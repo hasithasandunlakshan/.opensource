@@ -190,38 +190,53 @@
         line-height: 1.5;
       }
 
-      .meta-row { 
-        display: flex; 
-        gap: 10px; 
-        margin: 8px 0;
-        flex-wrap: wrap;
-        align-items: center;
+      .pr-facts {
+        display: grid;
+        gap: 6px;
+        margin: 12px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        font-size: 0.875rem;
       }
 
-      .date-badge {
-        padding: 4px 8px;
-        border: 1px solid var(--border-default);
-        border-radius: 6px;
-        font-size: 0.75rem;
-        font-weight: 500;
-        background: var(--panel-soft);
-        color: var(--muted);
+      .pr-facts li {
+        padding-left: 2px;
+      }
+
+      .pr-facts strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .change-fact {
+        line-height: 1.8;
+      }
+
+      .change-fact .diff-badge {
+        margin-left: 4px;
       }
 
       /* GitHub-style diff badges */
       .diff-badge {
-        padding: 4px 8px;
+        display: inline-flex;
+        align-items: center;
+        min-height: 22px;
+        padding: 2px 7px;
+        border: 1px solid transparent;
         border-radius: 6px;
         font-size: 0.75rem;
         font-weight: 600;
-        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+        line-height: 1.2;
+        font-family: var(--font-mono);
       }
       .diff-badge.add {
-        background: #ccffd8;
+        background: #dafbe1;
+        border-color: #aceebb;
         color: #116329;
       }
       .diff-badge.del {
-        background: #ffd7d5;
+        background: #ffebe9;
+        border-color: #ffcecb;
         color: #82071e;
       }
 
@@ -309,6 +324,9 @@
         display: grid;
         gap: 8px;
         margin-top: 8px; 
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
         font-size: 0.875rem; 
         color: var(--muted);
         font-family: var(--font-sans);
@@ -318,6 +336,7 @@
         border-radius: 6px;
       }
       .description.is-plain-markdown { white-space: pre-wrap; }
+      .description > * { min-width: 0; }
       .description p { margin: 0 0 8px; }
       .description p:last-child { margin-bottom: 0; }
       .description h1,
@@ -336,12 +355,15 @@
       .description ol { margin: 6px 0; padding-left: 20px; }
       .description li { margin: 3px 0; }
       .description li > p { margin: 4px 0; }
-      .description code { background: rgba(175, 184, 193, 0.2); padding: 2px 6px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.85em; }
-      .description pre { margin: 8px 0; padding: 12px; overflow-x: auto; background: rgba(175, 184, 193, 0.2); border-radius: 6px; }
+      .description a,
+      .description p,
+      .description li { overflow-wrap: anywhere; }
+      .description code { background: rgba(175, 184, 193, 0.2); padding: 2px 6px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.85em; overflow-wrap: anywhere; }
+      .description pre { max-width: 100%; margin: 8px 0; padding: 12px; overflow-x: auto; background: rgba(175, 184, 193, 0.2); border-radius: 6px; }
       .description pre code { padding: 0; background: transparent; border-radius: 0; }
       .description blockquote { margin: 8px 0; padding: 0 12px; color: var(--muted); border-left: 4px solid var(--border-default); }
-      .description img { max-width: 100%; border-radius: 6px; border: 1px solid var(--border-default); margin-top: 8px; }
-      .description table { display: block; width: max-content; max-width: 100%; margin: 8px 0; overflow: auto; border-collapse: collapse; font-size: 0.875rem; }
+      .description img { display: block; height: auto; max-width: 100%; border-radius: 6px; border: 1px solid var(--border-default); margin-top: 8px; }
+      .description table { display: block; width: 100%; max-width: 100%; margin: 8px 0; overflow-x: auto; border-collapse: collapse; font-size: 0.875rem; }
       .description th,
       .description td { padding: 8px 12px; border: 1px solid var(--border-default); text-align: left; }
       .description th { background: var(--panel); font-weight: 600; color: var(--text); }
@@ -423,12 +445,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 26, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+81 / -84</span>
-                  <span><strong>Files</strong>4</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+81</span>
+                    <span class="diff-badge del">-84</span>
+                  </li>
+                  <li><strong>Files</strong> 4</li>
+                </ul>
                 
                 
               </article>
@@ -463,12 +489,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 16, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+16 / -5</span>
-                  <span><strong>Files</strong>2</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 16, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+16</span>
+                    <span class="diff-badge del">-5</span>
+                  </li>
+                  <li><strong>Files</strong> 2</li>
+                </ul>
                 
                 
               </article>
@@ -503,12 +533,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>Jun 2, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+1 / -1</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> Jun 2, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+1</span>
+                    <span class="diff-badge del">-1</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 <div class="labels"><span>autoupdate</span></div>
               </article><article class="contribution" data-title="fix: redesigned-reminder-card-dark-mode" data-language="TypeScript">
@@ -526,12 +560,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>Jun 2, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+5 / -2</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> Jun 2, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+5</span>
+                    <span class="diff-badge del">-2</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 <div class="labels"><span>ready-to-merge</span></div>
               </article><article class="contribution" data-title="fix: enhance dark theme support for Visualizer and DocsLayout components" data-language="TypeScript">
@@ -549,12 +587,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 31, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+143 / -5</span>
-                  <span><strong>Files</strong>4</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 31, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+143</span>
+                    <span class="diff-badge del">-5</span>
+                  </li>
+                  <li><strong>Files</strong> 4</li>
+                </ul>
                 
                 <div class="labels"><span>waiting-for-author</span></div>
               </article><article class="contribution" data-title="fix: dark theme text issues in generator-api-section" data-language="TypeScript">
@@ -572,12 +614,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 31, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+16 / -1</span>
-                  <span><strong>Files</strong>2</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 31, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+16</span>
+                    <span class="diff-badge del">-1</span>
+                  </li>
+                  <li><strong>Files</strong> 2</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="feat: add dark mode support to newsroom article cards and dates" data-language="TypeScript">
@@ -595,12 +641,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 31, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+2 / -2</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 31, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+2</span>
+                    <span class="diff-badge del">-2</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: improve OpenAPI comparison diagram dark mode styling" data-language="TypeScript">
@@ -618,12 +668,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 30, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+662 / -511</span>
-                  <span><strong>Files</strong>11</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 30, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+662</span>
+                    <span class="diff-badge del">-511</span>
+                  </li>
+                  <li><strong>Files</strong> 11</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: enhance dark mode support and improve UI elements across tools" data-language="TypeScript">
@@ -641,12 +695,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 30, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+65 / -31</span>
-                  <span><strong>Files</strong>6</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 30, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+65</span>
+                    <span class="diff-badge del">-31</span>
+                  </li>
+                  <li><strong>Files</strong> 6</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: mermaid dark theme " data-language="TypeScript">
@@ -664,12 +722,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+98 / -33</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+98</span>
+                    <span class="diff-badge del">-33</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: add dark mode text color to Remember component" data-language="TypeScript">
@@ -687,12 +749,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+7 / -3</span>
-                  <span><strong>Files</strong>3</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+7</span>
+                    <span class="diff-badge del">-3</span>
+                  </li>
+                  <li><strong>Files</strong> 3</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: add dark theme support for Warning component" data-language="TypeScript">
@@ -710,12 +776,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+10 / -4</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+10</span>
+                    <span class="diff-badge del">-4</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: align netlify badge for mobile layout and remove stray margins" data-language="TypeScript">
@@ -733,12 +803,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+2 / -2</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+2</span>
+                    <span class="diff-badge del">-2</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: improve dark mode styles for AsyncAPI v3 comparison components" data-language="TypeScript">
@@ -756,12 +830,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 28, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+579 / -433</span>
-                  <span><strong>Files</strong>8</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 28, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+579</span>
+                    <span class="diff-badge del">-433</span>
+                  </li>
+                  <li><strong>Files</strong> 8</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile" data-language="TypeScript">
@@ -779,12 +857,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 28, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+9 / -4</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 28, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+9</span>
+                    <span class="diff-badge del">-4</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix(DocsMobileMenu): enhance dark theme support and improve styling c…" data-language="TypeScript">
@@ -802,12 +884,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 27, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+5 / -3</span>
-                  <span><strong>Files</strong>2</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 27, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+5</span>
+                    <span class="diff-badge del">-3</span>
+                  </li>
+                  <li><strong>Files</strong> 2</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: align mobile docs dropdown icon styles" data-language="TypeScript">
@@ -825,12 +911,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 26, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+2 / -2</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+2</span>
+                    <span class="diff-badge del">-2</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: update scroll-to-top button hover background color and improve image styling for dark mode" data-language="TypeScript">
@@ -848,12 +938,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 26, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+2 / -2</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+2</span>
+                    <span class="diff-badge del">-2</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="feat: enhance dark theme support in search and navigation components" data-language="TypeScript">
@@ -871,12 +965,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 26, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+43 / -26</span>
-                  <span><strong>Files</strong>3</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+43</span>
+                    <span class="diff-badge del">-26</span>
+                  </li>
+                  <li><strong>Files</strong> 3</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: improve docs callout dark theme" data-language="TypeScript">
@@ -894,12 +992,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 25, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+4 / -4</span>
-                  <span><strong>Files</strong>2</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 25, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+4</span>
+                    <span class="diff-badge del">-4</span>
+                  </li>
+                  <li><strong>Files</strong> 2</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix: enhance dark theme support for CLI page components" data-language="TypeScript">
@@ -917,12 +1019,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 25, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+8 / -6</span>
-                  <span><strong>Files</strong>2</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 25, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+8</span>
+                    <span class="diff-badge del">-6</span>
+                  </li>
+                  <li><strong>Files</strong> 2</li>
+                </ul>
                 
                 
               </article><article class="contribution" data-title="fix(StickyNavbar): update className for improved styling consistency" data-language="TypeScript">
@@ -940,12 +1046,16 @@
                 </div>
                 
                 
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 24, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+1 / -2</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> May 24, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+1</span>
+                    <span class="diff-badge del">-2</span>
+                  </li>
+                  <li><strong>Files</strong> 1</li>
+                </ul>
                 
                 
               </article>
