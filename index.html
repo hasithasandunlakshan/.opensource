@@ -38,7 +38,7 @@
       }
 
       .shell {
-        width: min(1120px, calc(100% - 32px));
+        width: min(1680px, calc(100% - 32px));
         margin: 0 auto;
       }
 
@@ -223,7 +223,7 @@
       }
 
       .repo-header p {
-        max-width: 760px;
+        max-width: 1080px;
         margin: 10px 0 0;
         color: var(--muted);
       }
@@ -254,8 +254,14 @@
         margin-top: 18px;
       }
 
+      @media (min-width: 1280px) {
+        .contribution-list {
+          gap: 14px;
+        }
+      }
+
       .contribution {
-        padding: 16px;
+        padding: 18px;
         border: 1px solid var(--line);
         border-radius: 4px;
         background: var(--panel-soft);
@@ -311,7 +317,7 @@
         display: block;
         max-width: 100%;
         height: auto;
-        max-height: 420px;
+        max-height: 620px;
         object-fit: contain;
         border: 1px solid var(--line);
         border-radius: 4px;
@@ -328,7 +334,7 @@
 
       .markdown-table {
         width: 100%;
-        min-width: 620px;
+        min-width: 860px;
         border-collapse: collapse;
         color: var(--text);
         font-size: 0.88rem;
@@ -336,7 +342,7 @@
 
       .markdown-table th,
       .markdown-table td {
-        padding: 10px;
+        padding: 12px;
         border-right: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
         vertical-align: top;
@@ -362,7 +368,7 @@
 
       .markdown-table img {
         width: 100%;
-        max-height: 260px;
+        max-height: 440px;
       }
 
       .description-fallback {
@@ -506,7 +512,7 @@
             </div>
           </div>
           <div class="stats" aria-label="Contribution summary">
-            <div class="stat"><strong>13</strong><span>contributions</span></div>
+            <div class="stat"><strong>9</strong><span>contributions</span></div>
             <div class="stat"><strong>3</strong><span>projects</span></div>
             <div class="stat"><strong>1</strong><span>languages</span></div>
           </div>
@@ -519,7 +525,7 @@
         <div class="filters" aria-label="Language filters">
             <button class="filter is-active" type="button" data-language="all">All</button>
             <button class="filter" type="button" data-language="TypeScript">
-              TypeScript <span>13</span>
+              TypeScript <span>9</span>
             </button>
           </div>
       </div>
@@ -536,7 +542,7 @@
                 <p>The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
               </div>
               <div class="repo-stats">
-                <span>103,357 stars</span>
+                <span>103,360 stars</span>
                 <span>1 PR</span>
               </div>
             </header>
@@ -603,7 +609,7 @@
               </div>
               <div class="repo-stats">
                 <span>707 stars</span>
-                <span>11 PRs</span>
+                <span>7 PRs</span>
               </div>
             </header>
             <div class="contribution-list">
@@ -642,7 +648,7 @@
               </article><article class="contribution" data-title="fix: enhance dark theme support for Visualizer and DocsLayout components" data-language="TypeScript">
                 <div class="contribution-main">
                   <a class="pr-title" href="https://github.com/asyncapi/website/pull/5507">fix: enhance dark theme support for Visualizer and DocsLayout components</a>
-                  <div class="description"><p>## Description<br /><br />- Adds dark theme support for the AsyncAPI Specification Explorer pages.<br />- Applies existing docs dark-theme styling to explorer routes such as <code>/docs/reference/specification/v3.1.0-explorer</code>.<br />- Adds scoped dark-mode overrides for Schyma/React Flow generated elements, including nodes, side panel, tables, tabs, controls, and JSON examples.<br />- Keeps light theme behavior unchanged by relying on Schyma&#39;s default styles.<br />- Adds a narrow TypeScript declaration for <code>schyma/dist/esm/style.css</code>.<br /><br />---<br /><br />## Reproduction Guidelines<br /><br />1. Open the Specification Explorer page:<br /><br />- https://deploy-preview-5507--asyncapi-website.netlify.app/docs/reference/specification/v3.1.0-explorer<br /><br />2. Test in light theme:<br /><br />   - Confirm the explorer keeps the existing light appearance.<br />   - Confirm schema nodes, the side panel, tables, tabs, and JSON examples render correctly.<br /><br />3. Switch to dark theme.<br /><br />4. Test in dark theme:<br /><br />   - Confirm the explorer background follows the docs dark theme.<br />   - Confirm all schema nodes are readable.<br />   - Confirm the side panel uses dark colors.<br />   - Confirm Examples/JSON blocks use dark code styling.<br />   - Confirm the docs menu popover remains readable.<br /><br />---<br /><br />## Screenshots<br /><br />### Light Theme Comparison<br /><br />| Before | After |<br />|---|---|<br />| <img src="https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca" alt="Light Theme Before 01" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca" alt="Light Theme After 01" width="700" loading="lazy" /> |<br />| <img src="https://github.com/user-attachments/assets/ecad2cd0-6bc3-446d-a917-b7819ae0d88c" alt="Light Theme Before 02" width="700" loading="lazy" /> | &lt;img width=&quot;700&quot; alt=&quot;Light Theme After 02&quot; src=&quot;https://github.com/user-attachments</p><p>...</p></div>
+                  <div class="description"><p>## Description<br /><br />- Adds dark theme support for the AsyncAPI Specification Explorer pages.<br />- Applies existing docs dark-theme styling to explorer routes such as <code>/docs/reference/specification/v3.1.0-explorer</code>.<br />- Adds scoped dark-mode overrides for Schyma/React Flow generated elements, including nodes, side panel, tables, tabs, controls, and JSON examples.<br />- Keeps light theme behavior unchanged by relying on Schyma&#39;s default styles.<br />- Adds a narrow TypeScript declaration for <code>schyma/dist/esm/style.css</code>.<br /><br />---<br /><br />## Reproduction Guidelines<br /><br />1. Open the Specification Explorer page:<br /><br />- https://deploy-preview-5507--asyncapi-website.netlify.app/docs/reference/specification/v3.1.0-explorer<br /><br />2. Test in light theme:<br /><br />   - Confirm the explorer keeps the existing light appearance.<br />   - Confirm schema nodes, the side panel, tables, tabs, and JSON examples render correctly.<br /><br />3. Switch to dark theme.<br /><br />4. Test in dark theme:<br /><br />   - Confirm the explorer background follows the docs dark theme.<br />   - Confirm all schema nodes are readable.<br />   - Confirm the side panel uses dark colors.<br />   - Confirm Examples/JSON blocks use dark code styling.<br />   - Confirm the docs menu popover remains readable.<br /><br />---<br /><br />## Screenshots<br /><br />### Light Theme Comparison<br /><br />| Before | After |<br />|---|---|<br />| <img src="https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca" alt="Light Theme Before 01" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca" alt="Light Theme After 01" width="700" loading="lazy" /> |<br />| <img src="https://github.com/user-attachments/assets/ecad2cd0-6bc3-446d-a917-b7819ae0d88c" alt="Light Theme Before 02" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/ecad2cd0-6bc3-446d-a917-b7819ae0d88c" alt="Light Theme After 02" width="700" loading="lazy" /> |<br /><br />---<br /><br />### Dark Theme Comparison<br /><br />| Before | After |<br />|---|---|<br />| <img src="https://github.com/user-attachments/assets/32252af2-36da-4d72-a94c-095cd9447bf5" alt="Dark Theme Before 01" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/3cf54e04-eb8a-496a-8e19-298c98aa196b" alt="Dark Theme After 01" width="700" loading="lazy" /> |<br />| <img src="https://github.com/user-attachments/assets/824c5916-faa6-42d3-be3c-50b856657ff5" alt="Dark Theme Before 02" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/8b2419a5-0fee-45ee-a607-ac10ec6dbd92" alt="Dark Theme After 02" width="700" loading="lazy" /> |</p><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Enhanced dark-mode styling across the docs UI and schema visualizer.</li><li>Improved explorer/menu visuals with updated dark backgrounds, borders, text, and interactive (hover/focus) states.</li><li>Refined visualizer theming for panels, nodes, controls, tabs, tables, and code examples, including consistent code-block backgrounds and syntax highlighting.</li></ul></div>
                 </div>
                 <div class="reviewed-by">
                   <span>Approved by</span>
@@ -690,7 +696,7 @@
               </article><article class="contribution" data-title="fix: improve OpenAPI comparison diagram dark mode styling" data-language="TypeScript">
                 <div class="contribution-main">
                   <a class="pr-title" href="https://github.com/asyncapi/website/pull/5513">fix: improve OpenAPI comparison diagram dark mode styling</a>
-                  <div class="description"><p><strong>Description</strong><br /><br />- Refactored OpenAPI comparison diagrams to follow the shared comparison component pattern.<br />- Replaced repeated inline hover handling with the reusable <code>HoverBox</code> component.<br />- Moved shared comparison helpers into <code>components/ComparisonCommon.tsx</code>.<br />- Updated OpenAPI comparison layouts to use shared <code>Column</code>, <code>HoverBox</code>, <code>StaticBox</code>, <code>ComponentGrid</code>, and <code>ComponentItem</code> patterns.<br />- Improved dark mode styling for borders, backgrounds, and hover states.<br />- Preserved existing OpenAPI comparison test IDs to avoid changing test behavior.<br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| Light | <img src="https://github.com/user-attachments/assets/8e312ff2-d5e5-4902-ac74-3d60515eeb03" alt="Screenshot Light Before" width="1010" height="733" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/71eecc0b-feec-4a1c-bd76-3bf40cb2a5f9" alt="Screenshot Light After" width="1002" height="742" loading="lazy" /> |<br />| Dark | <img src="https://github.com/user-attachments/assets/0989a618-7ce0-4b49-a5b7-ae5ab738e006" alt="Screenshot Dark Before" width="1048" height="743" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/b42b84e9-fb16-494c-828b-ad8649389e4d" alt="Screenshot Dark After" width="1022" height="734" loading="lazy" /> |<br /><br /><strong>Related issue(s)</strong></p><h4>Summary by CodeRabbit</h4><ul><li><strong>Refactor</strong></li><li>Enhanced hover-driven comparison UI across AsyncAPI and OpenAPI views with improved visual interaction patterns.</li><li>Restructured comparison layout using shared UI components for consistent styling and behavior across comparison panels.</li><li>Updated AsyncAPI 3.0 operations section with nested hover interactions for better information navigation.</li></ul><p>[<img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" />](https:/</p><p>...</p></div>
+                  <div class="description"><p><strong>Description</strong><br /><br />- Refactored OpenAPI comparison diagrams to follow the shared comparison component pattern.<br />- Replaced repeated inline hover handling with the reusable <code>HoverBox</code> component.<br />- Moved shared comparison helpers into <code>components/ComparisonCommon.tsx</code>.<br />- Updated OpenAPI comparison layouts to use shared <code>Column</code>, <code>HoverBox</code>, <code>StaticBox</code>, <code>ComponentGrid</code>, and <code>ComponentItem</code> patterns.<br />- Improved dark mode styling for borders, backgrounds, and hover states.<br />- Preserved existing OpenAPI comparison test IDs to avoid changing test behavior.<br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| Light | <img src="https://github.com/user-attachments/assets/8e312ff2-d5e5-4902-ac74-3d60515eeb03" alt="Screenshot Light Before" width="1010" height="733" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/71eecc0b-feec-4a1c-bd76-3bf40cb2a5f9" alt="Screenshot Light After" width="1002" height="742" loading="lazy" /> |<br />| Dark | <img src="https://github.com/user-attachments/assets/0989a618-7ce0-4b49-a5b7-ae5ab738e006" alt="Screenshot Dark Before" width="1048" height="743" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/b42b84e9-fb16-494c-828b-ad8649389e4d" alt="Screenshot Dark After" width="1022" height="734" loading="lazy" /> |<br /><br /><strong>Related issue(s)</strong></p><h4>Summary by CodeRabbit</h4><ul><li><strong>Refactor</strong></li><li>Enhanced hover-driven comparison UI across AsyncAPI and OpenAPI views with improved visual interaction patterns.</li><li>Restructured comparison layout using shared UI components for consistent styling and behavior across comparison panels.</li><li>Updated AsyncAPI 3.0 operations section with nested hover interactions for better information navigation.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5513?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
                 </div>
                 <div class="reviewed-by">
                   <span>Approved by</span>
@@ -706,7 +712,7 @@
               </article><article class="contribution" data-title="fix: enhance dark mode support and improve UI elements across tools" data-language="TypeScript">
                 <div class="contribution-main">
                   <a class="pr-title" href="https://github.com/asyncapi/website/pull/5522">fix: enhance dark mode support and improve UI elements across tools</a>
-                  <div class="description"><p><strong>Description</strong><br /><br />- Improved dark theme styles for the tools filter panel, including dropdown inputs, selected dropdown rows, applied filter chips, and ownership toggle.<br />- Updated info popovers and badge tooltip styling so content is readable in dark mode and no longer clips or overflows awkwardly.<br />- Fixed tools card header layout so the Open Source/Commercial badge stays aligned with the title without overlapping long titles.<br /><br /><strong>Screenshots</strong><br /><br />| Theme | Feature | Before | After |<br />| --- | --- | --- | --- |<br />| <strong>Light</strong> | Filter View | <img src="https://github.com/user-attachments/assets/1e0e6fe7-8626-4a8f-b734-0436a22cd431" alt="Light Filter Before" width="359" height="722" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/49b66165-04bf-4362-bdb2-0b60090634ab" alt="Light Filter After" width="349" height="732" loading="lazy" /> |<br />| <strong>Light</strong> | Tooltip | <img src="https://github.com/user-attachments/assets/8ce68765-30f9-47cd-b445-74d6f0e4fefd" alt="Light Tooltip Before" width="407" height="458" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/2fd2d949-7f1e-4f0f-bc7c-1041a03f33ed" alt="Light Tooltip After" width="399" height="451" loading="lazy" /> |<br />| <strong>Light</strong> | Explanation Mark Hover | <img src="https://github.com/user-attachments/assets/63d4b7d9-f4c2-4b9c-9c44-b64cae7265fb" alt="Light Hover Before" width="394" height="456" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/ff9bf41e-e021-4955-821c-1f5186a6885f" alt="Light Hover After" width="394" height="460" loading="lazy" /> |<br />| <strong>Light</strong> | Open Source Badge | <img src="https://github.com/user-attachments/assets/e429c652-a488-48ef-8120-9745d784e4d2" alt="Light Badge Before" width="440" height="472" loading="lazy" /> | &lt;img width=&quot;435&quot; height=&quot;468&quot; alt=&quot;Light Badge After&quot; src=&quot;https://github.com/user-attachments/assets/0f29a33e-6b8e-462b-8877-</p><p>...</p></div>
+                  <div class="description"><ul><li>Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4578167312</li></ul><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Improved dark-mode colors, contrast and visual consistency across filters, cards, chips, toggles and buttons</li><li>Refined hover, focus and active states for interactive elements and badges</li><li>Adjusted card and chip spacing and visual hierarchy for cleaner layouts</li><li><strong>Refactor</strong></li><li>Filter options made keyboard-focusable and standardized for more reliable interaction</li><li>Tooltips/popovers and description panels restyled with improved positioning, sizing and scroll behavior</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5522?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
                 </div>
                 <div class="reviewed-by">
                   <span>Approved by</span>
@@ -717,70 +723,6 @@
                   <span><strong>Language</strong>TypeScript</span>
                   <span><strong>Changes</strong>+65 / -31</span>
                   <span><strong>Files</strong>6</span>
-                </div>
-                
-              </article><article class="contribution" data-title="fix: mermaid dark theme " data-language="TypeScript">
-                <div class="contribution-main">
-                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5512">fix: mermaid dark theme </a>
-                  <div class="description"><ul><li>Diagrams update dynamically when you switch between light and dark themes, ens</li></ul><p>...</p></div>
-                </div>
-                <div class="reviewed-by">
-                  <span>Approved by</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="24" height="24" /></a></div>
-                </div>
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+98 / -33</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
-                
-              </article><article class="contribution" data-title="fix: add dark mode text color to Remember component" data-language="TypeScript">
-                <div class="contribution-main">
-                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5516">fix: add dark mode text color to Remember component</a>
-                  <div class="description"><p><strong>Description</strong><br /><br />Improved the UI styling for the generate code tutorial page. <br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| Dark | <img src="https://github.com/user-attachments/assets/91d7eac2-e22f-4551-b2dc-9363676c435f" alt="Screenshot Dark Before" width="967" height="462" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/d932c281-0dd1-492e-9abe-61f2e116364b" alt="Screenshot Dark After" width="991" height="467" loading="lazy" /> |<br />| Light | <img src="https://github.com/user-attachments/assets/759d4f62-581a-4ad1-a4d5-712d42b17a9b" alt="Screenshot Light Before" width="983" height="525" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/1b457fef-c4c9-4d21-8658-dcd21513a615" alt="Screenshot Light After" width="983" height="525" loading="lazy" /> |<br /><br /><strong>Reproduce</strong><br /><br />1. Navigate to https://deploy-preview-5516--asyncapi-website.netlify.app/docs/tutorials/generate-code<br />2. Observe the UI changes by toggling between the light and dark themes.<br /><br /><strong>Related issue(s)</strong></p></div>
-                </div>
-                <div class="reviewed-by">
-                  <span>Approved by</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="24" height="24" /></a></div>
-                </div>
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+7 / -3</span>
-                  <span><strong>Files</strong>3</span>
-                </div>
-                
-              </article><article class="contribution" data-title="fix: add dark theme support for Warning component" data-language="TypeScript">
-                <div class="contribution-main">
-                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5517">fix: add dark theme support for Warning component</a>
-                  <div class="description"><ul><li>N/A</li></ul></div>
-                </div>
-                <div class="reviewed-by">
-                  <span>Approved by</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="24" height="24" /></a></div>
-                </div>
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+10 / -4</span>
-                  <span><strong>Files</strong>1</span>
-                </div>
-                
-              </article><article class="contribution" data-title="fix: align netlify badge for mobile layout and remove stray margins" data-language="TypeScript">
-                <div class="contribution-main">
-                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5518">fix: align netlify badge for mobile layout and remove stray margins</a>
-                  <div class="description"><p><strong>Description</strong><br /><br />- align netlify badge for mobile layout and remove stray margins<br /><br /><br /> <strong>Please check the alignments in footer</strong><br />- Before <br /><img src="https://github.com/user-attachments/assets/fb0d0df8-d4e6-47a7-8767-d04c02cabcb3" alt="Screenshot 2026-05-29 at 14 35 15" width="376" height="296" loading="lazy" /><br /><br />- After <br /><img src="https://github.com/user-attachments/assets/b8ad609f-551e-4289-ba0e-bdcdaf4ffe7c" alt="Screenshot 2026-05-29 at 14 34 52" width="379" height="298" loading="lazy" /><br /><br /><br /><strong>Related issue(s)</strong></p></div>
-                </div>
-                <div class="reviewed-by">
-                  <span>Approved by</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="24" height="24" /></a></div>
-                </div>
-                <div class="meta-row">
-                  <span><strong>Merged</strong>May 29, 2026</span>
-                  <span><strong>Language</strong>TypeScript</span>
-                  <span><strong>Changes</strong>+2 / -2</span>
-                  <span><strong>Files</strong>1</span>
                 </div>
                 
               </article>
