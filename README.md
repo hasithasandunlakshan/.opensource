@@ -40,7 +40,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 ## Contributions by Project
 
 
-### <img src="https://github.com/supabase.png" width="32" height="32" style="vertical-align: middle; border-radius: 6px; margin-right: 8px;" alt="supabase"/> [supabase/supabase](https://github.com/supabase/supabase)
+### <img src="https://github.com/supabase.png" width="28" height="28" align="absmiddle" alt="supabase"> [supabase/supabase](https://github.com/supabase/supabase)
 
 The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.
 
@@ -48,13 +48,13 @@ The Postgres development platform. Supabase gives you a dedicated Postgres datab
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [migrate auth policy editor modal to dialog](https://github.com/supabase/supabase/pull/46374) [#46374](https://github.com/supabase/supabase/pull/46374)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [migrate auth policy editor modal to dialog](https://github.com/supabase/supabase/pull/46374) <sub>[#46374](https://github.com/supabase/supabase/pull/46374)</sub>
 
-<sub>Merged on May 26, 2026</sub>
+<sub><strong>Merged</strong> on May 26, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+81-2da44e?style=flat-square) ![](https://img.shields.io/badge/-84-cf222e?style=flat-square) across 4 files
+- **Changes:** <code>+81</code> <code>-84</code> across 4 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/1122076?u=f0c921a9936a7af17c272ca8857044c079ccd225&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="djhi" title="djhi"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/1122076?u=f0c921a9936a7af17c272ca8857044c079ccd225&v=4" width="24" height="24" align="absmiddle" alt="djhi" title="djhi">
 
 
 <details>
@@ -109,7 +109,7 @@ Behavior is intended to remain unchanged.
 ---
 
 
-### <img src="https://github.com/supabase-community.png" width="32" height="32" style="vertical-align: middle; border-radius: 6px; margin-right: 8px;" alt="supabase-community"/> [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp)
+### <img src="https://github.com/supabase-community.png" width="28" height="28" align="absmiddle" alt="supabase-community"> [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp)
 
 Connect Supabase to your AI assistants
 
@@ -117,13 +117,13 @@ Connect Supabase to your AI assistants
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [resolve edge function test typo and invalid branch array access](https://github.com/supabase-community/supabase-mcp/pull/279) [#279](https://github.com/supabase-community/supabase-mcp/pull/279)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [resolve edge function test typo and invalid branch array access](https://github.com/supabase-community/supabase-mcp/pull/279) <sub>[#279](https://github.com/supabase-community/supabase-mcp/pull/279)</sub>
 
-<sub>Merged on May 16, 2026</sub>
+<sub><strong>Merged</strong> on May 16, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+16-2da44e?style=flat-square) ![](https://img.shields.io/badge/-5-cf222e?style=flat-square) across 2 files
+- **Changes:** <code>+16</code> <code>-5</code> across 2 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/4133076?u=f3f783e0364abe955dbde6af80445ea27d948fdd&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="gregnr" title="gregnr"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/4133076?u=f3f783e0364abe955dbde6af80445ea27d948fdd&v=4" width="24" height="24" align="absmiddle" alt="gregnr" title="gregnr">
 
 
 <details>
@@ -154,7 +154,7 @@ These issues were identified while implementing new database tools. Resolving th
 ---
 
 
-### <img src="https://github.com/asyncapi.png" width="32" height="32" style="vertical-align: middle; border-radius: 6px; margin-right: 8px;" alt="asyncapi"/> [asyncapi/website](https://github.com/asyncapi/website)
+### <img src="https://github.com/asyncapi.png" width="28" height="28" align="absmiddle" alt="asyncapi"> [asyncapi/website](https://github.com/asyncapi/website)
 
 AsyncAPI specification website
 
@@ -162,13 +162,13 @@ AsyncAPI specification website
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [broken-url-in-tools](https://github.com/asyncapi/website/pull/5534) [#5534](https://github.com/asyncapi/website/pull/5534)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [broken-url-in-tools](https://github.com/asyncapi/website/pull/5534) <sub>[#5534](https://github.com/asyncapi/website/pull/5534)</sub>
 
-<sub>Merged on Jun 2, 2026</sub>
+<sub><strong>Merged</strong> on Jun 2, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+1-2da44e?style=flat-square) ![](https://img.shields.io/badge/-1-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+1</code> <code>-1</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -197,13 +197,13 @@ ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 -
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [redesigned-reminder-card-dark-mode](https://github.com/asyncapi/website/pull/5533) [#5533](https://github.com/asyncapi/website/pull/5533)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [redesigned-reminder-card-dark-mode](https://github.com/asyncapi/website/pull/5533) <sub>[#5533](https://github.com/asyncapi/website/pull/5533)</sub>
 
-<sub>Merged on Jun 2, 2026</sub>
+<sub><strong>Merged</strong> on Jun 2, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+5-2da44e?style=flat-square) ![](https://img.shields.io/badge/-2-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+5</code> <code>-2</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -239,13 +239,13 @@ ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 -
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [enhance dark theme support for Visualizer and DocsLayout components](https://github.com/asyncapi/website/pull/5507) [#5507](https://github.com/asyncapi/website/pull/5507)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [enhance dark theme support for Visualizer and DocsLayout components](https://github.com/asyncapi/website/pull/5507) <sub>[#5507](https://github.com/asyncapi/website/pull/5507)</sub>
 
-<sub>Merged on May 31, 2026</sub>
+<sub><strong>Merged</strong> on May 31, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+143-2da44e?style=flat-square) ![](https://img.shields.io/badge/-5-cf222e?style=flat-square) across 4 files
+- **Changes:** <code>+143</code> <code>-5</code> across 4 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -316,13 +316,13 @@ ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 -
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [dark theme text issues in generator-api-section](https://github.com/asyncapi/website/pull/5525) [#5525](https://github.com/asyncapi/website/pull/5525)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [dark theme text issues in generator-api-section](https://github.com/asyncapi/website/pull/5525) <sub>[#5525](https://github.com/asyncapi/website/pull/5525)</sub>
 
-<sub>Merged on May 31, 2026</sub>
+<sub><strong>Merged</strong> on May 31, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+16-2da44e?style=flat-square) ![](https://img.shields.io/badge/-1-cf222e?style=flat-square) across 2 files
+- **Changes:** <code>+16</code> <code>-1</code> across 2 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -358,13 +358,13 @@ ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 -
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [add dark mode support to newsroom article cards and dates](https://github.com/asyncapi/website/pull/5526) [#5526](https://github.com/asyncapi/website/pull/5526)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [add dark mode support to newsroom article cards and dates](https://github.com/asyncapi/website/pull/5526) <sub>[#5526](https://github.com/asyncapi/website/pull/5526)</sub>
 
-<sub>Merged on May 31, 2026</sub>
+<sub><strong>Merged</strong> on May 31, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+2-2da44e?style=flat-square) ![](https://img.shields.io/badge/-2-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+2</code> <code>-2</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -393,13 +393,13 @@ ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 -
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [improve OpenAPI comparison diagram dark mode styling](https://github.com/asyncapi/website/pull/5513) [#5513](https://github.com/asyncapi/website/pull/5513)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [improve OpenAPI comparison diagram dark mode styling](https://github.com/asyncapi/website/pull/5513) <sub>[#5513](https://github.com/asyncapi/website/pull/5513)</sub>
 
-<sub>Merged on May 30, 2026</sub>
+<sub><strong>Merged</strong> on May 30, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+662-2da44e?style=flat-square) ![](https://img.shields.io/badge/-511-cf222e?style=flat-square) across 11 files
+- **Changes:** <code>+662</code> <code>-511</code> across 11 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -441,13 +441,13 @@ ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 -
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [enhance dark mode support and improve UI elements across tools](https://github.com/asyncapi/website/pull/5522) [#5522](https://github.com/asyncapi/website/pull/5522)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [enhance dark mode support and improve UI elements across tools](https://github.com/asyncapi/website/pull/5522) <sub>[#5522](https://github.com/asyncapi/website/pull/5522)</sub>
 
-<sub>Merged on May 30, 2026</sub>
+<sub><strong>Merged</strong> on May 30, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+65-2da44e?style=flat-square) ![](https://img.shields.io/badge/-31-cf222e?style=flat-square) across 6 files
+- **Changes:** <code>+65</code> <code>-31</code> across 6 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -502,13 +502,13 @@ ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 -
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [mermaid dark theme ](https://github.com/asyncapi/website/pull/5512) [#5512](https://github.com/asyncapi/website/pull/5512)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [mermaid dark theme ](https://github.com/asyncapi/website/pull/5512) <sub>[#5512](https://github.com/asyncapi/website/pull/5512)</sub>
 
-<sub>Merged on May 29, 2026</sub>
+<sub><strong>Merged</strong> on May 29, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+98-2da44e?style=flat-square) ![](https://img.shields.io/badge/-33-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+98</code> <code>-33</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -551,13 +551,13 @@ ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4533042338
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [add dark mode text color to Remember component](https://github.com/asyncapi/website/pull/5516) [#5516](https://github.com/asyncapi/website/pull/5516)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [add dark mode text color to Remember component](https://github.com/asyncapi/website/pull/5516) <sub>[#5516](https://github.com/asyncapi/website/pull/5516)</sub>
 
-<sub>Merged on May 29, 2026</sub>
+<sub><strong>Merged</strong> on May 29, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+7-2da44e?style=flat-square) ![](https://img.shields.io/badge/-3-cf222e?style=flat-square) across 3 files
+- **Changes:** <code>+7</code> <code>-3</code> across 3 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -586,13 +586,13 @@ Improved the UI styling for the generate code tutorial page.
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [add dark theme support for Warning component](https://github.com/asyncapi/website/pull/5517) [#5517](https://github.com/asyncapi/website/pull/5517)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [add dark theme support for Warning component](https://github.com/asyncapi/website/pull/5517) <sub>[#5517](https://github.com/asyncapi/website/pull/5517)</sub>
 
-<sub>Merged on May 29, 2026</sub>
+<sub><strong>Merged</strong> on May 29, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+10-2da44e?style=flat-square) ![](https://img.shields.io/badge/-4-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+10</code> <code>-4</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -623,13 +623,13 @@ Improved the UI styling for the generate code tutorial page.
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [align netlify badge for mobile layout and remove stray margins](https://github.com/asyncapi/website/pull/5518) [#5518](https://github.com/asyncapi/website/pull/5518)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [align netlify badge for mobile layout and remove stray margins](https://github.com/asyncapi/website/pull/5518) <sub>[#5518](https://github.com/asyncapi/website/pull/5518)</sub>
 
-<sub>Merged on May 29, 2026</sub>
+<sub><strong>Merged</strong> on May 29, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+2-2da44e?style=flat-square) ![](https://img.shields.io/badge/-2-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+2</code> <code>-2</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -655,11 +655,11 @@ Improved the UI styling for the generate code tutorial page.
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [improve dark mode styles for AsyncAPI v3 comparison components](https://github.com/asyncapi/website/pull/5499) [#5499](https://github.com/asyncapi/website/pull/5499)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [improve dark mode styles for AsyncAPI v3 comparison components](https://github.com/asyncapi/website/pull/5499) <sub>[#5499](https://github.com/asyncapi/website/pull/5499)</sub>
 
-<sub>Merged on May 28, 2026</sub>
+<sub><strong>Merged</strong> on May 28, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+579-2da44e?style=flat-square) ![](https://img.shields.io/badge/-433-cf222e?style=flat-square) across 8 files
+- **Changes:** <code>+579</code> <code>-433</code> across 8 files
 - **Language:** TypeScript
 - **Merged by:** [@princerajpoot20](https://github.com/princerajpoot20)
 
@@ -736,13 +736,13 @@ https://deploy-preview-5499--asyncapi-website.netlify.app/docs/migration/migrati
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile](https://github.com/asyncapi/website/pull/5502) [#5502](https://github.com/asyncapi/website/pull/5502)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile](https://github.com/asyncapi/website/pull/5502) <sub>[#5502](https://github.com/asyncapi/website/pull/5502)</sub>
 
-<sub>Merged on May 28, 2026</sub>
+<sub><strong>Merged</strong> on May 28, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+9-2da44e?style=flat-square) ![](https://img.shields.io/badge/-4-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+9</code> <code>-4</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -799,13 +799,13 @@ Fixes N/A
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [enhance dark theme support and improve styling c…](https://github.com/asyncapi/website/pull/5477) [#5477](https://github.com/asyncapi/website/pull/5477)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [enhance dark theme support and improve styling c…](https://github.com/asyncapi/website/pull/5477) <sub>[#5477](https://github.com/asyncapi/website/pull/5477)</sub>
 
-<sub>Merged on May 27, 2026</sub>
+<sub><strong>Merged</strong> on May 27, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+5-2da44e?style=flat-square) ![](https://img.shields.io/badge/-3-cf222e?style=flat-square) across 2 files
+- **Changes:** <code>+5</code> <code>-3</code> across 2 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -856,13 +856,13 @@ Fixes #5253
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [align mobile docs dropdown icon styles](https://github.com/asyncapi/website/pull/5486) [#5486](https://github.com/asyncapi/website/pull/5486)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [align mobile docs dropdown icon styles](https://github.com/asyncapi/website/pull/5486) <sub>[#5486](https://github.com/asyncapi/website/pull/5486)</sub>
 
-<sub>Merged on May 26, 2026</sub>
+<sub><strong>Merged</strong> on May 26, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+2-2da44e?style=flat-square) ![](https://img.shields.io/badge/-2-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+2</code> <code>-2</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -903,13 +903,13 @@ Fixes https://github.com/asyncapi/website/pull/5253#issuecomment-4534746423
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [update scroll-to-top button hover background color and improve image styling for dark mode](https://github.com/asyncapi/website/pull/5484) [#5484](https://github.com/asyncapi/website/pull/5484)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [update scroll-to-top button hover background color and improve image styling for dark mode](https://github.com/asyncapi/website/pull/5484) <sub>[#5484](https://github.com/asyncapi/website/pull/5484)</sub>
 
-<sub>Merged on May 26, 2026</sub>
+<sub><strong>Merged</strong> on May 26, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+2-2da44e?style=flat-square) ![](https://img.shields.io/badge/-2-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+2</code> <code>-2</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -941,13 +941,13 @@ The scroll-to-top button had visibility and hover styling issues in dark theme.
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [enhance dark theme support in search and navigation components](https://github.com/asyncapi/website/pull/5471) [#5471](https://github.com/asyncapi/website/pull/5471)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [enhance dark theme support in search and navigation components](https://github.com/asyncapi/website/pull/5471) <sub>[#5471](https://github.com/asyncapi/website/pull/5471)</sub>
 
-<sub>Merged on May 26, 2026</sub>
+<sub><strong>Merged</strong> on May 26, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+43-2da44e?style=flat-square) ![](https://img.shields.io/badge/-26-cf222e?style=flat-square) across 3 files
+- **Changes:** <code>+43</code> <code>-26</code> across 3 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -986,13 +986,13 @@ Fixes #5470
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [improve docs callout dark theme](https://github.com/asyncapi/website/pull/5479) [#5479](https://github.com/asyncapi/website/pull/5479)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [improve docs callout dark theme](https://github.com/asyncapi/website/pull/5479) <sub>[#5479](https://github.com/asyncapi/website/pull/5479)</sub>
 
-<sub>Merged on May 25, 2026</sub>
+<sub><strong>Merged</strong> on May 25, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+4-2da44e?style=flat-square) ![](https://img.shields.io/badge/-4-cf222e?style=flat-square) across 2 files
+- **Changes:** <code>+4</code> <code>-4</code> across 2 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/144201791?u=bee7a229b7ad0dd54d22bf6acd2525ae3c6a4537&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="Sourya07" title="Sourya07"/> <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/144201791?u=bee7a229b7ad0dd54d22bf6acd2525ae3c6a4537&v=4" width="24" height="24" align="absmiddle" alt="Sourya07" title="Sourya07"> <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -1041,13 +1041,13 @@ Fixes #5253
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [enhance dark theme support for CLI page components](https://github.com/asyncapi/website/pull/5482) [#5482](https://github.com/asyncapi/website/pull/5482)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [enhance dark theme support for CLI page components](https://github.com/asyncapi/website/pull/5482) <sub>[#5482](https://github.com/asyncapi/website/pull/5482)</sub>
 
-<sub>Merged on May 25, 2026</sub>
+<sub><strong>Merged</strong> on May 25, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+8-2da44e?style=flat-square) ![](https://img.shields.io/badge/-6-cf222e?style=flat-square) across 2 files
+- **Changes:** <code>+8</code> <code>-6</code> across 2 files
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
@@ -1088,13 +1088,13 @@ Fixes #5253
 
 ---
 
-#### <img src="https://img.shields.io/badge/Merged-8250df?style=flat-square" alt="Merged" style="vertical-align: middle;"/> [update className for improved styling consistency](https://github.com/asyncapi/website/pull/5468) [#5468](https://github.com/asyncapi/website/pull/5468)
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [update className for improved styling consistency](https://github.com/asyncapi/website/pull/5468) <sub>[#5468](https://github.com/asyncapi/website/pull/5468)</sub>
 
-<sub>Merged on May 24, 2026</sub>
+<sub><strong>Merged</strong> on May 24, 2026</sub>
 
-- **Changes:** ![](https://img.shields.io/badge/+1-2da44e?style=flat-square) ![](https://img.shields.io/badge/-2-cf222e?style=flat-square) across 1 file
+- **Changes:** <code>+1</code> <code>-2</code> across 1 file
 - **Language:** TypeScript
-- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="28" height="28" style="border-radius: 50%; border: 2px solid #2da44e; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/>
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
 
 
 <details>
