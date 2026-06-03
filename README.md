@@ -108,7 +108,7 @@
 ## 🌟 Featured Projects
 
 <p align="center">
-  <a href="#supabasesupabase"><img src="https://img.shields.io/badge/supabase%2Fsupabase-103,364%20⭐-blue?style=for-the-badge&logo=github" alt="supabase/supabase"/></a>
+  <a href="#supabasesupabase"><img src="https://img.shields.io/badge/supabase%2Fsupabase-103,386%20⭐-blue?style=for-the-badge&logo=github" alt="supabase/supabase"/></a>
   <a href="#supabase-communitysupabase-mcp"><img src="https://img.shields.io/badge/supabase-community%2Fsupabase-mcp-2,710%20⭐-blue?style=for-the-badge&logo=github" alt="supabase-community/supabase-mcp"/></a>
   <a href="#asyncapiwebsite"><img src="https://img.shields.io/badge/asyncapi%2Fwebsite-707%20⭐-blue?style=for-the-badge&logo=github" alt="asyncapi/website"/></a>
 </p>
@@ -131,7 +131,7 @@
   <p>
     <strong>1</strong> contribution • 
     <code>TypeScript</code> • 
-    ⭐ <strong>103,364</strong> stars
+    ⭐ <strong>103,386</strong> stars
   </p>
 </blockquote>
 
