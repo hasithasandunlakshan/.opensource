@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Curated open source contributions by hasithasandun." />
+    <title>hasithasandun - Open Source Contributions</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f7f4;
+        --panel: #ffffff;
+        --panel-soft: #f0f4f1;
+        --text: #1e2723;
+        --muted: #667069;
+        --line: #dfe5df;
+        --accent: #23614f;
+        --accent-strong: #153d33;
+        --chip: #e6eee9;
+        --shadow: 0 20px 50px rgba(36, 47, 42, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        padding: 56px 0 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .profile {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 4.5rem);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .handle {
+        margin: 10px 0 0;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .bio {
+        max-width: 720px;
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 32px 0 0;
+      }
+
+      .stat {
+        min-height: 92px;
+        padding: 16px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.65rem;
+        line-height: 1.1;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 14px 0;
+        background: rgba(247, 247, 244, 0.92);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(16px);
+      }
+
+      .toolbar-inner {
+        display: grid;
+        grid-template-columns: minmax(220px, 360px) 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .search {
+        width: 100%;
+        min-height: 42px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--text);
+        font: inherit;
+      }
+
+      .filters {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .filter {
+        flex: 0 0 auto;
+        min-height: 38px;
+        padding: 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--panel);
+        color: var(--muted);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .filter span {
+        margin-left: 6px;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .filter.is-active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+
+      .filter.is-active span {
+        color: #dcebe5;
+      }
+
+      main {
+        padding: 28px 0 56px;
+      }
+
+      .repo-section {
+        margin-top: 18px;
+        padding: 22px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .repo-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: start;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .repo-name {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      .repo-name img {
+        border-radius: 6px;
+      }
+
+      .repo-header p {
+        max-width: 760px;
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      .repo-stats {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .repo-stats span,
+      .labels span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 0 9px;
+        background: var(--chip);
+        border-radius: 999px;
+        color: var(--accent-strong);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .contribution-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .contribution {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel-soft);
+      }
+
+      .pr-title {
+        font-weight: 800;
+        color: var(--accent-strong);
+      }
+
+      .contribution p {
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      .meta-row,
+      .labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .meta-row span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .empty {
+        margin-top: 28px;
+        padding: 24px;
+        border: 1px dashed var(--line);
+        border-radius: 8px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      footer {
+        padding: 28px 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 760px) {
+        .hero {
+          padding-top: 36px;
+        }
+
+        .profile,
+        .toolbar-inner,
+        .repo-header {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .repo-stats {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 460px) {
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .repo-section {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="shell">
+        <div class="profile">
+          <img class="avatar" src="https://github.com/hasithasandunlakshan.png" alt="hasithasandun" />
+          <div>
+            <h1>hasithasandun</h1>
+            <p class="handle"><a href="https://github.com/hasithasandunlakshan">@hasithasandunlakshan</a></p>
+            <p class="bio">Full Stack Developer @ Upwork | Engineering Undergraduate at University of Moratuwa</p>
+          </div>
+        </div>
+        <div class="stats" aria-label="Contribution summary">
+          <div class="stat"><strong>22</strong><span>contributions</span></div>
+          <div class="stat"><strong>3</strong><span>projects</span></div>
+          <div class="stat"><strong>1</strong><span>languages</span></div>
+          <div class="stat"><strong>106,773</strong><span>project stars</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="shell toolbar-inner">
+        <input class="search" id="search" type="search" placeholder="Search repositories and pull requests" autocomplete="off" />
+        
+          <div class="filters" aria-label="Language filters">
+            <button class="filter is-active" type="button" data-language="all">All</button>
+            
+            <button class="filter" type="button" data-language="TypeScript">
+              TypeScript <span>22</span>
+            </button>
+          </div>
+      </div>
+    </div>
+
+    <main class="shell">
+      <div id="results">
+        
+          <section class="repo-section" data-repo="supabase/supabase" data-languages="TypeScript">
+            <header class="repo-header">
+              <div>
+                <a class="repo-name" href="https://github.com/supabase/supabase">
+                  <img src="https://github.com/supabase.png" alt="" width="28" height="28" />
+                  supabase/supabase
+                </a>
+                <p>The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
+              </div>
+              <div class="repo-stats">
+                <span>103,356 stars</span>
+                <span>1 PR</span>
+              </div>
+            </header>
+            <div class="contribution-list">
+              
+              <article class="contribution" data-title="chore: migrate auth policy editor modal to dialog" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/supabase/supabase/pull/46374">chore: migrate auth policy editor modal to dialog</a>
+                  <p>I have read the CONTRIBUTING.md file. YES What kind of change does this PR introduce? Refactor What is the current behavior? The Auth policy editor flow still uses the deprecated `Modal` component and `Modal.Content` / `...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 26, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+81 -84</span>
+                  <span>4 files</span>
+                </div>
+                
+              </article>
+            </div>
+          </section>
+          <section class="repo-section" data-repo="supabase-community/supabase-mcp" data-languages="TypeScript">
+            <header class="repo-header">
+              <div>
+                <a class="repo-name" href="https://github.com/supabase-community/supabase-mcp">
+                  <img src="https://github.com/supabase-community.png" alt="" width="28" height="28" />
+                  supabase-community/supabase-mcp
+                </a>
+                <p>Connect Supabase to your AI assistants</p>
+              </div>
+              <div class="repo-stats">
+                <span>2,710 stars</span>
+                <span>1 PR</span>
+              </div>
+            </header>
+            <div class="contribution-list">
+              
+              <article class="contribution" data-title="fix(test): resolve edge function test typo and invalid branch array access" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/supabase-community/supabase-mcp/pull/279">fix(test): resolve edge function test typo and invalid branch array access</a>
+                  <p>What kind of change does this PR introduce? Bug fix What is the current behavior? 1. The `delete branch` test case in `server.test.ts` fails in standard JavaScript environments due to an invalid negative array index `bra...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 16, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+16 -5</span>
+                  <span>2 files</span>
+                </div>
+                
+              </article>
+            </div>
+          </section>
+          <section class="repo-section" data-repo="asyncapi/website" data-languages="TypeScript">
+            <header class="repo-header">
+              <div>
+                <a class="repo-name" href="https://github.com/asyncapi/website">
+                  <img src="https://github.com/asyncapi.png" alt="" width="28" height="28" />
+                  asyncapi/website
+                </a>
+                <p>AsyncAPI specification website</p>
+              </div>
+              <div class="repo-stats">
+                <span>707 stars</span>
+                <span>20 PRs</span>
+              </div>
+            </header>
+            <div class="contribution-list">
+              
+              <article class="contribution" data-title="fix: broken-url-in-tools" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5534">fix: broken-url-in-tools</a>
+                  <p>Updates the tool documentation link on the tools page to point to the correct documentation path in the community repository. Changes: - Updated tool documentation URL from https://github.com/asyncapi/community/blob/mast...</p>
+                </div>
+                <div class="meta-row">
+                  <span>Jun 2, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+1 -1</span>
+                  <span>1 files</span>
+                </div>
+                <div class="labels"><span>autoupdate</span></div>
+              </article>
+              <article class="contribution" data-title="fix: redesigned-reminder-card-dark-mode" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5533">fix: redesigned-reminder-card-dark-mode</a>
+                  <p>Description - Redesigned the reminder card to improve styling and support for dark mode. Screenshots | Theme | Before | After | | --- | --- | --- | | Light | &lt;img width=&quot;995&quot; height=&quot;656&quot; alt=&quot;Light Theme Before&quot; src=&quot;ht...</p>
+                </div>
+                <div class="meta-row">
+                  <span>Jun 2, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+5 -2</span>
+                  <span>1 files</span>
+                </div>
+                <div class="labels"><span>ready-to-merge</span></div>
+              </article>
+              <article class="contribution" data-title="fix: enhance dark theme support for Visualizer and DocsLayout components" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5507">fix: enhance dark theme support for Visualizer and DocsLayout components</a>
+                  <p>Description - Adds dark theme support for the AsyncAPI Specification Explorer pages. - Applies existing docs dark-theme styling to explorer routes such as `/docs/reference/specification/v3.1.0-explorer`. - Adds scoped da...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 31, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+143 -5</span>
+                  <span>4 files</span>
+                </div>
+                <div class="labels"><span>waiting-for-author</span></div>
+              </article>
+              <article class="contribution" data-title="fix: dark theme text issues in generator-api-section" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5525">fix: dark theme text issues in generator-api-section</a>
+                  <p>Description - Fixed UI issues regarding text visibility in the dark theme for the `generator-api-section`. Screenshots | Theme | Before | After | | --- | --- | --- | | Light | &lt;img width=&quot;936&quot; height=&quot;259&quot; alt=&quot;Light The...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 31, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+16 -1</span>
+                  <span>2 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="feat: add dark mode support to newsroom article cards and dates" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5526">feat: add dark mode support to newsroom article cards and dates</a>
+                  <p>Description - Added dark mode support to newsroom article cards and dates. Screenshots | Theme | Before | After | | --- | --- | --- | | Dark | &lt;img width=&quot;1234&quot; height=&quot;479&quot; alt=&quot;Dark Theme Before&quot; src=&quot;https://github.co...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 31, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+2 -2</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: improve OpenAPI comparison diagram dark mode styling" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5513">fix: improve OpenAPI comparison diagram dark mode styling</a>
+                  <p>Description - Refactored OpenAPI comparison diagrams to follow the shared comparison component pattern. - Replaced repeated inline hover handling with the reusable `HoverBox` component. - Moved shared comparison helpers...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 30, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+662 -511</span>
+                  <span>11 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: enhance dark mode support and improve UI elements across tools" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5522">fix: enhance dark mode support and improve UI elements across tools</a>
+                  <p>Description - Improved dark theme styles for the tools filter panel, including dropdown inputs, selected dropdown rows, applied filter chips, and ownership toggle. - Updated info popovers and badge tooltip styling so con...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 30, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+65 -31</span>
+                  <span>6 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: mermaid dark theme " data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5512">fix: mermaid dark theme </a>
+                  <p>ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4533042338 Description * Adds dark theme support for Mermaid diagrams rendered from MDX code blocks. * Reinitializes Mermaid with light or dark theme varia...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 29, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+98 -33</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: add dark mode text color to Remember component" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5516">fix: add dark mode text color to Remember component</a>
+                  <p>Description Improved the UI styling for the generate code tutorial page. Screenshots | Theme | Before | After | | --- | --- | --- | | Dark | &lt;img width=&quot;967&quot; height=&quot;462&quot; alt=&quot;Screenshot Dark Before&quot; src=&quot;https://github....</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 29, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+7 -3</span>
+                  <span>3 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: add dark theme support for Warning component" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5517">fix: add dark theme support for Warning component</a>
+                  <p>Description - Enhanced the design of the warning components in the Roadmap section. Screenshots | Theme | Before | After | | --- | --- | --- | | Light | &lt;img width=&quot;646&quot; height=&quot;204&quot; alt=&quot;Screenshot Light Before&quot; src=&quot;ht...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 29, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+10 -4</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: align netlify badge for mobile layout and remove stray margins" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5518">fix: align netlify badge for mobile layout and remove stray margins</a>
+                  <p>Description - align netlify badge for mobile layout and remove stray margins Please check the alignments in footer - Before &lt;img width=&quot;376&quot; height=&quot;296&quot; alt=&quot;Screenshot 2026-05-29 at 14 35 15&quot; src=&quot;https://github.com/us...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 29, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+2 -2</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: improve dark mode styles for AsyncAPI v3 comparison components" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5499">fix: improve dark mode styles for AsyncAPI v3 comparison components</a>
+                  <p>ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4556732392 Description - Updated AsyncAPI v3 migration comparison components to support dark mode styling. - Added dark mode classes for borders, backgroun...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 28, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+579 -433</span>
+                  <span>8 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5502">fix: improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile</a>
+                  <p>Description - Improved `TSCMemberCard` responsiveness for mobile devices. - Adjusted the card layout to better align content across different screen sizes. - Added responsive alignment changes using `items-center sm:item...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 28, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+9 -4</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix(DocsMobileMenu): enhance dark theme support and improve styling c…" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5477">fix(DocsMobileMenu): enhance dark theme support and improve styling c…</a>
+                  <p>Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4532416854 Description - Fixed dark theme styling for the mobile docs sidebar. - Updated the mobile docs menu background and search button to use existing d...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 27, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+5 -3</span>
+                  <span>2 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: align mobile docs dropdown icon styles" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5486">fix: align mobile docs dropdown icon styles</a>
+                  <p>refs: https://github.com/asyncapi/website/pull/5253#issuecomment-4534746423 Description - Fixed inconsistent icon styling in the mobile Docs dropdown menu. - Updated the mobile Docs dropdown to use the same `buckets` dat...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 26, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+2 -2</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: update scroll-to-top button hover background color and improve image styling for dark mode" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5484">fix: update scroll-to-top button hover background color and improve image styling for dark mode</a>
+                  <p>Description Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4539882638 - Added dark theme support for the scroll-to-top button. - Replaced the hardcoded hover background color with an existing theme color...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 26, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+2 -2</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="feat: enhance dark theme support in search and navigation components" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5471">feat: enhance dark theme support in search and navigation components</a>
+                  <p>Description - Updated the mobile docs search button to support dark theme using existing theme classes. - Added `data-theme=&quot;dark&quot;` alongside the existing `dark` class so Algolia DocSearch uses its dark theme. - Wrapped...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 26, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+43 -26</span>
+                  <span>3 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: improve docs callout dark theme" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5479">fix: improve docs callout dark theme</a>
+                  <p>ref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532677110 ref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532649920 Description - Fixed dark theme styling for the release notes callout i...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 25, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+4 -4</span>
+                  <span>2 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix: enhance dark theme support for CLI page components" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5482">fix: enhance dark theme support for CLI page components</a>
+                  <p>Fixes : https://github.com/asyncapi/website/pull/5253#issuecomment-4533246868 Description - Added dark theme support for the CLI tools page. - Updated the features section, feature icon cards, and inline command snippet...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 25, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+8 -6</span>
+                  <span>2 files</span>
+                </div>
+                
+              </article>
+              <article class="contribution" data-title="fix(StickyNavbar): update className for improved styling consistency" data-language="TypeScript">
+                <div class="contribution-main">
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5468">fix(StickyNavbar): update className for improved styling consistency</a>
+                  <p>Description - Fixed the mobile hamburger menu not opening correctly on small screens. - The issue was caused by `transform: translateZ(0)` being applied to the sticky navbar on all screen sizes. Since the mobile menu use...</p>
+                </div>
+                <div class="meta-row">
+                  <span>May 24, 2026</span>
+                  <span>TypeScript</span>
+                  <span>+1 -2</span>
+                  <span>1 files</span>
+                </div>
+                
+              </article>
+            </div>
+          </section>
+      </div>
+      <div class="empty" id="empty" hidden>No matching contributions.</div>
+    </main>
+
+    <footer>
+      <div class="shell">
+        Updated Jun 3, 2026. Data available in <a href="contributions.json">contributions.json</a>.
+      </div>
+    </footer>
+
+    <script>
+      const search = document.querySelector('#search');
+      const filters = [...document.querySelectorAll('.filter')];
+      const sections = [...document.querySelectorAll('.repo-section')];
+      const empty = document.querySelector('#empty');
+      let activeLanguage = 'all';
+
+      function normalize(value) {
+        return value.toLowerCase().trim();
+      }
+
+      function applyFilters() {
+        const query = normalize(search.value);
+        let visibleCount = 0;
+
+        sections.forEach((section) => {
+          const languages = section.dataset.languages.split('|');
+          const languageMatch = activeLanguage === 'all' || languages.includes(activeLanguage);
+          const queryMatch = !query || normalize(section.textContent).includes(query);
+
+          section.hidden = !(languageMatch && queryMatch);
+          if (!section.hidden) visibleCount += 1;
+        });
+
+        empty.hidden = visibleCount !== 0;
+      }
+
+      search.addEventListener('input', applyFilters);
+      filters.forEach((filter) => {
+        filter.addEventListener('click', () => {
+          activeLanguage = filter.dataset.language;
+          filters.forEach((item) => item.classList.toggle('is-active', item === filter));
+          applyFilters();
+        });
+      });
+    </script>
+  </body>
+</html>
