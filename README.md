@@ -40,51 +40,49 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 ## Contributions by Project
 
 
-### <img src="https://github.com/supabase.png" width="20" height="20" style="vertical-align: middle; border-radius: 4px;" alt="supabase"/> [supabase/supabase](https://github.com/supabase/supabase)
+<table>
+<tr>
+<td width="80">
+  <img src="https://github.com/supabase.png" width="60" height="60" alt="supabase" style="border-radius: 8px;"/>
+</td>
+<td>
+  <h3><a href="https://github.com/supabase/supabase">supabase/supabase</a></h3>
+  <p>The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
+  <p>
+    <strong>1 contribution</strong>
+    • TypeScript
+    • 103,394 stars
+  </p>
+</td>
+</tr>
+</table>
 
-The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.
-
-**1 contribution** • TypeScript • **103,394** stars
-
-<details>
-<summary><strong>View Contributions</strong></summary>
-
-
-#### [chore: migrate auth policy editor modal to dialog](https://github.com/supabase/supabase/pull/46374)
-
-I have read the CONTRIBUTING.md file.  YES  What kind of change does this PR introduce?  Refactor  What is the current behavior?  The Auth policy editor flow still uses the deprecated `Modal...
-
-
-**May 2026** • +81 -84 • Reviewed by [@djhi](https://github.com/djhi)
-
-
-
-</details>
+- **[chore: migrate auth policy editor modal to dialog](https://github.com/supabase/supabase/pull/46374)** - May 2026 <sub>![](https://img.shields.io/badge/+-81-success?style=flat-square) ![]( https://img.shields.io/badge/--84-critical?style=flat-square)</sub>
 
 ---
 
-### <img src="https://github.com/supabase-community.png" width="20" height="20" style="vertical-align: middle; border-radius: 4px;" alt="supabase-community"/> [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp)
 
-Connect Supabase to your AI assistants
+<table>
+<tr>
+<td width="80">
+  <img src="https://github.com/supabase-community.png" width="60" height="60" alt="supabase-community" style="border-radius: 8px;"/>
+</td>
+<td>
+  <h3><a href="https://github.com/supabase-community/supabase-mcp">supabase-community/supabase-mcp</a></h3>
+  <p>Connect Supabase to your AI assistants</p>
+  <p>
+    <strong>1 contribution</strong>
+    • TypeScript
+    • 2,710 stars
+  </p>
+</td>
+</tr>
+</table>
 
-**1 contribution** • TypeScript • **2,710** stars
-
-<details>
-<summary><strong>View Contributions</strong></summary>
-
-
-#### [fix(test): resolve edge function test typo and invalid branch array access](https://github.com/supabase-community/supabase-mcp/pull/279)
-
-What kind of change does this PR introduce?  Bug fix  What is the current behavior?  1. The `delete branch` test case in `server.test.ts` fails in standard JavaScript environments due to an inva...
-
-
-**May 2026** • +16 -5 • Reviewed by [@gregnr](https://github.com/gregnr)
-
-
-
-</details>
+- **[fix(test): resolve edge function test typo and invalid branch array access](https://github.com/supabase-community/supabase-mcp/pull/279)** - May 2026 <sub>![](https://img.shields.io/badge/+-16-success?style=flat-square) ![]( https://img.shields.io/badge/--5-critical?style=flat-square)</sub>
 
 ---
+
 
 
 ---
