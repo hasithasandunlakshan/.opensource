@@ -1,47 +1,116 @@
 
 <div align="center">
 
-# 🚀 Open Source Contributions
-
-<img src="https://github.com/hasithasandunlakshan.png" width="120" height="120" alt="hasithasandunlakshan" style="border-radius: 60px; border: 3px solid #0969da;"/>
-
-### hasithasandun
-[@hasithasandunlakshan](https://github.com/hasithasandunlakshan)
-
-<p><em>Full Stack Developer @ Upwork | Engineering Undergraduate at University of Moratuwa</em></p>
-
-<br/>
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/hasithasandunlakshan/.opensource/main/contributions.json&label=Contributions&query=$.contributions.length&color=brightgreen&style=for-the-badge&logo=github" alt="Total Contributions"/>
-    </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/Projects-3-blue?style=for-the-badge&logo=github" alt="Total Projects"/>
-    </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/Languages-1-orange?style=for-the-badge&logo=code" alt="Languages Used"/>
-    </td>
-  </tr>
-</table>
-
-<br/>
-
-<p>
-  <a href="#-featured-projects">Featured Projects</a> •
-  <a href="#-contributions-by-project">Contributions</a> •
-  <a href="contributions.json">Raw Data</a>
-</p>
+<!-- Hero Section with Full-Width Responsive Design -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+  <img alt="Open Source Contributions Banner" src="https://user-images.githubusercontent.com/25423296/163456776-7fe0f349-c08d-4b11-b41a-8e40061992f8.png" width="100%" style="max-width: 100%;">
+</picture>
 
 </div>
+
+<!-- Navigation Bar - Full Width, Responsive -->
+<table width="100%" style="border: none; margin: 0; padding: 0;">
+<tr>
+<td width="100%" style="border: none; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px;">
+  <table width="100%" style="border: none;">
+    <tr>
+      <td style="border: none; vertical-align: middle; padding: 0;">
+        <a href="https://github.com/hasithasandunlakshan">
+          <img src="https://github.com/hasithasandunlakshan.png" width="80" height="80" alt="hasithasandunlakshan" style="border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+        </a>
+      </td>
+      <td style="border: none; vertical-align: middle; padding-left: 20px;">
+        <h1 style="margin: 0; color: white; font-size: 28px;">
+          hasithasandun
+        </h1>
+        <p style="margin: 5px 0 0 0; color: rgba(255,255,255,0.9); font-size: 18px;">
+          <a href="https://github.com/hasithasandunlakshan" style="color: white; text-decoration: none;">@hasithasandunlakshan</a>
+        </p>
+        <p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.8); font-size: 14px; font-style: italic;">Full Stack Developer @ Upwork | Engineering Undergraduate at University of Moratuwa</p>
+      </td>
+      <td align="right" style="border: none; vertical-align: middle; padding: 0;">
+        <table style="border: none;">
+          <tr>
+            <td align="center" style="border: none; padding: 10px;">
+              <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                <div style="font-size: 32px; font-weight: bold; color: white;">9</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 5px;">CONTRIBUTIONS</div>
+              </div>
+            </td>
+            <td align="center" style="border: none; padding: 10px;">
+              <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                <div style="font-size: 32px; font-weight: bold; color: white;">3</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 5px;">PROJECTS</div>
+              </div>
+            </td>
+            <td align="center" style="border: none; padding: 10px;">
+              <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
+                <div style="font-size: 32px; font-weight: bold; color: white;">1</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 5px;">LANGUAGES</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+</tr>
+</table>
+
+<!-- Mobile-Friendly Version (Shows on narrow screens) -->
+<div align="center" style="display: none;">
+  <a href="https://github.com/hasithasandunlakshan">
+    <img src="https://github.com/hasithasandunlakshan.png" width="120" height="120" alt="hasithasandunlakshan" style="border-radius: 60px; border: 5px solid #667eea; margin: 20px 0;"/>
+  </a>
+  <h1 style="margin: 10px 0;">hasithasandun</h1>
+  <p style="margin: 5px 0;">
+    <a href="https://github.com/hasithasandunlakshan" style="color: #667eea; text-decoration: none; font-size: 18px;">@hasithasandunlakshan</a>
+  </p>
+  <p style="margin: 15px 20px; color: #666; font-style: italic;">Full Stack Developer @ Upwork | Engineering Undergraduate at University of Moratuwa</p>
+  
+  <table align="center" style="margin: 20px 0;">
+    <tr>
+      <td align="center" style="padding: 15px;">
+        <div style="font-size: 28px; font-weight: bold; color: #667eea;">9</div>
+        <div style="font-size: 11px; color: #666; margin-top: 5px;">CONTRIBUTIONS</div>
+      </td>
+      <td align="center" style="padding: 15px;">
+        <div style="font-size: 28px; font-weight: bold; color: #764ba2;">3</div>
+        <div style="font-size: 11px; color: #666; margin-top: 5px;">PROJECTS</div>
+      </td>
+      <td align="center" style="padding: 15px;">
+        <div style="font-size: 28px; font-weight: bold; color: #667eea;">1</div>
+        <div style="font-size: 11px; color: #666; margin-top: 5px;">LANGUAGES</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br/>
+
+<!-- Quick Navigation -->
+<div align="center">
+  <a href="#-featured-projects">
+    <img src="https://img.shields.io/badge/🌟_Featured_Projects-blue?style=for-the-badge" alt="Featured Projects"/>
+  </a>
+  <a href="#-contributions-by-project">
+    <img src="https://img.shields.io/badge/📦_All_Contributions-purple?style=for-the-badge" alt="All Contributions"/>
+  </a>
+  <a href="contributions.json">
+    <img src="https://img.shields.io/badge/📄_Raw_Data-gray?style=for-the-badge" alt="Raw Data"/>
+  </a>
+</div>
+
+<br/>
 
 ---
 
 ## 🌟 Featured Projects
 
 <p align="center">
-  <a href="#supabasesupabase"><img src="https://img.shields.io/badge/supabase%2Fsupabase-103,357%20⭐-blue?style=for-the-badge&logo=github" alt="supabase/supabase"/></a>
+  <a href="#supabasesupabase"><img src="https://img.shields.io/badge/supabase%2Fsupabase-103,360%20⭐-blue?style=for-the-badge&logo=github" alt="supabase/supabase"/></a>
   <a href="#supabase-communitysupabase-mcp"><img src="https://img.shields.io/badge/supabase-community%2Fsupabase-mcp-2,710%20⭐-blue?style=for-the-badge&logo=github" alt="supabase-community/supabase-mcp"/></a>
   <a href="#asyncapiwebsite"><img src="https://img.shields.io/badge/asyncapi%2Fwebsite-707%20⭐-blue?style=for-the-badge&logo=github" alt="asyncapi/website"/></a>
 </p>
@@ -64,7 +133,7 @@
   <p>
     <strong>1</strong> contribution • 
     <code>TypeScript</code> • 
-    ⭐ <strong>103,357</strong> stars
+    ⭐ <strong>103,360</strong> stars
   </p>
 </blockquote>
 
@@ -154,7 +223,7 @@
 
 <blockquote>
   <p>
-    <strong>11</strong> contributions • 
+    <strong>7</strong> contributions • 
     <code>TypeScript</code> • 
     ⭐ <strong>707</strong> stars
   </p>
@@ -322,102 +391,6 @@
   <img src="https://img.shields.io/badge/📊_%2B65%20%E2%88%9231-success?style=flat-square" alt="Changes"/>
   <img src="https://img.shields.io/badge/📁_6%20files-orange?style=flat-square" alt="6 files"/>
   <a href="https://github.com/asyncapi/website/pull/5522"><img src="https://img.shields.io/badge/View_PR-→-purple?style=flat-square" alt="View PR"/></a>
-</p>
-
-
-
-</div>
-
-
-<div style="padding: 16px; border-left: 4px solid #0969da; margin: 12px 0; background: #f6f8fa;">
-
-#### [fix: mermaid dark theme ](https://github.com/asyncapi/website/pull/5512)
-
-<p>ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4533042338 Description * Adds dark theme support for Mermaid diagrams rendered from MDX code blocks. * Reinitializes Mermaid with light or dark theme variables based on the `html.dark` class. * Re-renders Mermaid diagrams when the site...</p>
-
-
-
-  <p>
-    <sub>✅ <strong>Reviewed by:</strong> <a href="https://github.com/princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="20" height="20" style="border-radius: 50%; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/></a></sub>
-  </p>
-
-<p>
-  <img src="https://img.shields.io/badge/📅_May%2029%2C%202026-blue?style=flat-square" alt="Merged May 29, 2026"/>
-  <img src="https://img.shields.io/badge/📊_%2B98%20%E2%88%9233-success?style=flat-square" alt="Changes"/>
-  <img src="https://img.shields.io/badge/📁_1%20files-orange?style=flat-square" alt="1 files"/>
-  <a href="https://github.com/asyncapi/website/pull/5512"><img src="https://img.shields.io/badge/View_PR-→-purple?style=flat-square" alt="View PR"/></a>
-</p>
-
-
-
-</div>
-
-
-<div style="padding: 16px; border-left: 4px solid #0969da; margin: 12px 0; background: #f6f8fa;">
-
-#### [fix: add dark mode text color to Remember component](https://github.com/asyncapi/website/pull/5516)
-
-<p>Description Improved the UI styling for the generate code tutorial page. Screenshots | Theme | Before | After | | --- | --- | --- | | Dark | <img width="967" height="462" alt="Screenshot Dark Before" src="https://github.com/user-attachments/assets/91d7eac2-e22f-4551-b2dc-9363676c435f" /> | <img widt...</p>
-
-
-
-  <p>
-    <sub>✅ <strong>Reviewed by:</strong> <a href="https://github.com/princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="20" height="20" style="border-radius: 50%; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/></a></sub>
-  </p>
-
-<p>
-  <img src="https://img.shields.io/badge/📅_May%2029%2C%202026-blue?style=flat-square" alt="Merged May 29, 2026"/>
-  <img src="https://img.shields.io/badge/📊_%2B7%20%E2%88%923-success?style=flat-square" alt="Changes"/>
-  <img src="https://img.shields.io/badge/📁_3%20files-orange?style=flat-square" alt="3 files"/>
-  <a href="https://github.com/asyncapi/website/pull/5516"><img src="https://img.shields.io/badge/View_PR-→-purple?style=flat-square" alt="View PR"/></a>
-</p>
-
-
-
-</div>
-
-
-<div style="padding: 16px; border-left: 4px solid #0969da; margin: 12px 0; background: #f6f8fa;">
-
-#### [fix: add dark theme support for Warning component](https://github.com/asyncapi/website/pull/5517)
-
-<p>Description - Enhanced the design of the warning components in the Roadmap section. Screenshots | Theme | Before | After | | --- | --- | --- | | Light | <img width="646" height="204" alt="Screenshot Light Before" src="https://github.com/user-attachments/assets/d95539fc-4dd9-494e-b23d-82ce5d9bf6fd" /...</p>
-
-
-
-  <p>
-    <sub>✅ <strong>Reviewed by:</strong> <a href="https://github.com/princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="20" height="20" style="border-radius: 50%; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/></a></sub>
-  </p>
-
-<p>
-  <img src="https://img.shields.io/badge/📅_May%2029%2C%202026-blue?style=flat-square" alt="Merged May 29, 2026"/>
-  <img src="https://img.shields.io/badge/📊_%2B10%20%E2%88%924-success?style=flat-square" alt="Changes"/>
-  <img src="https://img.shields.io/badge/📁_1%20files-orange?style=flat-square" alt="1 files"/>
-  <a href="https://github.com/asyncapi/website/pull/5517"><img src="https://img.shields.io/badge/View_PR-→-purple?style=flat-square" alt="View PR"/></a>
-</p>
-
-
-
-</div>
-
-
-<div style="padding: 16px; border-left: 4px solid #0969da; margin: 12px 0; background: #f6f8fa;">
-
-#### [fix: align netlify badge for mobile layout and remove stray margins](https://github.com/asyncapi/website/pull/5518)
-
-<p>Description - align netlify badge for mobile layout and remove stray margins Please check the alignments in footer - Before <img width="376" height="296" alt="Screenshot 2026-05-29 at 14 35 15" src="https://github.com/user-attachments/assets/fb0d0df8-d4e6-47a7-8767-d04c02cabcb3" /> - After <img widt...</p>
-
-
-
-  <p>
-    <sub>✅ <strong>Reviewed by:</strong> <a href="https://github.com/princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="20" height="20" style="border-radius: 50%; vertical-align: middle;" alt="princerajpoot20" title="princerajpoot20"/></a></sub>
-  </p>
-
-<p>
-  <img src="https://img.shields.io/badge/📅_May%2029%2C%202026-blue?style=flat-square" alt="Merged May 29, 2026"/>
-  <img src="https://img.shields.io/badge/📊_%2B2%20%E2%88%922-success?style=flat-square" alt="Changes"/>
-  <img src="https://img.shields.io/badge/📁_1%20files-orange?style=flat-square" alt="1 files"/>
-  <a href="https://github.com/asyncapi/website/pull/5518"><img src="https://img.shields.io/badge/View_PR-→-purple?style=flat-square" alt="View PR"/></a>
 </p>
 
 
