@@ -98,7 +98,9 @@
         padding: 24px;
         background: var(--panel-soft);
         border: 1px solid var(--border-default);
+        border-left: 4px solid var(--accent);
         border-radius: 6px;
+        box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
       }
 
       .repo-header { 
@@ -106,8 +108,11 @@
         justify-content: space-between; 
         align-items: flex-start;
         gap: 24px; 
-        padding-bottom: 16px; 
+        margin: -24px -24px 0;
+        padding: 16px 20px 16px; 
+        background: linear-gradient(180deg, var(--panel) 0%, var(--panel-soft) 100%);
         border-bottom: 1px solid var(--border-default);
+        border-radius: 2px 6px 0 0;
       }
       
       .repo-title-area {
@@ -159,7 +164,7 @@
       }
 
       /* Contribution Details - Recruiter Optimized */
-      .contribution-list { display: grid; gap: 16px; margin-top: 16px; }
+      .contribution-list { display: grid; gap: 16px; margin-top: 20px; }
       .contribution { 
         padding: 16px; 
         border: 1px solid var(--border-default); 
@@ -206,6 +211,29 @@
       .pr-facts strong {
         color: var(--text);
         font-weight: 600;
+      }
+
+      .merged-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 22px;
+        padding: 2px 7px;
+        border: 1px solid #d8b9ff;
+        border-radius: 999px;
+        background: #f6f0ff;
+        color: #8250df;
+        font-size: 0.75rem;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .merged-badge::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        margin-right: 5px;
+        border-radius: 50%;
+        background: #8250df;
       }
 
       .change-fact {
@@ -425,7 +453,7 @@
                 <p>The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
               </div>
               <div class="repo-stats">
-                <span>103,398 stars</span>
+                <span aria-label="103,399 stars">★ 103,399</span>
                 <span>1 PR</span>
               </div>
             </header>
@@ -446,7 +474,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/supabase/supabase/pull/46374">#46,374</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 26, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -469,7 +498,7 @@
                 <p>Connect Supabase to your AI assistants</p>
               </div>
               <div class="repo-stats">
-                <span>2,710 stars</span>
+                <span aria-label="2,710 stars">★ 2,710</span>
                 <span>1 PR</span>
               </div>
             </header>
@@ -490,7 +519,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 16, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/supabase-community/supabase-mcp/pull/279">#279</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 16, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -513,7 +543,7 @@
                 <p>AsyncAPI specification website</p>
               </div>
               <div class="repo-stats">
-                <span>707 stars</span>
+                <span aria-label="707 stars">★ 707</span>
                 <span>20 PRs</span>
               </div>
             </header>
@@ -534,7 +564,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> Jun 2, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5534">#5,534</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> Jun 2, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -561,7 +592,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> Jun 2, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5533">#5,533</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> Jun 2, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -588,7 +620,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 31, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5507">#5,507</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 31, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -615,7 +648,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 31, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5525">#5,525</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 31, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -642,7 +676,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 31, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5526">#5,526</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 31, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -669,7 +704,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 30, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5513">#5,513</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 30, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -696,7 +732,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 30, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5522">#5,522</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 30, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -723,7 +760,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5512">#5,512</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 29, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -750,7 +788,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5516">#5,516</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 29, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -777,7 +816,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5517">#5,517</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 29, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -804,7 +844,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 29, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5518">#5,518</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 29, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -831,7 +872,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 28, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5499">#5,499</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 28, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -858,7 +900,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 28, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5502">#5,502</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 28, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -885,7 +928,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 27, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5477">#5,477</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 27, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -912,7 +956,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5486">#5,486</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 26, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -939,7 +984,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5484">#5,484</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 26, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -966,7 +1012,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 26, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5471">#5,471</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 26, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -993,7 +1040,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 25, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5479">#5,479</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 25, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -1020,7 +1068,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 25, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5482">#5,482</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 25, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
@@ -1047,7 +1096,8 @@
                 
                 
                 <ul class="pr-facts">
-                  <li><strong>Merged</strong> May 24, 2026</li>
+                  <li><strong>PR</strong> <a href="https://github.com/asyncapi/website/pull/5468">#5,468</a></li>
+                  <li><strong>Merged</strong> <span class="merged-badge">Merged</span> May 24, 2026</li>
                   <li><strong>Language</strong> TypeScript</li>
                   <li class="change-fact">
                     <strong>Changes</strong>
