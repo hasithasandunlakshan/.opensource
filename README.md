@@ -40,46 +40,58 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 ## Contributions by Project
 
 
-<table>
+<div align="left">
+
+### <img src="https://github.com/supabase.png" width="28" height="28" style="vertical-align: middle; border-radius: 6px;" alt="supabase"/> [supabase/supabase](https://github.com/supabase/supabase)
+
+<sub>The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</sub>
+
+**1 contribution** • TypeScript • **103,394** stars
+
+</div>
+
+
+<table width="100%">
 <tr>
-<td width="80">
-  <img src="https://github.com/supabase.png" width="60" height="60" alt="supabase" style="border-radius: 8px;"/>
-</td>
-<td>
-  <h3><a href="https://github.com/supabase/supabase">supabase/supabase</a></h3>
-  <p>The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
-  <p>
-    <strong>1 contribution</strong>
-    • TypeScript
-    • 103,394 stars
-  </p>
+<td width="100%">
+
+#### [chore: migrate auth policy editor modal to dialog](https://github.com/supabase/supabase/pull/46374)
+
+<sub>**May 26, 2026** ![](https://img.shields.io/badge/+-81-success?style=flat-square) ![](https://img.shields.io/badge/--84-critical?style=flat-square)</sub> • <sub>Approved by: <a href="https://github.com/djhi"><img src="https://avatars.githubusercontent.com/u/1122076?u=f0c921a9936a7af17c272ca8857044c079ccd225&v=4" width="24" height="24" style="border-radius: 50%;" alt="djhi" title="djhi"/></a></sub>
+
+
 </td>
 </tr>
 </table>
 
-- **[chore: migrate auth policy editor modal to dialog](https://github.com/supabase/supabase/pull/46374)** - May 2026 <sub>![](https://img.shields.io/badge/+-81-success?style=flat-square) ![]( https://img.shields.io/badge/--84-critical?style=flat-square)</sub>
 
 ---
 
 
-<table>
+<div align="left">
+
+### <img src="https://github.com/supabase-community.png" width="28" height="28" style="vertical-align: middle; border-radius: 6px;" alt="supabase-community"/> [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp)
+
+<sub>Connect Supabase to your AI assistants</sub>
+
+**1 contribution** • TypeScript • **2,710** stars
+
+</div>
+
+
+<table width="100%">
 <tr>
-<td width="80">
-  <img src="https://github.com/supabase-community.png" width="60" height="60" alt="supabase-community" style="border-radius: 8px;"/>
-</td>
-<td>
-  <h3><a href="https://github.com/supabase-community/supabase-mcp">supabase-community/supabase-mcp</a></h3>
-  <p>Connect Supabase to your AI assistants</p>
-  <p>
-    <strong>1 contribution</strong>
-    • TypeScript
-    • 2,710 stars
-  </p>
+<td width="100%">
+
+#### [fix(test): resolve edge function test typo and invalid branch array access](https://github.com/supabase-community/supabase-mcp/pull/279)
+
+<sub>**May 16, 2026** ![](https://img.shields.io/badge/+-16-success?style=flat-square) ![](https://img.shields.io/badge/--5-critical?style=flat-square)</sub> • <sub>Approved by: <a href="https://github.com/gregnr"><img src="https://avatars.githubusercontent.com/u/4133076?u=f3f783e0364abe955dbde6af80445ea27d948fdd&v=4" width="24" height="24" style="border-radius: 50%;" alt="gregnr" title="gregnr"/></a></sub>
+
+
 </td>
 </tr>
 </table>
 
-- **[fix(test): resolve edge function test typo and invalid branch array access](https://github.com/supabase-community/supabase-mcp/pull/279)** - May 2026 <sub>![](https://img.shields.io/badge/+-16-success?style=flat-square) ![]( https://img.shields.io/badge/--5-critical?style=flat-square)</sub>
 
 ---
 
