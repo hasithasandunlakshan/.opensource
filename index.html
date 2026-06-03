@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Curated open source contributions by hasithasandun." />
     <title>hasithasandun - Open Source Contributions</title>
+    <link rel="icon" type="image/png" href="https://github.com/hasithasandunlakshan.png" />
+    <link rel="apple-touch-icon" href="https://github.com/hasithasandunlakshan.png" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
       :root {
-        /* Professional Light Theme - Full Width Layout */
-        --bg: #f9f9f9;
-        --panel: #ffffff;
-        --panel-soft: #f4f4f5;
-        --text: #09090b;
-        --muted: #71717a;
-        --line: #e4e4e7;
-        --accent: #18181b;
-        --accent-strong: #000000;
-        --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+        /* GitHub Light Theme */
+        --bg: #ffffff;
+        --panel: #f6f8fa;
+        --panel-soft: #ffffff;
+        --text: #1f2328;
+        --muted: #59636e;
+        --line: #d1d9e0;
+        --accent: #0969da;
+        --accent-hover: #0550ae;
+        --accent-strong: #0a3069;
+        --shadow: 0 1px 3px rgba(27, 31, 36, 0.12), 0 8px 24px rgba(66, 74, 83, 0.12);
+        --border-default: #d0d7de;
       }
 
       * { box-sizing: border-box; }
@@ -25,11 +30,17 @@
         margin: 0;
         background: var(--bg);
         color: var(--text);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
         line-height: 1.6;
       }
 
-      a { color: inherit; text-decoration: none; }
+      a { 
+        color: var(--accent); 
+        text-decoration: none; 
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
       /* Full Width Container */
       .shell {
@@ -43,10 +54,10 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--line);
-        padding: 12px 0;
+        background: var(--panel);
+        border-bottom: 1px solid var(--border-default);
+        padding: 16px 0;
+        box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
       }
 
       .navbar-inner {
@@ -56,37 +67,66 @@
       }
 
       .nav-identity { display: flex; align-items: center; gap: 12px; }
-      .nav-avatar { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); }
-      .nav-info { display: flex; flex-direction: column; line-height: 1.2; }
-      .nav-name { font-weight: 700; font-size: 0.95rem; }
-      .nav-handle { font-size: 0.8rem; color: var(--muted); }
+      .nav-avatar { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-default); }
+      .nav-info { display: flex; flex-direction: column; line-height: 1.3; }
+      .nav-name { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+      .nav-handle { font-size: 0.85rem; color: var(--muted); }
+      .nav-handle a { color: var(--accent); }
       .nav-controls { display: flex; align-items: center; gap: 16px; }
 
       .search {
         width: 300px;
-        height: 36px;
-        padding: 0 14px;
-        border: 1px solid var(--line);
+        height: 32px;
+        padding: 5px 12px;
+        border: 1px solid var(--border-default);
         border-radius: 6px;
-        background: var(--panel);
-        font-size: 0.85rem;
+        background: var(--panel-soft);
+        font-size: 0.875rem;
+        color: var(--text);
+      }
+      .search:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: -1px;
+        border-color: var(--accent);
       }
 
-      .filters { display: flex; gap: 4px; background: var(--panel-soft); padding: 3px; border-radius: 6px; border: 1px solid var(--line); }
-      .filter { height: 30px; padding: 0 12px; border: none; background: transparent; cursor: pointer; border-radius: 4px; font-weight: 500; font-size: 0.8rem; display: flex; align-items: center; gap: 4px; }
-      .filter.is-active { background: var(--panel); box-shadow: var(--shadow); font-weight: 600; }
+      .filters { display: flex; gap: 4px; background: transparent; padding: 0; border-radius: 6px; border: none; }
+      .filter { 
+        height: 32px; 
+        padding: 0 12px; 
+        border: 1px solid var(--border-default); 
+        background: var(--panel-soft); 
+        cursor: pointer; 
+        border-radius: 6px; 
+        font-weight: 500; 
+        font-size: 0.875rem; 
+        display: flex; 
+        align-items: center; 
+        gap: 4px;
+        color: var(--text);
+        transition: background-color 0.1s ease;
+      }
+      .filter:hover {
+        background: var(--panel);
+        border-color: var(--muted);
+      }
+      .filter.is-active { 
+        background: var(--accent); 
+        border-color: var(--accent);
+        color: #ffffff; 
+        font-weight: 600; 
+      }
 
       /* Main Content Layout */
       main { padding: 32px 0 64px; }
 
       /* Repository Section - Full Width */
       .repo-section {
-        margin-top: 28px;
-        padding: 28px;
-        background: var(--panel);
-        border: 2px solid var(--line);
-        border-radius: 12px;
-        box-shadow: var(--shadow);
+        margin-top: 24px;
+        padding: 24px;
+        background: var(--panel-soft);
+        border: 1px solid var(--border-default);
+        border-radius: 6px;
       }
 
       .repo-header { 
@@ -94,8 +134,8 @@
         justify-content: space-between; 
         align-items: flex-start;
         gap: 24px; 
-        padding-bottom: 24px; 
-        border-bottom: 2px solid var(--line);
+        padding-bottom: 16px; 
+        border-bottom: 1px solid var(--border-default);
       }
       
       .repo-title-area {
@@ -104,40 +144,42 @@
 
       .repo-name { 
         display: inline-flex; 
-        gap: 12px; 
+        gap: 10px; 
         align-items: center; 
         font-weight: 600; 
-        font-size: 1.25rem;
-        color: #0969da;
+        font-size: 1.125rem;
+        color: var(--accent);
       }
       .repo-name:hover {
+        color: var(--accent-hover);
         text-decoration: underline;
       }
       .repo-name img { 
-        border: 1px solid var(--line); 
+        border: 1px solid var(--border-default); 
         border-radius: 6px;
       }
       
       .repo-description { 
-        margin: 12px 0 0 44px;
+        margin: 8px 0 0 42px;
         color: var(--muted); 
-        font-size: 0.95rem;
+        font-size: 0.875rem;
         line-height: 1.5;
       }
       
       .repo-stats { 
         display: flex; 
-        gap: 10px; 
+        gap: 8px; 
         align-items: center;
         flex-wrap: wrap;
       }
       .repo-stats span { 
-        padding: 6px 14px; 
+        padding: 5px 12px; 
         background: var(--panel-soft); 
-        border: 1px solid var(--line); 
+        border: 1px solid var(--border-default); 
         border-radius: 6px; 
-        font-size: 0.88rem;
+        font-size: 0.75rem;
         font-weight: 500;
+        color: var(--muted);
       }
       .repo-stats strong {
         font-weight: 600;
@@ -145,77 +187,77 @@
       }
 
       /* Contribution Details - Recruiter Optimized */
-      .contribution-list { display: grid; gap: 16px; margin-top: 20px; }
+      .contribution-list { display: grid; gap: 16px; margin-top: 16px; }
       .contribution { 
-        padding: 20px; 
-        border: 2px solid #e1e4e8; 
-        border-radius: 8px; 
-        background: #f6f8fa; 
-        transition: all 0.2s ease;
+        padding: 16px; 
+        border: 1px solid var(--border-default); 
+        border-radius: 6px; 
+        background: var(--bg); 
+        transition: all 0.1s ease;
       }
       .contribution:hover {
-        border-color: #0969da;
-        box-shadow: 0 4px 12px rgba(9, 105, 218, 0.1);
+        border-color: var(--muted);
+        box-shadow: var(--shadow);
       }
       .pr-title { 
         font-weight: 600; 
-        font-size: 1.1rem; 
+        font-size: 1rem; 
         display: block; 
-        margin-bottom: 10px;
-        color: #0969da;
+        margin-bottom: 8px;
+        color: var(--accent);
       }
       .pr-title:hover {
+        color: var(--accent-hover);
         text-decoration: underline;
       }
 
       .brief-description {
-        margin: 0 0 14px 0;
-        font-size: 0.9rem;
+        margin: 0 0 12px 0;
+        font-size: 0.875rem;
         color: var(--muted);
         line-height: 1.5;
       }
 
       .meta-row { 
         display: flex; 
-        gap: 12px; 
-        margin: 12px 0;
+        gap: 10px; 
+        margin: 8px 0;
         flex-wrap: wrap;
         align-items: center;
       }
 
       .date-badge {
-        padding: 5px 12px;
-        border: 1px solid var(--line);
+        padding: 4px 8px;
+        border: 1px solid var(--border-default);
         border-radius: 6px;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         font-weight: 500;
-        background: var(--panel);
+        background: var(--panel-soft);
+        color: var(--muted);
       }
 
       /* GitHub-style diff badges */
       .diff-badge {
-        padding: 5px 12px;
+        padding: 4px 8px;
         border-radius: 6px;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         font-weight: 600;
-        font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Roboto Mono', monospace;
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
       }
       .diff-badge.add {
-        background: #d1f4d1;
+        background: #ccffd8;
         color: #116329;
-        border: 1px solid #a2e5a2;
       }
       .diff-badge.del {
         background: #ffd7d5;
-        color: #a0211a;
-        border: 1px solid #ffb8b5;
+        color: #82071e;
       }
 
       .reviewed-by { 
         display: flex; 
         align-items: center; 
-        gap: 8px;
-        font-size: 0.88rem;
+        gap: 6px;
+        font-size: 0.75rem;
       }
       .review-label {
         font-weight: 600;
@@ -223,17 +265,17 @@
       }
       .reviewers { 
         display: flex; 
-        gap: 6px;
+        gap: 4px;
       }
       .reviewers img { 
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
-        border: 2px solid #28a745;
-        transition: transform 0.2s ease;
+        border: 2px solid #1a7f37;
+        transition: transform 0.1s ease;
       }
       .reviewers img:hover {
-        transform: scale(1.1);
+        transform: scale(1.15);
       }
       .merged-by { 
         color: var(--accent); 
@@ -243,18 +285,18 @@
       .impact-note {
         display: flex;
         align-items: flex-start;
-        gap: 10px;
-        margin-top: 16px;
-        padding: 14px 16px;
-        background: #fff9e6;
-        border-left: 4px solid #ffc107;
+        gap: 8px;
+        margin-top: 12px;
+        padding: 12px;
+        background: #fff8c5;
+        border-left: 3px solid #bf8700;
         border-radius: 6px;
-        font-size: 0.9rem;
+        font-size: 0.875rem;
         line-height: 1.5;
       }
 
       .impact-icon {
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1;
         flex-shrink: 0;
       }
@@ -265,20 +307,21 @@
       }
 
       .description-details {
-        margin-top: 16px;
+        margin-top: 12px;
         cursor: pointer;
       }
 
       .description-details summary {
-        color: #0969da;
-        font-size: 0.88rem;
+        color: var(--accent);
+        font-size: 0.75rem;
         font-weight: 500;
         list-style: none;
         user-select: none;
-        padding: 8px 0;
+        padding: 6px 0;
       }
 
       .description-details summary:hover {
+        color: var(--accent-hover);
         text-decoration: underline;
       }
 
@@ -287,32 +330,59 @@
       }
 
       .description-details[open] summary {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
       }
 
       .description { 
         display: grid;
-        gap: 10px;
-        margin-top: 12px; 
-        font-size: 0.9rem; 
+        gap: 8px;
+        margin-top: 8px; 
+        font-size: 0.875rem; 
         color: var(--muted);
-        padding: 16px;
+        padding: 12px;
         background: var(--panel);
-        border: 1px solid var(--line);
+        border: 1px solid var(--border-default);
         border-radius: 6px;
       }
       .description p { margin: 0 0 8px; }
       .description p:last-child { margin-bottom: 0; }
-      .description h4 { margin: 16px 0 8px; font-size: 0.95rem; color: var(--text); }
-      .description ul { margin: 8px 0; padding-left: 20px; }
-      .description li { margin: 4px 0; }
-      .description code { background: #eee; padding: 2px 5px; border-radius: 4px; font-family: monospace; font-size: 0.88em; }
-      .description img { max-width: 100%; border-radius: 6px; border: 1px solid var(--line); margin-top: 12px; }
+      .description h1, .description h2, .description h3, .description h4, .description h5, .description h6 { 
+        margin: 16px 0 8px; 
+        font-size: 0.95rem; 
+        color: var(--text); 
+        font-weight: 600; 
+      }
+      .description h1:first-child, .description h2:first-child, .description h3:first-child, .description h4:first-child {
+        margin-top: 0;
+      }
+      .description ul, .description ol { margin: 6px 0; padding-left: 20px; }
+      .description li { margin: 3px 0; }
+      .description code { 
+        background: rgba(175, 184, 193, 0.2); 
+        padding: 2px 6px; 
+        border-radius: 6px; 
+        font-family: ui-monospace, Menlo, Monaco, Consolas, monospace; 
+        font-size: 0.85em; 
+      }
+      .description pre {
+        background: var(--panel);
+        border: 1px solid var(--border-default);
+        border-radius: 6px;
+        padding: 12px;
+        overflow-x: auto;
+        margin: 12px 0;
+      }
+      .description pre code {
+        background: none;
+        padding: 0;
+        font-size: 0.85rem;
+      }
+      .description img { max-width: 100%; border-radius: 6px; border: 1px solid var(--border-default); margin-top: 8px; }
 
-      .markdown-table-wrap { margin-top: 12px; border: 1px solid var(--line); border-radius: 6px; overflow-x: auto; background: var(--panel); }
-      .markdown-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-      .markdown-table th, .markdown-table td { padding: 10px; border: 1px solid var(--line); text-align: left; }
-      .markdown-table th { background: var(--panel-soft); font-weight: 600; }
+      /* Table styles from Marked.js */
+      .description table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 12px 0; }
+      .description th, .description td { padding: 8px 12px; border: 1px solid var(--border-default); text-align: left; }
+      .description th { background: var(--panel); font-weight: 600; }
 
       .labels { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
       .labels span { padding: 3px 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; font-size: 0.75rem; font-weight: 500; }
@@ -343,600 +413,225 @@
     </style>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="shell navbar-inner">
-        <div class="nav-identity">
-          <img class="nav-avatar" src="https://github.com/hasithasandunlakshan.png" alt="hasithasandun" />
-          <div class="nav-info">
-            <span class="nav-name">hasithasandun</span>
-            <span class="nav-handle"><a href="https://github.com/hasithasandunlakshan">@hasithasandunlakshan</a></span>
-          </div>
-        </div>
-        <div class="nav-controls">
-          <input class="search" id="search" type="search" placeholder="Search contributions..." />
-          <div class="filters" id="filters-container"></div>
-        </div>
-      </div>
-    </nav>
-    <main class="shell">
-      <div id="results">
-        <section class="repo-section" data-repo="supabase/supabase" data-languages="TypeScript">
-            <header class="repo-header">
-              <div class="repo-title-area">
-                <a class="repo-name" href="https://github.com/supabase/supabase">
-                  <img src="https://github.com/supabase.png" alt="supabase" width="32" height="32" />
-                  supabase/supabase
-                </a>
-                <p class="repo-description">The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
-              </div>
-              <div class="repo-stats">
-                <span><strong>1</strong> PR</span>
-                <span><strong>TypeScript</strong></span>
-                <span><strong>⭐ 103,394</strong></span>
-              </div>
-            </header>
-            <div class="contribution-list">
-              <article class="contribution" data-title="chore: migrate auth policy editor modal to dialog" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/supabase/supabase/pull/46374">migrate auth policy editor modal to dialog</a>
-                
-                <p class="brief-description">I have read the CONTRIBUTING.md file.  YES  What kind of change does this PR introduce?  Refactor  What is the current behavior?  The Auth policy editor flow still uses the deprecated `Modal...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 26, 2026</span>
-                  <span class="diff-badge add">+81</span>
-                  <span class="diff-badge del">−84</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/djhi" title="djhi"><img src="https://avatars.githubusercontent.com/u/1122076?u=f0c921a9936a7af17c272ca8857044c079ccd225&amp;v=4" alt="djhi" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><ul><li>Fixes #46375</li></ul><h4>Summary by CodeRabbit</h4><ul><li><strong>Refactor</strong></li><li>Updated the policy editor and review flows to a unified dialog layout for a cleaner, more consistent UI.</li><li>Sections and footer controls were reorganized for clearer grouping and improved button placement.</li><li>Existing behaviors (viewing templates, review/save flow, and close confirmation) are preserved.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46374?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article>
-            </div>
-          </section><section class="repo-section" data-repo="supabase-community/supabase-mcp" data-languages="TypeScript">
-            <header class="repo-header">
-              <div class="repo-title-area">
-                <a class="repo-name" href="https://github.com/supabase-community/supabase-mcp">
-                  <img src="https://github.com/supabase-community.png" alt="supabase-community" width="32" height="32" />
-                  supabase-community/supabase-mcp
-                </a>
-                <p class="repo-description">Connect Supabase to your AI assistants</p>
-              </div>
-              <div class="repo-stats">
-                <span><strong>1</strong> PR</span>
-                <span><strong>TypeScript</strong></span>
-                <span><strong>⭐ 2,710</strong></span>
-              </div>
-            </header>
-            <div class="contribution-list">
-              <article class="contribution" data-title="fix(test): resolve edge function test typo and invalid branch array access" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/supabase-community/supabase-mcp/pull/279">resolve edge function test typo and invalid branch array access</a>
-                
-                <p class="brief-description">What kind of change does this PR introduce?  Bug fix  What is the current behavior?  1. The `delete branch` test case in `server.test.ts` fails in standard JavaScript environments due to an inva...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 16, 2026</span>
-                  <span class="diff-badge add">+16</span>
-                  <span class="diff-badge del">−5</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/gregnr" title="gregnr"><img src="https://avatars.githubusercontent.com/u/4133076?u=f3f783e0364abe955dbde6af80445ea27d948fdd&amp;v=4" alt="gregnr" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>## What kind of change does this PR introduce?<br /><br />Bug fix<br /><br />## What is the current behavior?<br /><br />1. The <code>delete branch</code> test case in <code>server.test.ts</code> fails in standard JavaScript environments due to an invalid negative array index <code>branches[-1]</code>.<br />2. There is a typo in one of the Edge Function test descriptions: <code>eploy edge function validates slug format</code>.<br /><br />## What is the new behavior?<br /><br />1. Replaces <code>branches[-1]</code> with the modern JavaScript <code>.at(-1)</code> method to safely access the last element of the array.<br />2. Corrected the typo from <code>eploy</code> to <code>deploy</code>.<br /><br />## Additional context<br /><br />These issues were identified while implementing new database tools. Resolving them ensures a stable test suite for all contributors.</p></div>
-                </details>
-                
-                
-              </article>
-            </div>
-          </section><section class="repo-section" data-repo="asyncapi/website" data-languages="TypeScript">
-            <header class="repo-header">
-              <div class="repo-title-area">
-                <a class="repo-name" href="https://github.com/asyncapi/website">
-                  <img src="https://github.com/asyncapi.png" alt="asyncapi" width="32" height="32" />
-                  asyncapi/website
-                </a>
-                <p class="repo-description">AsyncAPI specification website</p>
-              </div>
-              <div class="repo-stats">
-                <span><strong>20</strong> PRs</span>
-                <span><strong>TypeScript</strong></span>
-                <span><strong>⭐ 707</strong></span>
-              </div>
-            </header>
-            <div class="contribution-list">
-              <article class="contribution" data-title="fix: broken-url-in-tools" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5534">broken-url-in-tools</a>
-                
-                <p class="brief-description">Updates the tool documentation link on the tools page to point to the correct documentation path in the community repository.  Changes: - Updated tool documentation URL from https://github.com/asyn...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">Jun 2, 2026</span>
-                  <span class="diff-badge add">+1</span>
-                  <span class="diff-badge del">−1</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>Updates the tool documentation link on the tools page to point to the correct documentation path in the community repository.<br /><br />### Changes:<br />- Updated tool documentation URL from https://github.com/asyncapi/community/blob/master/new-tool-documentation.md to  https://github.com/asyncapi/community/blob/master/docs/040-guides/add-new-asyncapi-tool-to-website.md<br />- The previous link was pointing to an outdated or incorrect path. The new link directs users to the proper guide for adding new AsyncAPI tools to the website.<br /><br />ref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 - Issue - 10</p><h4>Summary by CodeRabbit</h4><ul><li><strong>Documentation</strong></li><li>Updated the Tool Documentation link to reference the current guides location.</li></ul></div>
-                </details>
-                
-                <div class="labels"><span>autoupdate</span></div>
-              </article><article class="contribution" data-title="fix: redesigned-reminder-card-dark-mode" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5533">redesigned-reminder-card-dark-mode</a>
-                
-                <p class="brief-description">Description  - Redesigned the reminder card to improve styling and support for dark mode.  Screenshots  | Theme | Before | After | | --- | --- | --- | | Light | &lt;img width=&quot;995&quot; height=&quot;656&quot; a...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">Jun 2, 2026</span>
-                  <span class="diff-badge add">+5</span>
-                  <span class="diff-badge del">−2</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p><strong>Description</strong><br /><br />- Redesigned the reminder card to improve styling and support for dark mode.<br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| <strong>Light</strong> | <img src="https://github.com/user-attachments/assets/9309f399-fce0-4b21-b3c0-6297ac99ad8e" alt="Light Theme Before" width="995" height="656" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/62cc3bb4-0a04-45d7-ac9b-3d14ec771234" alt="Light Theme After" width="995" height="656" loading="lazy" /> |<br />| <strong>Dark</strong> | <img src="https://github.com/user-attachments/assets/8139d6f3-995c-46b6-bf4a-ede1a7f6c2ce" alt="Dark Theme Before" width="997" height="660" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/0a7b8c06-2d36-4f75-b461-2749dc18fddb" alt="Dark Theme After" width="990" height="662" loading="lazy" /> |<br /><br /><strong>Reproduce</strong><br /><br />1. Navigate to https://deploy-preview-5531--asyncapi-website.netlify.app/docs/reference<br />2. Locate the reminder card.<br />3. Toggle between the light and dark themes to verify the styling updates.<br /><br /><strong>Related issue(s)</strong></p><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Updated the Remember component’s dark-mode visuals: adjusted the main container background and refined the heading border to improve visual consistency and legibility in dark theme.</li></ul></div>
-                </details>
-                
-                <div class="labels"><span>ready-to-merge</span></div>
-              </article><article class="contribution" data-title="fix: enhance dark theme support for Visualizer and DocsLayout components" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5507">enhance dark theme support for Visualizer and DocsLayout components</a>
-                
-                <p class="brief-description">Description  - Adds dark theme support for the AsyncAPI Specification Explorer pages. - Applies existing docs dark-theme styling to explorer routes such as `/docs/reference/specification/v3.1.0-exp...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 31, 2026</span>
-                  <span class="diff-badge add">+143</span>
-                  <span class="diff-badge del">−5</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>## Description<br /><br />- Adds dark theme support for the AsyncAPI Specification Explorer pages.<br />- Applies existing docs dark-theme styling to explorer routes such as <code>/docs/reference/specification/v3.1.0-explorer</code>.<br />- Adds scoped dark-mode overrides for Schyma/React Flow generated elements, including nodes, side panel, tables, tabs, controls, and JSON examples.<br />- Keeps light theme behavior unchanged by relying on Schyma&#39;s default styles.<br />- Adds a narrow TypeScript declaration for <code>schyma/dist/esm/style.css</code>.<br /><br />---<br /><br />## Reproduction Guidelines<br /><br />1. Open the Specification Explorer page:<br /><br />- https://deploy-preview-5507--asyncapi-website.netlify.app/docs/reference/specification/v3.1.0-explorer<br /><br />2. Test in light theme:<br /><br />   - Confirm the explorer keeps the existing light appearance.<br />   - Confirm schema nodes, the side panel, tables, tabs, and JSON examples render correctly.<br /><br />3. Switch to dark theme.<br /><br />4. Test in dark theme:<br /><br />   - Confirm the explorer background follows the docs dark theme.<br />   - Confirm all schema nodes are readable.<br />   - Confirm the side panel uses dark colors.<br />   - Confirm Examples/JSON blocks use dark code styling.<br />   - Confirm the docs menu popover remains readable.<br /><br />---<br /><br />## Screenshots<br /><br />### Light Theme Comparison<br /><br />| Before | After |<br />|---|---|<br />| <img src="https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca" alt="Light Theme Before 01" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca" alt="Light Theme After 01" width="700" loading="lazy" /> |<br />| <img src="https://github.com/user-attachments/assets/ecad2cd0-6bc3-446d-a917-b7819ae0d88c" alt="Light Theme Before 02" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/ecad2cd0-6bc3-446d-a917-b7819ae0d88c" alt="Light Theme After 02" width="700" loading="lazy" /> |<br /><br />---<br /><br />### Dark Theme Comparison<br /><br />| Before | After |<br />|---|---|<br />| <img src="https://github.com/user-attachments/assets/32252af2-36da-4d72-a94c-095cd9447bf5" alt="Dark Theme Before 01" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/3cf54e04-eb8a-496a-8e19-298c98aa196b" alt="Dark Theme After 01" width="700" loading="lazy" /> |<br />| <img src="https://github.com/user-attachments/assets/824c5916-faa6-42d3-be3c-50b856657ff5" alt="Dark Theme Before 02" width="700" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/8b2419a5-0fee-45ee-a607-ac10ec6dbd92" alt="Dark Theme After 02" width="700" loading="lazy" /> |</p><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Enhanced dark-mode styling across the docs UI and schema visualizer.</li><li>Improved explorer/menu visuals with updated dark backgrounds, borders, text, and interactive (hover/focus) states.</li><li>Refined visualizer theming for panels, nodes, controls, tabs, tables, and code examples, including consistent code-block backgrounds and syntax highlighting.</li></ul></div>
-                </details>
-                
-                <div class="labels"><span>waiting-for-author</span></div>
-              </article><article class="contribution" data-title="fix: dark theme text issues in generator-api-section" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5525">dark theme text issues in generator-api-section</a>
-                
-                <p class="brief-description">Description  - Fixed UI issues regarding text visibility in the dark theme for the `generator-api-section`.  Screenshots  | Theme | Before | After | | --- | --- | --- | | Light | &lt;img width=&quot;9...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 31, 2026</span>
-                  <span class="diff-badge add">+16</span>
-                  <span class="diff-badge del">−1</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p><strong>Description</strong><br /><br />- Fixed UI issues regarding text visibility in the dark theme for the <code>generator-api-section</code>.<br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| <strong>Light</strong> | <img src="https://github.com/user-attachments/assets/c3bdd71b-d607-456c-8d80-a589964dd54b" alt="Light Theme Before" width="936" height="259" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/d25bb098-c725-4ccb-a4eb-172090968698" alt="Light Theme After" width="982" height="374" loading="lazy" /> |<br />| <strong>Dark</strong> | <img src="https://github.com/user-attachments/assets/3aa02334-ddc5-49af-81cf-6eb9e9779383" alt="Dark Theme Before" width="949" height="264" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/c740805c-0764-4eae-92c8-03b5303dc16b" alt="Dark Theme After" width="973" height="395" loading="lazy" /> |<br /><br /><strong>Reproduce</strong><br /><br />1. Navigate to https://deploy-preview-5525--asyncapi-website.netlify.app/docs/tools/generator/api<br />2. Toggle between the light and dark themes to verify the text visibility is fixed.<br /><br /><strong>Related issue(s)</strong></p><h4>Summary by CodeRabbit</h4><ul><li><strong>New Features</strong></li><li>Added support for rendering definition lists in MDX content with proper formatting and styling.</li></ul></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="feat: add dark mode support to newsroom article cards and dates" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5526">add dark mode support to newsroom article cards and dates</a>
-                
-                <p class="brief-description">Description  - Added dark mode support to newsroom article cards and dates.  Screenshots  | Theme | Before | After | | --- | --- | --- | | Dark | &lt;img width=&quot;1234&quot; height=&quot;479&quot; alt=&quot;Dark Theme...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 31, 2026</span>
-                  <span class="diff-badge add">+2</span>
-                  <span class="diff-badge del">−2</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p><strong>Description</strong><br /><br />- Added dark mode support to newsroom article cards and dates.<br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| <strong>Dark</strong> | <img src="https://github.com/user-attachments/assets/c1c8ff83-4af3-482f-85f0-85d27d6a40e2" alt="Dark Theme Before" width="1234" height="479" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/e470d5bf-cf03-4403-a0f3-a421c35be8da" alt="Dark Theme After" width="1233" height="497" loading="lazy" /> |<br />| <strong>Light</strong> | <img src="https://github.com/user-attachments/assets/ea901263-61ed-47f7-932c-a33b710da1f3" alt="Light Theme Before" width="1235" height="413" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/705e9aa7-2044-407a-a4f6-9945de312f55" alt="Light Theme After" width="1222" height="459" loading="lazy" /> |<br /><br /><strong>Reproduce</strong><br /><br />1. Navigate to https://deploy-preview-5253--asyncapi-website.netlify.app/community/newsroom<br />2. Toggle between the light and dark themes to verify the styling updates for the article cards and dates.<br /><br /><strong>Related issue(s)</strong></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: improve OpenAPI comparison diagram dark mode styling" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5513">improve OpenAPI comparison diagram dark mode styling</a>
-                
-                <p class="brief-description">Description  - Refactored OpenAPI comparison diagrams to follow the shared comparison component pattern. - Replaced repeated inline hover handling with the reusable `HoverBox` component. - Moved s...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 30, 2026</span>
-                  <span class="diff-badge add">+662</span>
-                  <span class="diff-badge del">−511</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p><strong>Description</strong><br /><br />- Refactored OpenAPI comparison diagrams to follow the shared comparison component pattern.<br />- Replaced repeated inline hover handling with the reusable <code>HoverBox</code> component.<br />- Moved shared comparison helpers into <code>components/ComparisonCommon.tsx</code>.<br />- Updated OpenAPI comparison layouts to use shared <code>Column</code>, <code>HoverBox</code>, <code>StaticBox</code>, <code>ComponentGrid</code>, and <code>ComponentItem</code> patterns.<br />- Improved dark mode styling for borders, backgrounds, and hover states.<br />- Preserved existing OpenAPI comparison test IDs to avoid changing test behavior.<br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| Light | <img src="https://github.com/user-attachments/assets/8e312ff2-d5e5-4902-ac74-3d60515eeb03" alt="Screenshot Light Before" width="1010" height="733" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/71eecc0b-feec-4a1c-bd76-3bf40cb2a5f9" alt="Screenshot Light After" width="1002" height="742" loading="lazy" /> |<br />| Dark | <img src="https://github.com/user-attachments/assets/0989a618-7ce0-4b49-a5b7-ae5ab738e006" alt="Screenshot Dark Before" width="1048" height="743" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/b42b84e9-fb16-494c-828b-ad8649389e4d" alt="Screenshot Dark After" width="1022" height="734" loading="lazy" /> |<br /><br /><strong>Related issue(s)</strong></p><h4>Summary by CodeRabbit</h4><ul><li><strong>Refactor</strong></li><li>Enhanced hover-driven comparison UI across AsyncAPI and OpenAPI views with improved visual interaction patterns.</li><li>Restructured comparison layout using shared UI components for consistent styling and behavior across comparison panels.</li><li>Updated AsyncAPI 3.0 operations section with nested hover interactions for better information navigation.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5513?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: enhance dark mode support and improve UI elements across tools" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5522">enhance dark mode support and improve UI elements across tools</a>
-                
-                <p class="brief-description">Description  - Improved dark theme styles for the tools filter panel, including dropdown inputs, selected dropdown rows, applied filter chips, and ownership toggle. - Updated info popovers and badg...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 30, 2026</span>
-                  <span class="diff-badge add">+65</span>
-                  <span class="diff-badge del">−31</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><ul><li>Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4578167312</li></ul><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Improved dark-mode colors, contrast and visual consistency across filters, cards, chips, toggles and buttons</li><li>Refined hover, focus and active states for interactive elements and badges</li><li>Adjusted card and chip spacing and visual hierarchy for cleaner layouts</li><li><strong>Refactor</strong></li><li>Filter options made keyboard-focusable and standardized for more reliable interaction</li><li>Tooltips/popovers and description panels restyled with improved positioning, sizing and scroll behavior</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5522?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: mermaid dark theme " data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5512">mermaid dark theme </a>
-                
-                <p class="brief-description">ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4533042338 Description  * Adds dark theme support for Mermaid diagrams rendered from MDX code blocks. * Reinitializes Mermaid with ...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 29, 2026</span>
-                  <span class="diff-badge add">+98</span>
-                  <span class="diff-badge del">−33</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4533042338<br />## Description<br /><br />* Adds dark theme support for Mermaid diagrams rendered from MDX code blocks.<br />* Reinitializes Mermaid with light or dark theme variables based on the <code>html.dark</code> class.<br />* Re-renders Mermaid diagrams when the site theme changes, while keeping the initial render hydration-safe.<br /><br />## Screenshots<br /><br />| Theme | Before | After |<br />| :--- | :--- | :--- |<br />| <strong>Light Theme</strong> | <img src="https://github.com/user-attachments/assets/fe4e999e-7938-4c6f-aa91-805b1f8902a2" alt="Screenshot 2026-05-29 at 01 23 21" width="969" height="468" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/fe4e999e-7938-4c6f-aa91-805b1f8902a2" alt="Screenshot 2026-05-29 at 01 23 21" width="969" height="468" loading="lazy" /> |<br />| <strong>Dark Theme</strong> | <img src="https://github.com/user-attachments/assets/b27701fa-bedf-49a1-9c7e-f08590ef5572" alt="Screenshot 2026-05-29 at 01 16 05" width="1000" height="576" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/b0c0638d-e65b-472a-b1c1-701ef003d704" alt="Screenshot 2026-05-29 at 01 15 38" width="963" height="542" loading="lazy" /> |<br /><br />## Steps to Reproduce<br /><br />1. Navigate to the Deploy Preview: <a href="https://deploy-preview-5512--asyncapi-website.netlify.app/docs/guides/message-validation">https://deploy-preview-5512--asyncapi-website.netlify.app/docs/guides/message-validation</a><br />2. Check the diagrams by toggling between light and dark themes.<br />3. Resize the viewport to ensure the diagrams render correctly across different screen sizes.<br /><br /><br /><br />## Summary by CodeRabbit<br /><br />* <strong>Bug Fixes</strong><br />  * Mermaid diagrams now properly display in light and dark modes, automatically adapting to your current site theme preference<br />  * Diagrams update dynamically when you switch between light and dark themes, ensuring consistent visual appearance<br /><br /><br /><br /><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5512?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: add dark mode text color to Remember component" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5516">add dark mode text color to Remember component</a>
-                
-                <p class="brief-description">Description  Improved the UI styling for the generate code tutorial page.   Screenshots  | Theme | Before | After | | --- | --- | --- | | Dark | &lt;img width=&quot;967&quot; height=&quot;462&quot; alt=&quot;Screenshot D...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 29, 2026</span>
-                  <span class="diff-badge add">+7</span>
-                  <span class="diff-badge del">−3</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p><strong>Description</strong><br /><br />Improved the UI styling for the generate code tutorial page. <br /><br /><strong>Screenshots</strong><br /><br />| Theme | Before | After |<br />| --- | --- | --- |<br />| Dark | <img src="https://github.com/user-attachments/assets/91d7eac2-e22f-4551-b2dc-9363676c435f" alt="Screenshot Dark Before" width="967" height="462" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/d932c281-0dd1-492e-9abe-61f2e116364b" alt="Screenshot Dark After" width="991" height="467" loading="lazy" /> |<br />| Light | <img src="https://github.com/user-attachments/assets/759d4f62-581a-4ad1-a4d5-712d42b17a9b" alt="Screenshot Light Before" width="983" height="525" loading="lazy" /> | <img src="https://github.com/user-attachments/assets/1b457fef-c4c9-4d21-8658-dcd21513a615" alt="Screenshot Light After" width="983" height="525" loading="lazy" /> |<br /><br /><strong>Reproduce</strong><br /><br />1. Navigate to https://deploy-preview-5516--asyncapi-website.netlify.app/docs/tutorials/generate-code<br />2. Observe the UI changes by toggling between the light and dark themes.<br /><br /><strong>Related issue(s)</strong></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: add dark theme support for Warning component" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5517">add dark theme support for Warning component</a>
-                
-                <p class="brief-description">Description  - Enhanced the design of the warning components in the Roadmap section.  Screenshots  | Theme | Before | After | | --- | --- | --- | | Light | &lt;img width=&quot;646&quot; height=&quot;204&quot; alt=&quot;S...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 29, 2026</span>
-                  <span class="diff-badge add">+10</span>
-                  <span class="diff-badge del">−4</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><ul><li>N/A</li></ul></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: align netlify badge for mobile layout and remove stray margins" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5518">align netlify badge for mobile layout and remove stray margins</a>
-                
-                <p class="brief-description">Description  - align netlify badge for mobile layout and remove stray margins    Please check the alignments in footer - Before  &lt;img width=&quot;376&quot; height=&quot;296&quot; alt=&quot;Screenshot 2026-05-29 at 14 3...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 29, 2026</span>
-                  <span class="diff-badge add">+2</span>
-                  <span class="diff-badge del">−2</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p><strong>Description</strong><br /><br />- align netlify badge for mobile layout and remove stray margins<br /><br /><br /> <strong>Please check the alignments in footer</strong><br />- Before <br /><img src="https://github.com/user-attachments/assets/fb0d0df8-d4e6-47a7-8767-d04c02cabcb3" alt="Screenshot 2026-05-29 at 14 35 15" width="376" height="296" loading="lazy" /><br /><br />- After <br /><img src="https://github.com/user-attachments/assets/b8ad609f-551e-4289-ba0e-bdcdaf4ffe7c" alt="Screenshot 2026-05-29 at 14 34 52" width="379" height="298" loading="lazy" /><br /><br /><br /><strong>Related issue(s)</strong></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: improve dark mode styles for AsyncAPI v3 comparison components" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5499">improve dark mode styles for AsyncAPI v3 comparison components</a>
-                
-                <p class="brief-description">ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4556732392  Description  - Updated AsyncAPI v3 migration comparison components to support dark mode styling. - Added dark mode cla...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 28, 2026</span>
-                  <span class="diff-badge add">+579</span>
-                  <span class="diff-badge del">−433</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Merged by:</span>
-                  <a class="merged-by" href="https://github.com/princerajpoot20">@princerajpoot20</a>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><ul><li>https://github.com/asyncapi/website/pull/5253#issuecomment-4556732392</li></ul><h4>Summary by CodeRabbit</h4><ul><li><strong>New Features</strong></li><li>Added reusable comparison panels and a generic hover-enabled tile component used across AsyncAPI comparisons.</li><li><strong>Refactor</strong></li><li>Consolidated many comparison views onto the shared components, unifying hover behavior, focus handling, and interaction wiring.</li><li><strong>Style</strong></li><li>Expanded dark-mode styling and refined hover/active visuals across channels, operations, parameters, servers, metadata, schema, and ID/address comparisons.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5499?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5502">improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile</a>
-                
-                <p class="brief-description">Description  - Improved `TSCMemberCard` responsiveness for mobile devices. - Adjusted the card layout to better align content across different screen sizes. - Added responsive alignment changes us...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 28, 2026</span>
-                  <span class="diff-badge add">+9</span>
-                  <span class="diff-badge del">−4</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>## Description<br /><br />- Improved <code>TSCMemberCard</code> responsiveness for mobile devices.<br />- Adjusted the card layout to better align content across different screen sizes.<br />- Added responsive alignment changes using <code>items-center sm:items-start</code>.<br />- Prevented avatar shrinking on smaller screens with <code>shrink-0</code>.<br />- Conditionally displayed the availability badge differently on mobile and desktop for improved readability and spacing.<br />- Ensured the component works consistently in both light and dark themes.<br /><br />## Before<br /><br />### Light Theme<br /><img src="https://github.com/user-attachments/assets/21f93904-4204-40d7-8c55-076c0a612feb" alt="Screenshot 2026-05-28 at 10 04 09" width="380" height="671" loading="lazy" /><br /><br />### Dark Theme<br /><br /><img src="https://github.com/user-attachments/assets/2e722042-0329-4abe-b52e-c3bcbf233e0e" alt="Screenshot 2026-05-28 at 10 04 15" width="378" height="668" loading="lazy" /><br /><br />## After<br /><br />### Light Theme<br /><br /><img src="https://github.com/user-attachments/assets/8f0fc8df-34df-4cd0-a8e4-d643fd17dac3" alt="Screenshot 2026-05-28 at 10 03 44" width="380" height="671" loading="lazy" /><br /><br />### Dark Theme<br /><br /><img src="https://github.com/user-attachments/assets/812ae256-590d-4e01-a885-84e03e4e136b" alt="Screenshot 2026-05-28 at 10 03 51" width="375" height="669" loading="lazy" /><br /><br />## Reproduction Guidelines<br /><br />1. Open the community/team members page.https://deploy-preview-5502--asyncapi-website.netlify.app/community/tsc<br />2. Resize the browser window to a mobile viewport or use browser device emulation.<br />3. Observe the <code>TSCMemberCard</code> layout before applying the fix:<br />   - Avatar and text alignment appear inconsistent on smaller screens.<br />   - Availability badge affects spacing and responsiveness.<br />4. Apply the changes from this PR.<br />5. Recheck the component in both light and dark themes across mobile and desktop screen sizes.<br />6. Verify:<br />   - Proper alignment of member details.<br />   - Avatar remains fixed without shrinking.<br />   - Availability badge displays correctly depending on screen size.<br />   - No visual regressions in dark mode.<br />## Related issue(s)<br /><br />Fixes N/A</p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix(DocsMobileMenu): enhance dark theme support and improve styling c…" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5477">enhance dark theme support and improve styling c…</a>
-                
-                <p class="brief-description">Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4532416854  Description  - Fixed dark theme styling for the mobile docs sidebar. - Updated the mobile docs menu background and sear...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 27, 2026</span>
-                  <span class="diff-badge add">+5</span>
-                  <span class="diff-badge del">−3</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4532416854<br /><br /><strong>Description</strong><br /><br />- Fixed dark theme styling for the mobile docs sidebar.<br />- Updated the mobile docs menu background and search button to use existing dark theme classes.<br />- Kept the change scoped to <code>DocsMobileMenu</code> without adding global CSS or new colors.<br /><br /><strong>Steps to Reproduce</strong><br /><br />1. Open the website in a mobile viewport.<br />2. Enable dark mode from the navbar theme toggle.<br />3. Navigate to any docs page.<br />4. Tap the docs sidebar/menu button near the top of the docs page.<br />5. Notice that the mobile docs sidebar and search bar still appear in light theme colors.<br /><br /><strong>Before</strong><br /><br /><img src="https://github.com/user-attachments/assets/fb80bfb0-3dd3-4972-907c-7fab709b7210" alt="Screenshot 2026-05-25 at 13 23 28" width="317" height="596" loading="lazy" /><br /><br /><strong>After</strong><br /><br /><img src="https://github.com/user-attachments/assets/297d71f3-d492-4a8c-ab77-d047bb1a9c50" alt="Screenshot 2026-05-25 at 13 22 57" width="379" height="671" loading="lazy" /><br /><br /><strong>Related issue(s)</strong><br /><br />Fixes #5253</p><h4>Summary by CodeRabbit</h4><ul><li>Enhanced dark mode styling for navigation dropdown arrows with updated hover effects.</li><li>Improved dark mode appearance for mobile menu, including background colors and search button styling.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5477?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: align mobile docs dropdown icon styles" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5486">align mobile docs dropdown icon styles</a>
-                
-                <p class="brief-description">refs: https://github.com/asyncapi/website/pull/5253#issuecomment-4534746423 Description  - Fixed inconsistent icon styling in the mobile Docs dropdown menu. - Updated the mobile Docs dropdown to u...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 26, 2026</span>
-                  <span class="diff-badge add">+2</span>
-                  <span class="diff-badge del">−2</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>refs: https://github.com/asyncapi/website/pull/5253#issuecomment-4534746423<br /><strong>Description</strong><br /><br />- Fixed inconsistent icon styling in the mobile Docs dropdown menu.<br />- Updated the mobile Docs dropdown to use the same <code>buckets</code> data as the desktop Docs dropdown.<br />- Kept the change minimal and scoped to <code>MobileNavMenu</code>.<br /><br /><strong>Steps to Reproduce</strong><br /><br />1. Open the website on a mobile viewport.<br />2. Open the navbar menu.<br />3. Expand the Docs dropdown.<br />4. Notice that the Docs dropdown icons use a different purple style compared to the desktop Docs dropdown.<br /><br /><strong>Screenshots</strong><br /><br />Before:<br /><img src="https://github.com/user-attachments/assets/61bbed42-e3dc-492f-a88d-d5d08512998c" alt="Screenshot 2026-05-26 at 09 54 52" width="374" height="665" loading="lazy" /><br /><img src="https://github.com/user-attachments/assets/a04bdb9f-ff7c-4f51-b65d-a879d2325a92" alt="Screenshot 2026-05-26 at 10 06 38" width="377" height="672" loading="lazy" /><br /><br /><br />After:<br /><img src="https://github.com/user-attachments/assets/8f1485b3-8f80-472d-9d59-a884d907142f" alt="Screenshot 2026-05-26 at 09 55 37" width="400" height="685" loading="lazy" /><br /><img src="https://github.com/user-attachments/assets/429708bf-1b6e-4218-81be-000cdc5be417" alt="Screenshot 2026-05-26 at 09 56 18" width="384" height="666" loading="lazy" /><br /><br /><br /><strong>Related issue(s)</strong><br /><br />Fixes https://github.com/asyncapi/website/pull/5253#issuecomment-4534746423</p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: update scroll-to-top button hover background color and improve image styling for dark mode" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5484">update scroll-to-top button hover background color and improve image styling for dark mode</a>
-                
-                <p class="brief-description">Description  Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4539882638  - Added dark theme support for the scroll-to-top button. - Replaced the hardcoded hover background color w...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 26, 2026</span>
-                  <span class="diff-badge add">+2</span>
-                  <span class="diff-badge del">−2</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><ul><li>N/A</li></ul></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="feat: enhance dark theme support in search and navigation components" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5471">enhance dark theme support in search and navigation components</a>
-                
-                <p class="brief-description">Description  - Updated the mobile docs search button to support dark theme using existing theme classes. - Added `data-theme=&quot;dark&quot;` alongside the existing `dark` class so Algolia DocSearch uses it...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 26, 2026</span>
-                  <span class="diff-badge add">+43</span>
-                  <span class="diff-badge del">−26</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>## Description<br /><br />- Updated the mobile docs search button to support dark theme using existing theme classes.<br />- Added <code>data-theme=&quot;dark&quot;</code> alongside the existing <code>dark</code> class so Algolia DocSearch uses its dark theme.<br />- Wrapped the DocSearch modal with existing dark text styling to keep no-results text readable in dark mode.<br /><br />### New behaviour<br /><br />&lt;video src=&quot;https://github.com/user-attachments/assets/53b86845-e2c5-4e38-99e4-519347e812ea&quot; controls width=&quot;100%&quot;&gt;&lt;/video&gt;<br /><br />## Related issue(s)<br /><br />Fixes #5470</p><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Enhanced dark mode styling consistency across search modal, mobile navigation, and theme components.</li></ul><ul><li><strong>Bug Fixes</strong></li><li>Improved dark mode theme synchronization to ensure proper styling persistence and visual consistency.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5471?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: improve docs callout dark theme" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5479">improve docs callout dark theme</a>
-                
-                <p class="brief-description">ref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532677110 ref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532649920 Description  - Fixed dark theme styling for th...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 25, 2026</span>
-                  <span class="diff-badge add">+4</span>
-                  <span class="diff-badge del">−4</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/Sourya07" title="Sourya07"><img src="https://avatars.githubusercontent.com/u/144201791?u=bee7a229b7ad0dd54d22bf6acd2525ae3c6a4537&amp;v=4" alt="Sourya07" width="28" height="28" /></a><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>ref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532677110<br />ref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532649920<br /><strong>Description</strong><br /><br />- Fixed dark theme styling for the release notes callout in the docs layout.<br />- Updated the release notes callout background and text to use existing dark theme classes.<br />- Fixed alignment of the plus icon in the roadmap page “Join Our Community” button.<br />- Kept the changes scoped to <code>components/layout/DocsLayout.tsx</code> and <code>pages/roadmap.tsx</code>.<br /><br />- Before<br /><br /><img src="https://github.com/user-attachments/assets/0a7737ed-9148-4df3-90d0-3fe5227ed812" alt="Screenshot 2026-05-25 at 14 12 24" width="983" height="164" loading="lazy" /><br /><img src="https://github.com/user-attachments/assets/e043e542-2a87-4322-bfb9-cf32a55cf2c0" alt="Screenshot 2026-05-25 at 14 13 29" width="630" height="259" loading="lazy" /><br /><br /><br />- After <br /><br /><img src="https://github.com/user-attachments/assets/16bb8125-a697-446c-b3e7-ef93299414de" alt="Screenshot 2026-05-25 at 14 12 12" width="974" height="126" loading="lazy" /><br /><img src="https://github.com/user-attachments/assets/70150de2-aa22-4138-af0f-1a944d2285da" alt="Screenshot 2026-05-25 at 14 13 15" width="606" height="312" loading="lazy" /><br /><br /><br /><br /><strong>Related issue(s)</strong><br /><br />Fixes #5253</p><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Improved dark mode appearance for the release notes section with updated background and text color styling.</li><li>Updated icon sizing and responsive behavior for the &quot;Join Our Community&quot; button.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5479?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix: enhance dark theme support for CLI page components" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5482">enhance dark theme support for CLI page components</a>
-                
-                <p class="brief-description">Fixes : https://github.com/asyncapi/website/pull/5253#issuecomment-4533246868 Description  - Added dark theme support for the CLI tools page. - Updated the features section, feature icon cards, an...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 25, 2026</span>
-                  <span class="diff-badge add">+8</span>
-                  <span class="diff-badge del">−6</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>Fixes : https://github.com/asyncapi/website/pull/5253#issuecomment-4533246868<br /><strong>Description</strong><br /><br />- Added dark theme support for the CLI tools page.<br />- Updated the features section, feature icon cards, and inline command snippet to use existing dark theme classes.<br />- Applied the same styling to both localized and non-localized CLI routes.<br /><br />- Before <br /><img src="https://github.com/user-attachments/assets/4eb11705-f03e-4172-8012-52d630f34d62" alt="Screenshot 2026-05-25 at 15 17 19" width="1233" height="641" loading="lazy" /><br /><br />- After <br /><img src="https://github.com/user-attachments/assets/66656cf8-1975-4535-90f1-b009737e0686" alt="Screenshot 2026-05-25 at 15 17 09" width="1362" height="698" loading="lazy" /><br /><br /><br /><strong>Related issue(s)</strong><br /><br />Fixes #5253</p><h4>Summary by CodeRabbit</h4><ul><li><strong>Style</strong></li><li>Improved dark mode appearance across CLI tools documentation with enhanced styling for code elements and feature icons.</li></ul><p><a href="https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5482?utm_source=github_walkthrough&amp;utm_medium=github&amp;utm_campaign=change_stack"><img src="https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg" alt="Review Change Stack" loading="lazy" /></a></p></div>
-                </details>
-                
-                
-              </article><article class="contribution" data-title="fix(StickyNavbar): update className for improved styling consistency" data-language="TypeScript">
-                <a class="pr-title" href="https://github.com/asyncapi/website/pull/5468">update className for improved styling consistency</a>
-                
-                <p class="brief-description">Description  - Fixed the mobile hamburger menu not opening correctly on small screens. - The issue was caused by `transform: translateZ(0)` being applied to the sticky navbar on all screen sizes. S...</p>
-                
-                <div class="meta-row">
-                  <span class="date-badge">May 24, 2026</span>
-                  <span class="diff-badge add">+1</span>
-                  <span class="diff-badge del">−2</span>
-                  <div class="reviewed-by">
-                  <span class="review-label">Approved by:</span>
-                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="28" height="28" /></a></div>
-                </div>
-                </div>
-                
-                
-                
-                <details class="description-details">
-                  <summary>View full description</summary>
-                  <div class="description"><p>## Description<br /><br />- Fixed the mobile hamburger menu not opening correctly on small screens.<br />- The issue was caused by <code>transform: translateZ(0)</code> being applied to the sticky navbar on all screen sizes. Since the mobile menu uses fixed positioning and is rendered inside the navbar, the transformed parent interfered with the mobile overlay behavior.<br />- Updated the <code>transform</code> and <code>will-change</code> styles to apply only on large screens using Tailwind responsive classes, preserving the existing desktop behavior while preventing the mobile menu issue on smaller devices.<br /><br />## Related issue(s)<br /><br />### Before<br />&lt;video src=&quot;https://github.com/user-attachments/assets/bb12f0ed-2afe-4536-bde8-721467c553d4&quot; controls width=&quot;100%&quot;&gt;&lt;/video&gt;<br /><br />### After<br />&lt;video src=&quot;https://github.com/user-attachments/assets/c031bd05-0f81-4e54-b17e-9b36d7d70e34&quot; controls width=&quot;100%&quot;&gt;&lt;/video&gt;<br /><br />Fixes #5469</p></div>
-                </details>
-                
-                
-              </article>
-            </div>
-          </section>
-      </div>
-      <div class="empty" id="empty" hidden>No matching contributions found.</div>
-    </main>
-    <footer>
-      <div class="shell">
-        Updated Jun 3, 2026. Data available in <a href="contributions.json">contributions.json</a>.
-      </div>
-    </footer>
+    <div id="app"></div>
     <script>
-      // Inject language filters
-      const filtersContainer = document.querySelector('#filters-container');
-      if (filtersContainer) {
-        filtersContainer.innerHTML = `<button class="filter is-active" data-language="all">All</button>
-       <button class="filter" data-language="TypeScript">TypeScript <span>22</span></button>`;
+      window.__DATA__ = {"version":"1.0","updated_at":"2026-06-03T20:21:56.926Z","contributor":{"username":"hasithasandunlakshan","profile_url":"https://github.com/hasithasandunlakshan","name":"hasithasandun","email":"hasiofficial2002@gmail.com","bio":"Full Stack Developer @ Upwork | Engineering Undergraduate at University of Moratuwa","location":"Sri Lanka","website":""},"contributions":[{"repo":"supabase/supabase","pr_number":46374,"pr_title":"chore: migrate auth policy editor modal to dialog","pr_url":"https://github.com/supabase/supabase/pull/46374","pr_body":"## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.\r\n\r\nYES\r\n\r\n## What kind of change does this PR introduce?\r\n\r\nRefactor\r\n\r\n## What is the current behavior?\r\n\r\nThe Auth policy editor flow still uses the deprecated `Modal` component and `Modal.Content` / `Modal.Separator` helpers.\r\n\r\n## What is the new behavior?\r\n\r\nThe Auth policy editor flow now uses `Dialog` primitives instead:\r\n\r\n- `Dialog`\r\n- `DialogContent`\r\n- `DialogHeader`\r\n- `DialogTitle`\r\n- `DialogSection`\r\n- `DialogSectionSeparator`\r\n\r\nBehavior is intended to remain unchanged.\r\n\r\n## Additional context\r\n\r\n- Fixes #46375 \r\n\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Refactor**\n  * Updated the policy editor and review flows to a unified dialog layout for a cleaner, more consistent UI.\n  * Sections and footer controls were reorganized for clearer grouping and improved button placement.\n  * Existing behaviors (viewing templates, review/save flow, and close confirmation) are preserved.\n\n<!-- review_stack_entry_start -->\r\n\r\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46374?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\r\n\r\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-26T16:18:21Z","language":"TypeScript","repo_stars":103397,"repo_description":"The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.","labels":[],"additions":81,"deletions":84,"files_changed":4,"reviewers":[{"login":"djhi","avatar_url":"https://avatars.githubusercontent.com/u/1122076?u=f0c921a9936a7af17c272ca8857044c079ccd225&v=4"}],"merged_by":"djhi","showcase":true},{"repo":"supabase-community/supabase-mcp","pr_number":279,"pr_title":"fix(test): resolve edge function test typo and invalid branch array access","pr_url":"https://github.com/supabase-community/supabase-mcp/pull/279","pr_body":"## What kind of change does this PR introduce?\r\n\r\nBug fix\r\n\r\n## What is the current behavior?\r\n\r\n1. The `delete branch` test case in `server.test.ts` fails in standard JavaScript environments due to an invalid negative array index `branches[-1]`.\r\n2. There is a typo in one of the Edge Function test descriptions: `eploy edge function validates slug format`.\r\n\r\n## What is the new behavior?\r\n\r\n1. Replaces `branches[-1]` with the modern JavaScript `.at(-1)` method to safely access the last element of the array.\r\n2. Corrected the typo from `eploy` to `deploy`.\r\n\r\n## Additional context\r\n\r\nThese issues were identified while implementing new database tools. Resolving them ensures a stable test suite for all contributors.\r\n","merged_at":"2026-05-15T21:05:16Z","language":"TypeScript","repo_stars":2710,"repo_description":"Connect Supabase to your AI assistants","labels":[],"additions":16,"deletions":5,"files_changed":2,"reviewers":[{"login":"gregnr","avatar_url":"https://avatars.githubusercontent.com/u/4133076?u=f3f783e0364abe955dbde6af80445ea27d948fdd&v=4"}],"merged_by":"gregnr","showcase":true},{"repo":"asyncapi/website","pr_number":5534,"pr_title":"fix: broken-url-in-tools","pr_url":"https://github.com/asyncapi/website/pull/5534","pr_body":"Updates the tool documentation link on the tools page to point to the correct documentation path in the community repository.\r\n\r\n### Changes:\r\n- Updated tool documentation URL from https://github.com/asyncapi/community/blob/master/new-tool-documentation.md to  https://github.com/asyncapi/community/blob/master/docs/040-guides/add-new-asyncapi-tool-to-website.md\r\n- The previous link was pointing to an outdated or incorrect path. The new link directs users to the proper guide for adding new AsyncAPI tools to the website.\r\n\r\nref  : https://github.com/asyncapi/website/issues/5465#issuecomment-4582981458 - Issue - 10\r\n\r\n\r\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n* **Documentation**\n  * Updated the Tool Documentation link to reference the current guides location.\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-06-02T17:04:48Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":["autoupdate"],"additions":1,"deletions":1,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5533,"pr_title":"fix: redesigned-reminder-card-dark-mode","pr_url":"https://github.com/asyncapi/website/pull/5533","pr_body":"**Description**\r\n\r\n- Redesigned the reminder card to improve styling and support for dark mode.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| **Light** | <img width=\"995\" height=\"656\" alt=\"Light Theme Before\" src=\"https://github.com/user-attachments/assets/9309f399-fce0-4b21-b3c0-6297ac99ad8e\" /> | <img width=\"995\" height=\"656\" alt=\"Light Theme After\" src=\"https://github.com/user-attachments/assets/62cc3bb4-0a04-45d7-ac9b-3d14ec771234\" /> |\r\n| **Dark** | <img width=\"997\" height=\"660\" alt=\"Dark Theme Before\" src=\"https://github.com/user-attachments/assets/8139d6f3-995c-46b6-bf4a-ede1a7f6c2ce\" /> | <img width=\"990\" height=\"662\" alt=\"Dark Theme After\" src=\"https://github.com/user-attachments/assets/0a7b8c06-2d36-4f75-b461-2749dc18fddb\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5531--asyncapi-website.netlify.app/docs/reference\r\n2. Locate the reminder card.\r\n3. Toggle between the light and dark themes to verify the styling updates.\r\n\r\n**Related issue(s)**\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Style**\n  * Updated the Remember component’s dark-mode visuals: adjusted the main container background and refined the heading border to improve visual consistency and legibility in dark theme.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-06-02T16:58:31Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":["ready-to-merge"],"additions":5,"deletions":2,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5507,"pr_title":"fix: enhance dark theme support for Visualizer and DocsLayout components","pr_url":"https://github.com/asyncapi/website/pull/5507","pr_body":"<!--\r\nThank you for your contribution. Before you submit the pull request:\r\n1. Follow our contribution guidelines\r\n2. Test your changes and attach their results to the pull request.\r\n3. Update the relevant documentation.\r\n-->\r\n\r\n## Description\r\n\r\n- Adds dark theme support for the AsyncAPI Specification Explorer pages.\r\n- Applies existing docs dark-theme styling to explorer routes such as `/docs/reference/specification/v3.1.0-explorer`.\r\n- Adds scoped dark-mode overrides for Schyma/React Flow generated elements, including nodes, side panel, tables, tabs, controls, and JSON examples.\r\n- Keeps light theme behavior unchanged by relying on Schyma's default styles.\r\n- Adds a narrow TypeScript declaration for `schyma/dist/esm/style.css`.\r\n\r\n---\r\n\r\n## Reproduction Guidelines\r\n\r\n1. Open the Specification Explorer page:\r\n\r\n- https://deploy-preview-5507--asyncapi-website.netlify.app/docs/reference/specification/v3.1.0-explorer\r\n\r\n2. Test in light theme:\r\n\r\n   - Confirm the explorer keeps the existing light appearance.\r\n   - Confirm schema nodes, the side panel, tables, tabs, and JSON examples render correctly.\r\n\r\n3. Switch to dark theme.\r\n\r\n4. Test in dark theme:\r\n\r\n   - Confirm the explorer background follows the docs dark theme.\r\n   - Confirm all schema nodes are readable.\r\n   - Confirm the side panel uses dark colors.\r\n   - Confirm Examples/JSON blocks use dark code styling.\r\n   - Confirm the docs menu popover remains readable.\r\n\r\n---\r\n\r\n## Screenshots\r\n\r\n### Light Theme Comparison\r\n\r\n| Before | After |\r\n|---|---|\r\n| <img width=\"700\" alt=\"Light Theme Before 01\" src=\"https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca\" /> | <img width=\"700\" alt=\"Light Theme After 01\" src=\"https://github.com/user-attachments/assets/038a8cac-7f79-425e-b30e-f05b469df0ca\" /> |\r\n| <img width=\"700\" alt=\"Light Theme Before 02\" src=\"https://github.com/user-attachments/assets/ecad2cd0-6bc3-446d-a917-b7819ae0d88c\" /> | <img width=\"700\" alt=\"Light Theme After 02\" src=\"https://github.com/user-attachments/assets/ecad2cd0-6bc3-446d-a917-b7819ae0d88c\" /> |\r\n\r\n---\r\n\r\n### Dark Theme Comparison\r\n\r\n| Before | After |\r\n|---|---|\r\n| <img width=\"700\" alt=\"Dark Theme Before 01\" src=\"https://github.com/user-attachments/assets/32252af2-36da-4d72-a94c-095cd9447bf5\" /> | <img width=\"700\" alt=\"Dark Theme After 01\" src=\"https://github.com/user-attachments/assets/3cf54e04-eb8a-496a-8e19-298c98aa196b\" /> |\r\n| <img width=\"700\" alt=\"Dark Theme Before 02\" src=\"https://github.com/user-attachments/assets/824c5916-faa6-42d3-be3c-50b856657ff5\" /> | <img width=\"700\" alt=\"Dark Theme After 02\" src=\"https://github.com/user-attachments/assets/8b2419a5-0fee-45ee-a607-ac10ec6dbd92\" /> |\r\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Style**\n  * Enhanced dark-mode styling across the docs UI and schema visualizer.\n  * Improved explorer/menu visuals with updated dark backgrounds, borders, text, and interactive (hover/focus) states.\n  * Refined visualizer theming for panels, nodes, controls, tabs, tables, and code examples, including consistent code-block backgrounds and syntax highlighting.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-31T11:05:48Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":["waiting-for-author"],"additions":143,"deletions":5,"files_changed":4,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5525,"pr_title":"fix: dark theme text issues in generator-api-section","pr_url":"https://github.com/asyncapi/website/pull/5525","pr_body":"**Description**\r\n\r\n- Fixed UI issues regarding text visibility in the dark theme for the `generator-api-section`.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| **Light** | <img width=\"936\" height=\"259\" alt=\"Light Theme Before\" src=\"https://github.com/user-attachments/assets/c3bdd71b-d607-456c-8d80-a589964dd54b\" /> | <img width=\"982\" height=\"374\" alt=\"Light Theme After\" src=\"https://github.com/user-attachments/assets/d25bb098-c725-4ccb-a4eb-172090968698\" /> |\r\n| **Dark** | <img width=\"949\" height=\"264\" alt=\"Dark Theme Before\" src=\"https://github.com/user-attachments/assets/3aa02334-ddc5-49af-81cf-6eb9e9779383\" /> | <img width=\"973\" height=\"395\" alt=\"Dark Theme After\" src=\"https://github.com/user-attachments/assets/c740805c-0764-4eae-92c8-03b5303dc16b\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5525--asyncapi-website.netlify.app/docs/tools/generator/api\r\n2. Toggle between the light and dark themes to verify the text visibility is fixed.\r\n\r\n**Related issue(s)**\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n* **New Features**\n  * Added support for rendering definition lists in MDX content with proper formatting and styling.\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-31T10:37:02Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":16,"deletions":1,"files_changed":2,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5526,"pr_title":"feat: add dark mode support to newsroom article cards and dates","pr_url":"https://github.com/asyncapi/website/pull/5526","pr_body":"**Description**\r\n\r\n- Added dark mode support to newsroom article cards and dates.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| **Dark** | <img width=\"1234\" height=\"479\" alt=\"Dark Theme Before\" src=\"https://github.com/user-attachments/assets/c1c8ff83-4af3-482f-85f0-85d27d6a40e2\" /> | <img width=\"1233\" height=\"497\" alt=\"Dark Theme After\" src=\"https://github.com/user-attachments/assets/e470d5bf-cf03-4403-a0f3-a421c35be8da\" /> |\r\n| **Light** | <img width=\"1235\" height=\"413\" alt=\"Light Theme Before\" src=\"https://github.com/user-attachments/assets/ea901263-61ed-47f7-932c-a33b710da1f3\" /> | <img width=\"1222\" height=\"459\" alt=\"Light Theme After\" src=\"https://github.com/user-attachments/assets/705e9aa7-2044-407a-a4f6-9945de312f55\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5253--asyncapi-website.netlify.app/community/newsroom\r\n2. Toggle between the light and dark themes to verify the styling updates for the article cards and dates.\r\n\r\n**Related issue(s)**","merged_at":"2026-05-31T10:16:20Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":2,"deletions":2,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5513,"pr_title":"fix: improve OpenAPI comparison diagram dark mode styling","pr_url":"https://github.com/asyncapi/website/pull/5513","pr_body":"**Description**\r\n\r\n- Refactored OpenAPI comparison diagrams to follow the shared comparison component pattern.\r\n- Replaced repeated inline hover handling with the reusable `HoverBox` component.\r\n- Moved shared comparison helpers into `components/ComparisonCommon.tsx`.\r\n- Updated OpenAPI comparison layouts to use shared `Column`, `HoverBox`, `StaticBox`, `ComponentGrid`, and `ComponentItem` patterns.\r\n- Improved dark mode styling for borders, backgrounds, and hover states.\r\n- Preserved existing OpenAPI comparison test IDs to avoid changing test behavior.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| Light | <img width=\"1010\" height=\"733\" alt=\"Screenshot Light Before\" src=\"https://github.com/user-attachments/assets/8e312ff2-d5e5-4902-ac74-3d60515eeb03\" /> | <img width=\"1002\" height=\"742\" alt=\"Screenshot Light After\" src=\"https://github.com/user-attachments/assets/71eecc0b-feec-4a1c-bd76-3bf40cb2a5f9\" /> |\r\n| Dark | <img width=\"1048\" height=\"743\" alt=\"Screenshot Dark Before\" src=\"https://github.com/user-attachments/assets/0989a618-7ce0-4b49-a5b7-ae5ab738e006\" /> | <img width=\"1022\" height=\"734\" alt=\"Screenshot Dark After\" src=\"https://github.com/user-attachments/assets/b42b84e9-fb16-494c-828b-ad8649389e4d\" /> |\r\n\r\n**Related issue(s)**\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n* **Refactor**\n  * Enhanced hover-driven comparison UI across AsyncAPI and OpenAPI views with improved visual interaction patterns.\n  * Restructured comparison layout using shared UI components for consistent styling and behavior across comparison panels.\n  * Updated AsyncAPI 3.0 operations section with nested hover interactions for better information navigation.\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5513?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-30T15:28:48Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":662,"deletions":511,"files_changed":11,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5522,"pr_title":"fix: enhance dark mode support and improve UI elements across tools","pr_url":"https://github.com/asyncapi/website/pull/5522","pr_body":"**Description**\r\n\r\n- Improved dark theme styles for the tools filter panel, including dropdown inputs, selected dropdown rows, applied filter chips, and ownership toggle.\r\n- Updated info popovers and badge tooltip styling so content is readable in dark mode and no longer clips or overflows awkwardly.\r\n- Fixed tools card header layout so the Open Source/Commercial badge stays aligned with the title without overlapping long titles.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Feature | Before | After |\r\n| --- | --- | --- | --- |\r\n| **Light** | Filter View | <img width=\"359\" height=\"722\" alt=\"Light Filter Before\" src=\"https://github.com/user-attachments/assets/1e0e6fe7-8626-4a8f-b734-0436a22cd431\" /> | <img width=\"349\" height=\"732\" alt=\"Light Filter After\" src=\"https://github.com/user-attachments/assets/49b66165-04bf-4362-bdb2-0b60090634ab\" /> |\r\n| **Light** | Tooltip | <img width=\"407\" height=\"458\" alt=\"Light Tooltip Before\" src=\"https://github.com/user-attachments/assets/8ce68765-30f9-47cd-b445-74d6f0e4fefd\" /> | <img width=\"399\" height=\"451\" alt=\"Light Tooltip After\" src=\"https://github.com/user-attachments/assets/2fd2d949-7f1e-4f0f-bc7c-1041a03f33ed\" /> |\r\n| **Light** | Explanation Mark Hover | <img width=\"394\" height=\"456\" alt=\"Light Hover Before\" src=\"https://github.com/user-attachments/assets/63d4b7d9-f4c2-4b9c-9c44-b64cae7265fb\" /> | <img width=\"394\" height=\"460\" alt=\"Light Hover After\" src=\"https://github.com/user-attachments/assets/ff9bf41e-e021-4955-821c-1f5186a6885f\" /> |\r\n| **Light** | Open Source Badge | <img width=\"440\" height=\"472\" alt=\"Light Badge Before\" src=\"https://github.com/user-attachments/assets/e429c652-a488-48ef-8120-9745d784e4d2\" /> | <img width=\"435\" height=\"468\" alt=\"Light Badge After\" src=\"https://github.com/user-attachments/assets/0f29a33e-6b8e-462b-8877-5715aa278e39\" /> |\r\n| **Dark** | Filter View | <img width=\"370\" height=\"740\" alt=\"Dark Filter Before\" src=\"https://github.com/user-attachments/assets/e06230ec-0237-4c00-bbd7-eca209e85eb2\" /> | <img width=\"359\" height=\"730\" alt=\"Dark Filter After\" src=\"https://github.com/user-attachments/assets/ec0f1ac2-b010-4bae-a968-b5370808b637\" /> |\r\n| **Dark** | Tooltip | <img width=\"400\" height=\"486\" alt=\"Dark Tooltip Before\" src=\"https://github.com/user-attachments/assets/7b51e63b-d2d7-451a-a8bd-e163507521ab\" /> | <img width=\"401\" height=\"481\" alt=\"Dark Tooltip After\" src=\"https://github.com/user-attachments/assets/a484c11f-7885-4513-b7e5-b0a553b40500\" /> |\r\n| **Dark** | Explanation Mark Hover | <img width=\"401\" height=\"455\" alt=\"Dark Hover Before\" src=\"https://github.com/user-attachments/assets/53cd29f2-a867-4c62-8639-9c85969185e9\" /> | <img width=\"400\" height=\"455\" alt=\"Dark Hover After\" src=\"https://github.com/user-attachments/assets/9643074b-34a5-4642-b5db-e2bec79029f8\" /> |\r\n| **Dark** | Open Source Badge | <img width=\"398\" height=\"463\" alt=\"Dark Badge Before\" src=\"https://github.com/user-attachments/assets/c2f5ca62-9819-4c84-a0d0-30d2a1913db5\" /> | <img width=\"425\" height=\"448\" alt=\"Dark Badge After\" src=\"https://github.com/user-attachments/assets/b68874d6-ff04-435a-98cb-b93235e98c90\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5522--asyncapi-website.netlify.app/tools\r\n2. Click on filters and apply them in both the dark and light themes.\r\n3. Check the tool cards and hover behaviors to verify styling changes.\r\n\r\n**Related issue(s)**\r\n\r\n- Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4578167312\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Style**\n  * Improved dark-mode colors, contrast and visual consistency across filters, cards, chips, toggles and buttons\n  * Refined hover, focus and active states for interactive elements and badges\n  * Adjusted card and chip spacing and visual hierarchy for cleaner layouts\n* **Refactor**\n  * Filter options made keyboard-focusable and standardized for more reliable interaction\n  * Tooltips/popovers and description panels restyled with improved positioning, sizing and scroll behavior\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5522?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-30T15:19:30Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":65,"deletions":31,"files_changed":6,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5512,"pr_title":"fix: mermaid dark theme ","pr_url":"https://github.com/asyncapi/website/pull/5512","pr_body":"ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4533042338\r\n## Description\r\n\r\n* Adds dark theme support for Mermaid diagrams rendered from MDX code blocks.\r\n* Reinitializes Mermaid with light or dark theme variables based on the `html.dark` class.\r\n* Re-renders Mermaid diagrams when the site theme changes, while keeping the initial render hydration-safe.\r\n\r\n## Screenshots\r\n\r\n| Theme | Before | After |\r\n| :--- | :--- | :--- |\r\n| **Light Theme** | <img width=\"969\" height=\"468\" alt=\"Screenshot 2026-05-29 at 01 23 21\" src=\"https://github.com/user-attachments/assets/fe4e999e-7938-4c6f-aa91-805b1f8902a2\" /> | <img width=\"969\" height=\"468\" alt=\"Screenshot 2026-05-29 at 01 23 21\" src=\"https://github.com/user-attachments/assets/fe4e999e-7938-4c6f-aa91-805b1f8902a2\" /> |\r\n| **Dark Theme** | <img width=\"1000\" height=\"576\" alt=\"Screenshot 2026-05-29 at 01 16 05\" src=\"https://github.com/user-attachments/assets/b27701fa-bedf-49a1-9c7e-f08590ef5572\" /> | <img width=\"963\" height=\"542\" alt=\"Screenshot 2026-05-29 at 01 15 38\" src=\"https://github.com/user-attachments/assets/b0c0638d-e65b-472a-b1c1-701ef003d704\" /> |\r\n\r\n## Steps to Reproduce\r\n\r\n1. Navigate to the Deploy Preview: [https://deploy-preview-5512--asyncapi-website.netlify.app/docs/guides/message-validation](https://deploy-preview-5512--asyncapi-website.netlify.app/docs/guides/message-validation)\r\n2. Check the diagrams by toggling between light and dark themes.\r\n3. Resize the viewport to ensure the diagrams render correctly across different screen sizes.\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\r\n\r\n## Summary by CodeRabbit\r\n\r\n* **Bug Fixes**\r\n  * Mermaid diagrams now properly display in light and dark modes, automatically adapting to your current site theme preference\r\n  * Diagrams update dynamically when you switch between light and dark themes, ensuring consistent visual appearance\r\n\r\n<!-- review_stack_entry_start -->\r\n\r\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5512?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\r\n\r\n<!-- review_stack_entry_end -->\r\n\r\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-29T12:48:49Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":98,"deletions":33,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5516,"pr_title":"fix: add dark mode text color to Remember component","pr_url":"https://github.com/asyncapi/website/pull/5516","pr_body":"**Description**\r\n\r\nImproved the UI styling for the generate code tutorial page. \r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| Dark | <img width=\"967\" height=\"462\" alt=\"Screenshot Dark Before\" src=\"https://github.com/user-attachments/assets/91d7eac2-e22f-4551-b2dc-9363676c435f\" /> | <img width=\"991\" height=\"467\" alt=\"Screenshot Dark After\" src=\"https://github.com/user-attachments/assets/d932c281-0dd1-492e-9abe-61f2e116364b\" /> |\r\n| Light | <img width=\"983\" height=\"525\" alt=\"Screenshot Light Before\" src=\"https://github.com/user-attachments/assets/759d4f62-581a-4ad1-a4d5-712d42b17a9b\" /> | <img width=\"983\" height=\"525\" alt=\"Screenshot Light After\" src=\"https://github.com/user-attachments/assets/1b457fef-c4c9-4d21-8658-dcd21513a615\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5516--asyncapi-website.netlify.app/docs/tutorials/generate-code\r\n2. Observe the UI changes by toggling between the light and dark themes.\r\n\r\n**Related issue(s)**","merged_at":"2026-05-29T12:45:18Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":7,"deletions":3,"files_changed":3,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5517,"pr_title":"fix: add dark theme support for Warning component","pr_url":"https://github.com/asyncapi/website/pull/5517","pr_body":"**Description**\r\n\r\n- Enhanced the design of the warning components in the Roadmap section.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| Light | <img width=\"646\" height=\"204\" alt=\"Screenshot Light Before\" src=\"https://github.com/user-attachments/assets/d95539fc-4dd9-494e-b23d-82ce5d9bf6fd\" /> | <img width=\"714\" height=\"206\" alt=\"Screenshot Light After\" src=\"https://github.com/user-attachments/assets/e30575dc-fdb9-4fd8-a443-be7c3f7abc4b\" /> |\r\n| Dark | <img width=\"635\" height=\"174\" alt=\"Screenshot Dark Before\" src=\"https://github.com/user-attachments/assets/e3206a41-ab7a-491c-9b93-a3ad43c9e8e8\" /> | <img width=\"723\" height=\"215\" alt=\"Screenshot Dark After\" src=\"https://github.com/user-attachments/assets/22f5f3ae-2005-41e1-9758-f29903fb558f\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5517--asyncapi-website.netlify.app/roadmap\r\n2. Scroll down to see the warning component.\r\n3. Test the UI by toggling between the light and dark themes.\r\n\r\n**Related issue(s)**\r\n- N/A","merged_at":"2026-05-29T12:19:20Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":10,"deletions":4,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5518,"pr_title":"fix: align netlify badge for mobile layout and remove stray margins","pr_url":"https://github.com/asyncapi/website/pull/5518","pr_body":"<!--   Thank you for your contribution. Before you submit the pull request:\r\n1. Follow our contribution guidelines\r\n2. Test your changes and attach their results to the pull request.\r\n3. Update the relevant documentation.\r\n-->\r\n\r\n**Description**\r\n\r\n- align netlify badge for mobile layout and remove stray margins\r\n\r\n\r\n **Please check the alignments in footer**\r\n- Before \r\n<img width=\"376\" height=\"296\" alt=\"Screenshot 2026-05-29 at 14 35 15\" src=\"https://github.com/user-attachments/assets/fb0d0df8-d4e6-47a7-8767-d04c02cabcb3\" />\r\n\r\n- After \r\n<img width=\"379\" height=\"298\" alt=\"Screenshot 2026-05-29 at 14 34 52\" src=\"https://github.com/user-attachments/assets/b8ad609f-551e-4289-ba0e-bdcdaf4ffe7c\" />\r\n\r\n\r\n**Related issue(s)**\r\n<!-- If you refer to a particular issue, provide its number, otherwise, remove this section.\r\nFor example, `Resolves #123`, `Fixes #43`, or `See also #33`. The `See also #33` option will not automatically close the issue after the PR merge. -->","merged_at":"2026-05-29T12:17:59Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":2,"deletions":2,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5499,"pr_title":"fix: improve dark mode styles for AsyncAPI v3 comparison components","pr_url":"https://github.com/asyncapi/website/pull/5499","pr_body":"ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4556732392\r\n\r\n## Description\r\n\r\n- Updated AsyncAPI v3 migration comparison components to support dark mode styling.\r\n- Added dark mode classes for borders, backgrounds, text colors, and hover states.\r\n- Improved readability and visual consistency of comparison diagrams on the v3 migration docs page.\r\n\r\n## Screenshots\r\n\r\n### Before : Dark theme\r\n\r\n<img width=\"983\" height=\"219\" alt=\"Screenshot 2026-05-27 at 22 56 40\" src=\"https://github.com/user-attachments/assets/04ca67ba-d751-48d4-8f89-e6308f7bbd74\" />\r\n\r\n<img width=\"978\" height=\"279\" alt=\"Screenshot 2026-05-27 at 22 56 46\" src=\"https://github.com/user-attachments/assets/d9c47129-2a19-4d2e-a17f-45c29495a9c4\" />\r\n\r\n<img width=\"974\" height=\"271\" alt=\"Screenshot 2026-05-27 at 22 57 07\" src=\"https://github.com/user-attachments/assets/719f8fbc-9fcc-46e0-8177-c3005d3f0f7e\" />\r\n\r\n<img width=\"960\" height=\"551\" alt=\"Screenshot 2026-05-27 at 22 57 31\" src=\"https://github.com/user-attachments/assets/e4ccd937-4d9a-4b74-884d-1aa1d1144aa6\" />\r\n\r\n### After : Dark theme\r\n\r\n<img width=\"971\" height=\"211\" alt=\"Screenshot 2026-05-27 at 22 54 18\" src=\"https://github.com/user-attachments/assets/4686b1e9-a8d8-4211-9d71-d9c5bad177b5\" />\r\n\r\n<img width=\"978\" height=\"264\" alt=\"Screenshot 2026-05-27 at 22 54 24\" src=\"https://github.com/user-attachments/assets/ca98a1eb-68d3-4560-b127-6913c99c5e44\" />\r\n\r\n<img width=\"967\" height=\"701\" alt=\"Screenshot 2026-05-27 at 22 54 32\" src=\"https://github.com/user-attachments/assets/826b0b35-2f2a-42de-ac9b-0c64a6228082\" />\r\n\r\n<img width=\"966\" height=\"257\" alt=\"Screenshot 2026-05-27 at 22 54 41\" src=\"https://github.com/user-attachments/assets/a33c154e-aea5-427b-a156-eb5bf87244b3\" />\r\n\r\n<img width=\"968\" height=\"262\" alt=\"Screenshot 2026-05-27 at 22 54 48\" src=\"https://github.com/user-attachments/assets/f978cbf7-70bb-4732-8f03-da81f5ca9286\" />\r\n\r\n<img width=\"982\" height=\"387\" alt=\"Screenshot 2026-05-27 at 22 54 57\" src=\"https://github.com/user-attachments/assets/c4dc5bb3-a7a6-4ae0-8750-0be0964be14b\" />\r\n\r\n<img width=\"986\" height=\"587\" alt=\"Screenshot 2026-05-27 at 22 55 05\" src=\"https://github.com/user-attachments/assets/65e0a95c-6727-4d55-9d94-d3d9f5fed2f5\" />\r\n\r\n## Reproduce Guide\r\n\r\nNavigate to:\r\n\r\nhttps://deploy-preview-5499--asyncapi-website.netlify.app/docs/migration/migrating-to-v3\r\n\r\n1. Switch the website to dark mode.\r\n2. Scroll to the comparison sections on the page.\r\n3. Hover over the interactive comparison boxes to verify their dark mode hover states.\r\n\r\n## Related issue(s)\r\n\r\n- https://github.com/asyncapi/website/pull/5253#issuecomment-4556732392\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **New Features**\n  * Added reusable comparison panels and a generic hover-enabled tile component used across AsyncAPI comparisons.\n* **Refactor**\n  * Consolidated many comparison views onto the shared components, unifying hover behavior, focus handling, and interaction wiring.\n* **Style**\n  * Expanded dark-mode styling and refined hover/active visuals across channels, operations, parameters, servers, metadata, schema, and ID/address comparisons.\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5499?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-28T13:21:39Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":579,"deletions":433,"files_changed":8,"reviewers":[],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5502,"pr_title":"fix: improve TSCMemberCard responsiveness by adjusting layout and conditionally displaying availability badge on mobile","pr_url":"https://github.com/asyncapi/website/pull/5502","pr_body":"<!--\r\n  Thank you for your contribution. Before you submit the pull request:\r\n  1. Follow our contribution guidelines\r\n  2. Test your changes and attach their results to the pull request.\r\n  3. Update the relevant documentation.\r\n-->\r\n\r\n## Description\r\n\r\n- Improved `TSCMemberCard` responsiveness for mobile devices.\r\n- Adjusted the card layout to better align content across different screen sizes.\r\n- Added responsive alignment changes using `items-center sm:items-start`.\r\n- Prevented avatar shrinking on smaller screens with `shrink-0`.\r\n- Conditionally displayed the availability badge differently on mobile and desktop for improved readability and spacing.\r\n- Ensured the component works consistently in both light and dark themes.\r\n\r\n## Before\r\n\r\n### Light Theme\r\n<img width=\"380\" height=\"671\" alt=\"Screenshot 2026-05-28 at 10 04 09\" src=\"https://github.com/user-attachments/assets/21f93904-4204-40d7-8c55-076c0a612feb\" />\r\n\r\n### Dark Theme\r\n<!-- Add dark theme before screenshot here -->\r\n<img width=\"378\" height=\"668\" alt=\"Screenshot 2026-05-28 at 10 04 15\" src=\"https://github.com/user-attachments/assets/2e722042-0329-4abe-b52e-c3bcbf233e0e\" />\r\n\r\n## After\r\n\r\n### Light Theme\r\n<!-- Add light theme after screenshot here -->\r\n<img width=\"380\" height=\"671\" alt=\"Screenshot 2026-05-28 at 10 03 44\" src=\"https://github.com/user-attachments/assets/8f0fc8df-34df-4cd0-a8e4-d643fd17dac3\" />\r\n\r\n### Dark Theme\r\n\r\n<img width=\"375\" height=\"669\" alt=\"Screenshot 2026-05-28 at 10 03 51\" src=\"https://github.com/user-attachments/assets/812ae256-590d-4e01-a885-84e03e4e136b\" />\r\n\r\n## Reproduction Guidelines\r\n\r\n1. Open the community/team members page.https://deploy-preview-5502--asyncapi-website.netlify.app/community/tsc\r\n2. Resize the browser window to a mobile viewport or use browser device emulation.\r\n3. Observe the `TSCMemberCard` layout before applying the fix:\r\n   - Avatar and text alignment appear inconsistent on smaller screens.\r\n   - Availability badge affects spacing and responsiveness.\r\n4. Apply the changes from this PR.\r\n5. Recheck the component in both light and dark themes across mobile and desktop screen sizes.\r\n6. Verify:\r\n   - Proper alignment of member details.\r\n   - Avatar remains fixed without shrinking.\r\n   - Availability badge displays correctly depending on screen size.\r\n   - No visual regressions in dark mode.\r\n## Related issue(s)\r\n\r\nFixes N/A","merged_at":"2026-05-28T12:59:24Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":9,"deletions":4,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5477,"pr_title":"fix(DocsMobileMenu): enhance dark theme support and improve styling c…","pr_url":"https://github.com/asyncapi/website/pull/5477","pr_body":"Ref: https://github.com/asyncapi/website/pull/5253#issuecomment-4532416854\r\n\r\n**Description**\r\n\r\n- Fixed dark theme styling for the mobile docs sidebar.\r\n- Updated the mobile docs menu background and search button to use existing dark theme classes.\r\n- Kept the change scoped to `DocsMobileMenu` without adding global CSS or new colors.\r\n\r\n**Steps to Reproduce**\r\n\r\n1. Open the website in a mobile viewport.\r\n2. Enable dark mode from the navbar theme toggle.\r\n3. Navigate to any docs page.\r\n4. Tap the docs sidebar/menu button near the top of the docs page.\r\n5. Notice that the mobile docs sidebar and search bar still appear in light theme colors.\r\n\r\n**Before**\r\n\r\n<img width=\"317\" height=\"596\" alt=\"Screenshot 2026-05-25 at 13 23 28\" src=\"https://github.com/user-attachments/assets/fb80bfb0-3dd3-4972-907c-7fab709b7210\" />\r\n\r\n**After**\r\n\r\n<img width=\"379\" height=\"671\" alt=\"Screenshot 2026-05-25 at 13 22 57\" src=\"https://github.com/user-attachments/assets/297d71f3-d492-4a8c-ab77-d047bb1a9c50\" />\r\n\r\n**Related issue(s)**\r\n\r\nFixes #5253\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n## Style\n* Enhanced dark mode styling for navigation dropdown arrows with updated hover effects.\n* Improved dark mode appearance for mobile menu, including background colors and search button styling.\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5477?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-27T13:53:09Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":5,"deletions":3,"files_changed":2,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5486,"pr_title":"fix: align mobile docs dropdown icon styles","pr_url":"https://github.com/asyncapi/website/pull/5486","pr_body":"refs: https://github.com/asyncapi/website/pull/5253#issuecomment-4534746423\r\n**Description**\r\n\r\n- Fixed inconsistent icon styling in the mobile Docs dropdown menu.\r\n- Updated the mobile Docs dropdown to use the same `buckets` data as the desktop Docs dropdown.\r\n- Kept the change minimal and scoped to `MobileNavMenu`.\r\n\r\n**Steps to Reproduce**\r\n\r\n1. Open the website on a mobile viewport.\r\n2. Open the navbar menu.\r\n3. Expand the Docs dropdown.\r\n4. Notice that the Docs dropdown icons use a different purple style compared to the desktop Docs dropdown.\r\n\r\n**Screenshots**\r\n\r\nBefore:\r\n<img width=\"374\" height=\"665\" alt=\"Screenshot 2026-05-26 at 09 54 52\" src=\"https://github.com/user-attachments/assets/61bbed42-e3dc-492f-a88d-d5d08512998c\" />\r\n<img width=\"377\" height=\"672\" alt=\"Screenshot 2026-05-26 at 10 06 38\" src=\"https://github.com/user-attachments/assets/a04bdb9f-ff7c-4f51-b65d-a879d2325a92\" />\r\n\r\n\r\nAfter:\r\n<img width=\"400\" height=\"685\" alt=\"Screenshot 2026-05-26 at 09 55 37\" src=\"https://github.com/user-attachments/assets/8f1485b3-8f80-472d-9d59-a884d907142f\" />\r\n<img width=\"384\" height=\"666\" alt=\"Screenshot 2026-05-26 at 09 56 18\" src=\"https://github.com/user-attachments/assets/429708bf-1b6e-4218-81be-000cdc5be417\" />\r\n\r\n\r\n**Related issue(s)**\r\n\r\nFixes https://github.com/asyncapi/website/pull/5253#issuecomment-4534746423","merged_at":"2026-05-26T14:39:26Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":2,"deletions":2,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5484,"pr_title":"fix: update scroll-to-top button hover background color and improve image styling for dark mode","pr_url":"https://github.com/asyncapi/website/pull/5484","pr_body":"## Description\r\n\r\nRef: https://github.com/asyncapi/website/pull/5253#issuecomment-4539882638\r\n\r\n- Added dark theme support for the scroll-to-top button.\r\n- Replaced the hardcoded hover background color with an existing theme color for better consistency.\r\n- Updated the scroll arrow icon styling so it remains visible in dark mode.\r\n\r\n### Before applying fixes\r\nThe scroll-to-top button had visibility and hover styling issues in dark theme.\r\n\r\n<img width=\"376\" height=\"666\" alt=\"Screenshot 2026-05-25 at 21 38 23\" src=\"https://github.com/user-attachments/assets/9fff5f60-c4bf-49b8-9f40-dd246a2f8886\" />\r\n\r\n### After applying fixes\r\n\r\n<img width=\"378\" height=\"677\" alt=\"Screenshot 2026-05-25 at 21 42 20\" src=\"https://github.com/user-attachments/assets/1341d5fc-31a7-44dd-b625-bcbcb7bd484c\" />\r\n\r\n## Related issue(s)\r\n\r\n- N/A","merged_at":"2026-05-26T14:33:56Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":2,"deletions":2,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5471,"pr_title":"feat: enhance dark theme support in search and navigation components","pr_url":"https://github.com/asyncapi/website/pull/5471","pr_body":"## Description\r\n\r\n- Updated the mobile docs search button to support dark theme using existing theme classes.\r\n- Added `data-theme=\"dark\"` alongside the existing `dark` class so Algolia DocSearch uses its dark theme.\r\n- Wrapped the DocSearch modal with existing dark text styling to keep no-results text readable in dark mode.\r\n\r\n### New behaviour\r\n\r\n<video src=\"https://github.com/user-attachments/assets/53b86845-e2c5-4e38-99e4-519347e812ea\" controls width=\"100%\"></video>\r\n\r\n## Related issue(s)\r\n\r\nFixes #5470\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n* **Style**\n  * Enhanced dark mode styling consistency across search modal, mobile navigation, and theme components.\n\n* **Bug Fixes**\n  * Improved dark mode theme synchronization to ensure proper styling persistence and visual consistency.\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5471?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-26T14:31:23Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":43,"deletions":26,"files_changed":3,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5479,"pr_title":"fix: improve docs callout dark theme","pr_url":"https://github.com/asyncapi/website/pull/5479","pr_body":"ref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532677110\r\nref :https://github.com/asyncapi/website/pull/5253#issuecomment-4532649920\r\n**Description**\r\n\r\n- Fixed dark theme styling for the release notes callout in the docs layout.\r\n- Updated the release notes callout background and text to use existing dark theme classes.\r\n- Fixed alignment of the plus icon in the roadmap page “Join Our Community” button.\r\n- Kept the changes scoped to `components/layout/DocsLayout.tsx` and `pages/roadmap.tsx`.\r\n\r\n- Before\r\n\r\n<img width=\"983\" height=\"164\" alt=\"Screenshot 2026-05-25 at 14 12 24\" src=\"https://github.com/user-attachments/assets/0a7737ed-9148-4df3-90d0-3fe5227ed812\" />\r\n<img width=\"630\" height=\"259\" alt=\"Screenshot 2026-05-25 at 14 13 29\" src=\"https://github.com/user-attachments/assets/e043e542-2a87-4322-bfb9-cf32a55cf2c0\" />\r\n\r\n\r\n- After \r\n\r\n<img width=\"974\" height=\"126\" alt=\"Screenshot 2026-05-25 at 14 12 12\" src=\"https://github.com/user-attachments/assets/16bb8125-a697-446c-b3e7-ef93299414de\" />\r\n<img width=\"606\" height=\"312\" alt=\"Screenshot 2026-05-25 at 14 13 15\" src=\"https://github.com/user-attachments/assets/70150de2-aa22-4138-af0f-1a944d2285da\" />\r\n\r\n\r\n\r\n**Related issue(s)**\r\n\r\nFixes #5253\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n* **Style**\n  * Improved dark mode appearance for the release notes section with updated background and text color styling.\n  * Updated icon sizing and responsive behavior for the \"Join Our Community\" button.\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5479?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-25T13:37:16Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":4,"deletions":4,"files_changed":2,"reviewers":[{"login":"Sourya07","avatar_url":"https://avatars.githubusercontent.com/u/144201791?u=bee7a229b7ad0dd54d22bf6acd2525ae3c6a4537&v=4"},{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5482,"pr_title":"fix: enhance dark theme support for CLI page components","pr_url":"https://github.com/asyncapi/website/pull/5482","pr_body":"Fixes : https://github.com/asyncapi/website/pull/5253#issuecomment-4533246868\r\n**Description**\r\n\r\n- Added dark theme support for the CLI tools page.\r\n- Updated the features section, feature icon cards, and inline command snippet to use existing dark theme classes.\r\n- Applied the same styling to both localized and non-localized CLI routes.\r\n\r\n- Before \r\n<img width=\"1233\" height=\"641\" alt=\"Screenshot 2026-05-25 at 15 17 19\" src=\"https://github.com/user-attachments/assets/4eb11705-f03e-4172-8012-52d630f34d62\" />\r\n\r\n- After \r\n<img width=\"1362\" height=\"698\" alt=\"Screenshot 2026-05-25 at 15 17 09\" src=\"https://github.com/user-attachments/assets/66656cf8-1975-4535-90f1-b009737e0686\" />\r\n\r\n\r\n**Related issue(s)**\r\n\r\nFixes #5253\r\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n\n## Summary by CodeRabbit\n\n* **Style**\n  * Improved dark mode appearance across CLI tools documentation with enhanced styling for code elements and feature icons.\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5482?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->","merged_at":"2026-05-25T13:03:52Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":8,"deletions":6,"files_changed":2,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true},{"repo":"asyncapi/website","pr_number":5468,"pr_title":"fix(StickyNavbar): update className for improved styling consistency","pr_url":"https://github.com/asyncapi/website/pull/5468","pr_body":"## Description\r\n\r\n- Fixed the mobile hamburger menu not opening correctly on small screens.\r\n- The issue was caused by `transform: translateZ(0)` being applied to the sticky navbar on all screen sizes. Since the mobile menu uses fixed positioning and is rendered inside the navbar, the transformed parent interfered with the mobile overlay behavior.\r\n- Updated the `transform` and `will-change` styles to apply only on large screens using Tailwind responsive classes, preserving the existing desktop behavior while preventing the mobile menu issue on smaller devices.\r\n\r\n## Related issue(s)\r\n\r\n### Before\r\n<video src=\"https://github.com/user-attachments/assets/bb12f0ed-2afe-4536-bde8-721467c553d4\" controls width=\"100%\"></video>\r\n\r\n### After\r\n<video src=\"https://github.com/user-attachments/assets/c031bd05-0f81-4e54-b17e-9b36d7d70e34\" controls width=\"100%\"></video>\r\n\r\nFixes #5469 ","merged_at":"2026-05-24T14:25:18Z","language":"TypeScript","repo_stars":707,"repo_description":"AsyncAPI specification website","labels":[],"additions":1,"deletions":2,"files_changed":1,"reviewers":[{"login":"princerajpoot20","avatar_url":"https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"}],"merged_by":"princerajpoot20","showcase":true}]};
+    </script>
+    <script>
+    (function() {
+      const data = window.__DATA__;
+      if (!data) return;
+
+      // --- Utilities ---
+      function escapeHtml(value) {
+        return String(value ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
       }
 
+      function escapeAttribute(value) {
+        return escapeHtml(value).replace(/\`/g, '&#96;');
+      }
+
+      function formatDate(value) {
+        return new Date(value).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        });
+      }
+
+      function renderRichDescription(value) {
+        if (!value) return '';
+        try {
+          if (typeof marked !== 'undefined' && marked.parse) {
+            // Configure marked options if needed (e.g. gfm, breaks)
+            marked.setOptions({
+              gfm: true,
+              breaks: true
+            });
+            return marked.parse(value);
+          }
+        } catch (e) {
+          console.warn('Marked parsing failed:', e);
+        }
+        return escapeHtml(value).replace(/
+/g, '<br />');
+      }
+
+      function calculateStats(contributions) {
+        const repos = new Set();
+        const languages = new Map();
+        contributions.forEach((contribution) => {
+          repos.add(contribution.repo);
+          if (contribution.language) {
+            languages.set(contribution.language, (languages.get(contribution.language) ?? 0) + 1);
+          }
+        });
+        return {
+          totalContributions: contributions.length,
+          totalProjects: repos.size,
+          totalLanguages: languages.size,
+          languages: Array.from(languages.entries())
+            .map(([name, count]) => ({ name, count }))
+            .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)),
+        };
+      }
+
+      function groupByRepository(contributions) {
+        const grouped = new Map();
+        contributions.forEach((contribution) => {
+          const existing = grouped.get(contribution.repo) ?? [];
+          existing.push(contribution);
+          grouped.set(contribution.repo, existing);
+        });
+        return Array.from(grouped.entries()).sort((a, b) => {
+          const aStars = a[1][0]?.repo_stars ?? 0;
+          const bStars = b[1][0]?.repo_stars ?? 0;
+          return bStars - aStars || a[0].localeCompare(b[0]);
+        });
+      }
+
+      // --- Components ---
+      function renderHero(contributor, stats) {
+        const displayName = contributor.name || contributor.username;
+        const languageFilters = stats.languages.length > 0
+          ? '<button class="filter is-active" data-language="all">All</button>' +
+            stats.languages.map((lang) => '<button class="filter" data-language="' + escapeHtml(lang.name) + '">' + escapeHtml(lang.name) + ' <span>' + lang.count + '</span></button>').join('')
+          : '';
+
+        return '<nav class="navbar">' +
+          '<div class="shell navbar-inner">' +
+            '<div class="nav-identity">' +
+              '<img class="nav-avatar" src="https://github.com/' + escapeHtml(contributor.username) + '.png" alt="' + escapeHtml(displayName) + '" />' +
+              '<div class="nav-info">' +
+                '<span class="nav-name">' + escapeHtml(displayName) + '</span>' +
+                '<span class="nav-handle"><a href="' + escapeHtml(contributor.profile_url) + '">@' + escapeHtml(contributor.username) + '</a></span>' +
+              '</div>' +
+            '</div>' +
+            '<div class="nav-controls">' +
+              '<input class="search" id="search" type="search" placeholder="Search contributions..." />' +
+              '<div class="filters" id="filters-container">' + languageFilters + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</nav>';
+      }
+
+      function renderContributionCard(contribution) {
+        const fullDescription = renderRichDescription(contribution.pr_body);
+        const labels = contribution.labels.slice(0, 5);
+        const language = contribution.language ?? 'Unknown';
+        const reviewers = contribution.reviewers?.slice(0, 5) ?? [];
+
+        const cleanTitle = contribution.pr_title
+          .replace(/^(feat|fix|chore|docs|refactor|test|style|perf):\\s*/i, '')
+          .replace(/^(feat|fix|chore|docs|refactor|test|style|perf)\\(.*?\\):\\s*/i, '');
+
+        let briefDescription = '';
+        if (contribution.pr_body) {
+          briefDescription = contribution.pr_body
+            .replace(/<!--[\\s\\S]*?-->/g, '')
+            .replace(/\\`\\`\\`[\\s\\S]*?-->/g, '')
+            .replace(/#{1,6}\\s+/g, '')
+            .replace(/\\*\\*([^*]+)\\*\\*/g, '$1')
+            .replace(/\\[([^\\]]+)\\]\\([^\\)]+\\)/g, '$1')
+            .replace(/\\n+/g, ' ')
+            .trim()
+            .substring(0, 200);
+          if (briefDescription && contribution.pr_body.length > 200) {
+            briefDescription += '...';
+          }
+        }
+
+        const addBadge = '<span class="diff-badge add">+' + contribution.additions.toLocaleString() + '</span>';
+        const delBadge = '<span class="diff-badge del">−' + contribution.deletions.toLocaleString() + '</span>';
+
+        let reviewerInfo = '';
+        if (reviewers.length > 0) {
+          const reviewerAvatars = reviewers
+            .map((r) => '<a href="https://github.com/' + escapeHtml(r.login) + '" title="' + escapeHtml(r.login) + '"><img src="' + escapeHtml(r.avatar_url) + '" alt="' + escapeHtml(r.login) + '" width="28" height="28" /></a>')
+            .join('');
+          reviewerInfo = '<div class="reviewed-by"><span class="review-label">Approved by:</span><div class="reviewers">' + reviewerAvatars + '</div></div>';
+        } else if (contribution.merged_by) {
+          reviewerInfo = '<div class="reviewed-by"><span class="review-label">Merged by:</span><a class="merged-by" href="https://github.com/' + escapeHtml(contribution.merged_by) + '">@' + escapeHtml(contribution.merged_by) + '</a></div>';
+        }
+
+        const impactNote = contribution.note
+          ? '<div class="impact-note"><span class="impact-icon">💡</span><strong>Impact:</strong> ' + escapeHtml(contribution.note) + '</div>'
+          : '';
+
+        return '<article class="contribution" data-title="' + escapeHtml(contribution.pr_title) + '" data-language="' + escapeHtml(language) + '">' +
+          '<a class="pr-title" href="' + escapeHtml(contribution.pr_url) + '">' + escapeHtml(cleanTitle) + '</a>' +
+          (briefDescription ? '<p class="brief-description">' + escapeHtml(briefDescription) + '</p>' : '') +
+          '<div class="meta-row">' +
+            '<span class="date-badge">' + escapeHtml(formatDate(contribution.merged_at)) + '</span>' +
+            addBadge +
+            delBadge +
+            reviewerInfo +
+          '</div>' +
+          impactNote +
+          (fullDescription ? '<details class="description-details"><summary>View full description</summary><div class="description">' + fullDescription + '</div></details>' : '') +
+          (labels.length > 0 ? '<div class="labels">' + labels.map((label) => '<span>' + escapeHtml(label) + '</span>').join('') + '</div>' : '') +
+        '</article>';
+      }
+
+      function renderRepositorySection(repo, contributions) {
+        const first = contributions[0];
+        if (!first) return '';
+        const sorted = Array.from(contributions).sort((a, b) => new Date(b.merged_at).getTime() - new Date(a.merged_at).getTime());
+        const [owner] = repo.split('/');
+        const languages = new Set(sorted.map((c) => c.language ?? 'Unknown'));
+
+        return '<section class="repo-section" data-repo="' + escapeHtml(repo) + '" data-languages="' + escapeHtml(Array.from(languages).join('|')) + '">' +
+          '<header class="repo-header">' +
+            '<div class="repo-title-area">' +
+              '<a class="repo-name" href="https://github.com/' + escapeHtml(repo) + '">' +
+                '<img src="https://github.com/' + escapeHtml(owner) + '.png" alt="' + escapeHtml(owner) + '" width="32" height="32" />' +
+                escapeHtml(repo) +
+              '</a>' +
+              (first.repo_description ? '<p class="repo-description">' + escapeHtml(first.repo_description) + '</p>' : '') +
+            '</div>' +
+            '<div class="repo-stats">' +
+              '<span><strong>' + sorted.length + '</strong> ' + (sorted.length === 1 ? 'PR' : 'PRs') + '</span>' +
+              (first.language ? '<span><strong>' + escapeHtml(first.language) + '</strong></span>' : '') +
+              '<span><strong>⭐ ' + first.repo_stars.toLocaleString() + '</strong></span>' +
+            '</div>' +
+          '</header>' +
+          '<div class="contribution-list">' +
+            sorted.map(renderContributionCard).join('') +
+          '</div>' +
+        '</section>';
+      }
+
+      function renderMainContent(grouped) {
+        return '<main class="shell">' +
+          '<div id="results">' +
+            grouped.map(([repo, contributions]) => renderRepositorySection(repo, contributions)).join('') +
+          '</div>' +
+          '<div class="empty" id="empty" hidden>No matching contributions found.</div>' +
+        '</main>';
+      }
+
+      function renderFooter(updatedAt) {
+        return '<footer><div class="shell">Updated ' + escapeHtml(formatDate(updatedAt)) + '. Data available in <a href="contributions.json">contributions.json</a>.</div></footer>';
+      }
+
+      // --- Rendering and Interactive Logic ---
+      const contributions = data.contributions.filter((c) => c.showcase);
+      const stats = calculateStats(contributions);
+      const grouped = groupByRepository(contributions);
+
+      const app = document.getElementById('app');
+      if (app) {
+        app.innerHTML = renderHero(data.contributor, stats) +
+          renderMainContent(grouped) +
+          renderFooter(data.updated_at);
+      }
+
+      // Event listeners for interactive features
       const search = document.querySelector('#search');
       const filters = document.querySelectorAll('.filter');
       const sections = document.querySelectorAll('.repo-section');
@@ -948,7 +643,8 @@
         let visibleCount = 0;
 
         sections.forEach((section) => {
-          const languages = section.dataset.languages.split('|');
+          const attr = section.getAttribute('data-languages');
+          const languages = attr ? attr.split('|') : [];
           const matchLang = activeLanguage === 'all' || languages.includes(activeLanguage);
           const matchQuery = !query || section.textContent.toLowerCase().includes(query);
 
@@ -956,7 +652,9 @@
           if (!section.hidden) visibleCount++;
         });
 
-        empty.hidden = visibleCount !== 0;
+        if (empty) {
+          empty.hidden = visibleCount !== 0;
+        }
       }
 
       if (search) {
@@ -965,11 +663,12 @@
 
       filters.forEach((filter) => {
         filter.addEventListener('click', () => {
-          activeLanguage = filter.dataset.language;
+          activeLanguage = filter.getAttribute('data-language');
           filters.forEach((f) => f.classList.toggle('is-active', f === filter));
           applyFilters();
         });
       });
-    </script>
+    })();
+  </script>
   </body>
 </html>
