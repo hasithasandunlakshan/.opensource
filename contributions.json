@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-03T04:04:31.596Z",
+  "updated_at": "2026-06-03T04:22:33.343Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -19,7 +19,7 @@
       "pr_body": "## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.\r\n\r\nYES\r\n\r\n## What kind of change does this PR introduce?\r\n\r\nRefactor\r\n\r\n## What is the current behavior?\r\n\r\nThe Auth policy editor flow still uses the deprecated `Modal` component and `Modal.Content` / `Modal.Separator` helpers.\r\n\r\n## What is the new behavior?\r\n\r\nThe Auth policy editor flow now uses `Dialog` primitives instead:\r\n\r\n- `Dialog`\r\n- `DialogContent`\r\n- `DialogHeader`\r\n- `DialogTitle`\r\n- `DialogSection`\r\n- `DialogSectionSeparator`\r\n\r\nBehavior is intended to remain unchanged.\r\n\r\n## Additional context\r\n\r\n- Fixes #46375 \r\n\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Refactor**\n  * Updated the policy editor and review flows to a unified dialog layout for a cleaner, more consistent UI.\n  * Sections and footer controls were reorganized for clearer grouping and improved button placement.\n  * Existing behaviors (viewing templates, review/save flow, and close confirmation) are preserved.\n\n<!-- review_stack_entry_start -->\r\n\r\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46374?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\r\n\r\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
       "merged_at": "2026-05-26T16:18:21Z",
       "language": "TypeScript",
-      "repo_stars": 103357,
+      "repo_stars": 103360,
       "repo_description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
       "labels": [],
       "additions": 81,
@@ -215,98 +215,6 @@
       "additions": 65,
       "deletions": 31,
       "files_changed": 6,
-      "reviewers": [
-        {
-          "login": "princerajpoot20",
-          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
-        }
-      ],
-      "merged_by": "princerajpoot20",
-      "showcase": true
-    },
-    {
-      "repo": "asyncapi/website",
-      "pr_number": 5512,
-      "pr_title": "fix: mermaid dark theme ",
-      "pr_url": "https://github.com/asyncapi/website/pull/5512",
-      "pr_body": "ref - https://github.com/asyncapi/website/pull/5253#issuecomment-4533042338\r\n## Description\r\n\r\n* Adds dark theme support for Mermaid diagrams rendered from MDX code blocks.\r\n* Reinitializes Mermaid with light or dark theme variables based on the `html.dark` class.\r\n* Re-renders Mermaid diagrams when the site theme changes, while keeping the initial render hydration-safe.\r\n\r\n## Screenshots\r\n\r\n| Theme | Before | After |\r\n| :--- | :--- | :--- |\r\n| **Light Theme** | <img width=\"969\" height=\"468\" alt=\"Screenshot 2026-05-29 at 01 23 21\" src=\"https://github.com/user-attachments/assets/fe4e999e-7938-4c6f-aa91-805b1f8902a2\" /> | <img width=\"969\" height=\"468\" alt=\"Screenshot 2026-05-29 at 01 23 21\" src=\"https://github.com/user-attachments/assets/fe4e999e-7938-4c6f-aa91-805b1f8902a2\" /> |\r\n| **Dark Theme** | <img width=\"1000\" height=\"576\" alt=\"Screenshot 2026-05-29 at 01 16 05\" src=\"https://github.com/user-attachments/assets/b27701fa-bedf-49a1-9c7e-f08590ef5572\" /> | <img width=\"963\" height=\"542\" alt=\"Screenshot 2026-05-29 at 01 15 38\" src=\"https://github.com/user-attachments/assets/b0c0638d-e65b-472a-b1c1-701ef003d704\" /> |\r\n\r\n## Steps to Reproduce\r\n\r\n1. Navigate to the Deploy Preview: [https://deploy-preview-5512--asyncapi-website.netlify.app/docs/guides/message-validation](https://deploy-preview-5512--asyncapi-website.netlify.app/docs/guides/message-validation)\r\n2. Check the diagrams by toggling between light and dark themes.\r\n3. Resize the viewport to ensure the diagrams render correctly across different screen sizes.\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\r\n\r\n## Summary by CodeRabbit\r\n\r\n* **Bug Fixes**\r\n  * Mermaid diagrams now properly display in light and dark modes, automatically adapting to your current site theme preference\r\n  * Diagrams update dynamically when you switch between light and dark themes, ensuring consistent visual appearance\r\n\r\n<!-- review_stack_entry_start -->\r\n\r\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/asyncapi/website/pull/5512?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\r\n\r\n<!-- review_stack_entry_end -->\r\n\r\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
-      "merged_at": "2026-05-29T12:48:49Z",
-      "language": "TypeScript",
-      "repo_stars": 707,
-      "repo_description": "AsyncAPI specification website",
-      "labels": [],
-      "additions": 98,
-      "deletions": 33,
-      "files_changed": 1,
-      "reviewers": [
-        {
-          "login": "princerajpoot20",
-          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
-        }
-      ],
-      "merged_by": "princerajpoot20",
-      "showcase": true
-    },
-    {
-      "repo": "asyncapi/website",
-      "pr_number": 5516,
-      "pr_title": "fix: add dark mode text color to Remember component",
-      "pr_url": "https://github.com/asyncapi/website/pull/5516",
-      "pr_body": "**Description**\r\n\r\nImproved the UI styling for the generate code tutorial page. \r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| Dark | <img width=\"967\" height=\"462\" alt=\"Screenshot Dark Before\" src=\"https://github.com/user-attachments/assets/91d7eac2-e22f-4551-b2dc-9363676c435f\" /> | <img width=\"991\" height=\"467\" alt=\"Screenshot Dark After\" src=\"https://github.com/user-attachments/assets/d932c281-0dd1-492e-9abe-61f2e116364b\" /> |\r\n| Light | <img width=\"983\" height=\"525\" alt=\"Screenshot Light Before\" src=\"https://github.com/user-attachments/assets/759d4f62-581a-4ad1-a4d5-712d42b17a9b\" /> | <img width=\"983\" height=\"525\" alt=\"Screenshot Light After\" src=\"https://github.com/user-attachments/assets/1b457fef-c4c9-4d21-8658-dcd21513a615\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5516--asyncapi-website.netlify.app/docs/tutorials/generate-code\r\n2. Observe the UI changes by toggling between the light and dark themes.\r\n\r\n**Related issue(s)**",
-      "merged_at": "2026-05-29T12:45:18Z",
-      "language": "TypeScript",
-      "repo_stars": 707,
-      "repo_description": "AsyncAPI specification website",
-      "labels": [],
-      "additions": 7,
-      "deletions": 3,
-      "files_changed": 3,
-      "reviewers": [
-        {
-          "login": "princerajpoot20",
-          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
-        }
-      ],
-      "merged_by": "princerajpoot20",
-      "showcase": true
-    },
-    {
-      "repo": "asyncapi/website",
-      "pr_number": 5517,
-      "pr_title": "fix: add dark theme support for Warning component",
-      "pr_url": "https://github.com/asyncapi/website/pull/5517",
-      "pr_body": "**Description**\r\n\r\n- Enhanced the design of the warning components in the Roadmap section.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| Light | <img width=\"646\" height=\"204\" alt=\"Screenshot Light Before\" src=\"https://github.com/user-attachments/assets/d95539fc-4dd9-494e-b23d-82ce5d9bf6fd\" /> | <img width=\"714\" height=\"206\" alt=\"Screenshot Light After\" src=\"https://github.com/user-attachments/assets/e30575dc-fdb9-4fd8-a443-be7c3f7abc4b\" /> |\r\n| Dark | <img width=\"635\" height=\"174\" alt=\"Screenshot Dark Before\" src=\"https://github.com/user-attachments/assets/e3206a41-ab7a-491c-9b93-a3ad43c9e8e8\" /> | <img width=\"723\" height=\"215\" alt=\"Screenshot Dark After\" src=\"https://github.com/user-attachments/assets/22f5f3ae-2005-41e1-9758-f29903fb558f\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5517--asyncapi-website.netlify.app/roadmap\r\n2. Scroll down to see the warning component.\r\n3. Test the UI by toggling between the light and dark themes.\r\n\r\n**Related issue(s)**\r\n- N/A",
-      "merged_at": "2026-05-29T12:19:20Z",
-      "language": "TypeScript",
-      "repo_stars": 707,
-      "repo_description": "AsyncAPI specification website",
-      "labels": [],
-      "additions": 10,
-      "deletions": 4,
-      "files_changed": 1,
-      "reviewers": [
-        {
-          "login": "princerajpoot20",
-          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
-        }
-      ],
-      "merged_by": "princerajpoot20",
-      "showcase": true
-    },
-    {
-      "repo": "asyncapi/website",
-      "pr_number": 5518,
-      "pr_title": "fix: align netlify badge for mobile layout and remove stray margins",
-      "pr_url": "https://github.com/asyncapi/website/pull/5518",
-      "pr_body": "<!--   Thank you for your contribution. Before you submit the pull request:\r\n1. Follow our contribution guidelines\r\n2. Test your changes and attach their results to the pull request.\r\n3. Update the relevant documentation.\r\n-->\r\n\r\n**Description**\r\n\r\n- align netlify badge for mobile layout and remove stray margins\r\n\r\n\r\n **Please check the alignments in footer**\r\n- Before \r\n<img width=\"376\" height=\"296\" alt=\"Screenshot 2026-05-29 at 14 35 15\" src=\"https://github.com/user-attachments/assets/fb0d0df8-d4e6-47a7-8767-d04c02cabcb3\" />\r\n\r\n- After \r\n<img width=\"379\" height=\"298\" alt=\"Screenshot 2026-05-29 at 14 34 52\" src=\"https://github.com/user-attachments/assets/b8ad609f-551e-4289-ba0e-bdcdaf4ffe7c\" />\r\n\r\n\r\n**Related issue(s)**\r\n<!-- If you refer to a particular issue, provide its number, otherwise, remove this section.\r\nFor example, `Resolves #123`, `Fixes #43`, or `See also #33`. The `See also #33` option will not automatically close the issue after the PR merge. -->",
-      "merged_at": "2026-05-29T12:17:59Z",
-      "language": "TypeScript",
-      "repo_stars": 707,
-      "repo_description": "AsyncAPI specification website",
-      "labels": [],
-      "additions": 2,
-      "deletions": 2,
-      "files_changed": 1,
       "reviewers": [
         {
           "login": "princerajpoot20",
