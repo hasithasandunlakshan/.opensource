@@ -31,7 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SHOWCASE_COMMAND: ${{ github.event.comment.body || github.event.issue.body || inputs.command }}
-        run: npx opensource-showcase@latest command "$SHOWCASE_COMMAND"
+        run: npx --yes opensource-showcase@latest command -- "$SHOWCASE_COMMAND"
 
       - name: Commit showcase updates
         run: |
