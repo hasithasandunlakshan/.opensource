@@ -44,7 +44,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 
 The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.
 
-**1 contribution** • TypeScript • **★ 103,400**
+**1 contribution** • TypeScript • **★ 103,430**
 
 ---
 
@@ -113,7 +113,7 @@ Behavior is intended to remain unchanged.
 
 Connect Supabase to your AI assistants
 
-**1 contribution** • TypeScript • **★ 2,710**
+**1 contribution** • TypeScript • **★ 2,713**
 
 ---
 
