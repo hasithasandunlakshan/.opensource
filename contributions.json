@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-03T21:49:43.581Z",
+  "updated_at": "2026-06-04T06:32:52.872Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -520,6 +520,24 @@
         }
       ],
       "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "hasithasandunlakshan/leo_candle_night",
+      "pr_number": 86,
+      "pr_title": "Update contact information and footer details for clarity and consist…",
+      "pr_url": "https://github.com/hasithasandunlakshan/leo_candle_night/pull/86",
+      "pr_body": "…ency",
+      "merged_at": "2025-02-13T12:08:54Z",
+      "language": "TypeScript",
+      "repo_stars": 1,
+      "repo_description": "An event platform for booking seats and food options for Leo Club events, with QR code entry verification.",
+      "labels": [],
+      "additions": 19,
+      "deletions": 9,
+      "files_changed": 1,
+      "reviewers": [],
+      "merged_by": "hasithasandunlakshan",
       "showcase": true
     }
   ]

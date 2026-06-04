@@ -119,7 +119,7 @@ Connect Supabase to your AI assistants
 
 #### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [resolve edge function test typo and invalid branch array access](https://github.com/supabase-community/supabase-mcp/pull/279) <sub>[#279](https://github.com/supabase-community/supabase-mcp/pull/279)</sub>
 
-<sub><strong>Merged</strong> on May 16, 2026</sub>
+<sub><strong>Merged</strong> on May 15, 2026</sub>
 
 - **Changes:** <code>+16</code> <code>-5</code> across 2 files
 - **Language:** TypeScript
