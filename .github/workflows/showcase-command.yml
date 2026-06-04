@@ -95,8 +95,7 @@ jobs:
             echo "❌ Could not update showcase."
             echo
             echo "```txt"
-            printf '%s
-' "$COMMAND_OUTPUT"
+            printf '%s\n' "$COMMAND_OUTPUT"
             echo "```"
           } > failure-comment.md
           gh issue comment "${{ github.event.issue.number }}" --body-file failure-comment.md
