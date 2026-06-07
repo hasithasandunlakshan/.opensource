@@ -19,7 +19,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 <table align="center">
   <tr>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">23</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">24</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Contributions</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
@@ -158,7 +158,53 @@ These issues were identified while implementing new database tools. Resolving th
 
 AsyncAPI specification website
 
-**21 contributions** • TypeScript • **★ 707**
+**22 contributions** • TypeScript • **★ 707**
+
+---
+
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [implement FilterDropdown component and replace Select in Filtercomponent](https://github.com/asyncapi/website/pull/5531) <sub>[#5531](https://github.com/asyncapi/website/pull/5531)</sub>
+
+<sub><strong>Merged</strong> on Jun 7, 2026</sub>
+
+- **Changes:** <code>+129</code> <code>-17</code> across 3 files
+- **Language:** TypeScript
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
+
+
+<details>
+<summary>View PR description</summary>
+
+**Description**
+
+- The current dropdown filter on the blog page was using the full device height. Because it relied on the native HTML `<select>` element, it was difficult to style and control.
+- Implemented a simple custom dropdown component to replace it, which correctly manages the height and fully supports both dark and light themes.
+
+**Screenshots**
+
+| Theme | Before | After |
+| --- | --- | --- |
+| **Light** | <img width="1512" height="954" alt="Light Theme Before" src="https://github.com/user-attachments/assets/851696f3-e20f-47c5-af0e-777b492ce083" /> | <img width="822" height="660" alt="Light Theme After" src="https://github.com/user-attachments/assets/efd2c7b6-301c-4ce7-bb1a-ae685b331cfb" /> |
+| **Dark** | <img width="1512" height="952" alt="Dark Theme Before" src="https://github.com/user-attachments/assets/2fc95806-3e57-4fa6-893f-c2aa2afd17be" /> | <img width="809" height="722" alt="Dark Theme After" src="https://github.com/user-attachments/assets/358818d1-b659-4529-b8cb-0636d56a7ef4" /> |
+
+**Reproduce**
+
+1. Navigate to the blog page at https://deploy-preview-5531--asyncapi-website.netlify.app/blog.
+2. Click on the category filter to open the dropdown.
+3. Verify that the custom dropdown renders correctly and does not stretch to the full device height.
+4. Toggle between the light and dark themes to check the styling.
+
+**Related issue(s)**
+
+
+## Summary by CodeRabbit
+
+* **New Features**
+  * Replaced legacy select controls with a single‑select filter dropdown for type/author/tag — adds a dedicated dropdown component, outside‑click and Escape‑to‑close behavior, rotating caret visual state, and ARIA accessibility improvements.
+* **Tests**
+  * End-to-end tests updated to drive and assert the new dropdown controls, including robust option matching and selecting the first available option.
+
+</details>
+
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-07T06:32:54.535Z",
+  "updated_at": "2026-06-07T06:34:12.079Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -538,6 +538,32 @@
       "additions": 8,
       "deletions": 7,
       "files_changed": 4,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        }
+      ],
+      "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/website",
+      "pr_number": 5531,
+      "pr_title": "feat: implement FilterDropdown component and replace Select in Filtercomponent",
+      "pr_url": "https://github.com/asyncapi/website/pull/5531",
+      "pr_body": "**Description**\r\n\r\n- The current dropdown filter on the blog page was using the full device height. Because it relied on the native HTML `<select>` element, it was difficult to style and control.\r\n- Implemented a simple custom dropdown component to replace it, which correctly manages the height and fully supports both dark and light themes.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| **Light** | <img width=\"1512\" height=\"954\" alt=\"Light Theme Before\" src=\"https://github.com/user-attachments/assets/851696f3-e20f-47c5-af0e-777b492ce083\" /> | <img width=\"822\" height=\"660\" alt=\"Light Theme After\" src=\"https://github.com/user-attachments/assets/efd2c7b6-301c-4ce7-bb1a-ae685b331cfb\" /> |\r\n| **Dark** | <img width=\"1512\" height=\"952\" alt=\"Dark Theme Before\" src=\"https://github.com/user-attachments/assets/2fc95806-3e57-4fa6-893f-c2aa2afd17be\" /> | <img width=\"809\" height=\"722\" alt=\"Dark Theme After\" src=\"https://github.com/user-attachments/assets/358818d1-b659-4529-b8cb-0636d56a7ef4\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to the blog page at https://deploy-preview-5531--asyncapi-website.netlify.app/blog.\r\n2. Click on the category filter to open the dropdown.\r\n3. Verify that the custom dropdown renders correctly and does not stretch to the full device height.\r\n4. Toggle between the light and dark themes to check the styling.\r\n\r\n**Related issue(s)**\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **New Features**\n  * Replaced legacy select controls with a single‑select filter dropdown for type/author/tag — adds a dedicated dropdown component, outside‑click and Escape‑to‑close behavior, rotating caret visual state, and ARIA accessibility improvements.\n* **Tests**\n  * End-to-end tests updated to drive and assert the new dropdown controls, including robust option matching and selecting the first available option.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "merged_at": "2026-06-07T05:51:41Z",
+      "language": "TypeScript",
+      "repo_stars": 708,
+      "repo_description": "AsyncAPI specification website",
+      "labels": [
+        "ready-to-merge",
+        "autoupdate"
+      ],
+      "additions": 129,
+      "deletions": 17,
+      "files_changed": 3,
       "reviewers": [
         {
           "login": "princerajpoot20",
