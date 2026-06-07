@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-04T15:18:49.109Z",
+  "updated_at": "2026-06-07T06:32:54.535Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -513,6 +513,31 @@
       "additions": 1,
       "deletions": 2,
       "files_changed": 1,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        }
+      ],
+      "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/website",
+      "pr_number": 5545,
+      "pr_title": "fix: update broken allcontributors and TSC_MEMBERSHIP links",
+      "pr_url": "https://github.com/asyncapi/website/pull/5545",
+      "pr_body": "**Description**\r\n\r\nThis PR fixes several broken external links found across the website's documentation and configuration files. The `allcontributors.org` site restructured its URL paths from `/docs/en/` to `/en/reference/`, and the `TSC_MEMBERSHIP.md` file was moved from the root of the `asyncapi/community` repo to a subdirectory, making the old hardcoded path return a 404.\r\n\r\n**Changes made:**\r\n\r\n- Updated the `TSC_MEMBERSHIP` constant in `FooterList.ts` to point to the correct subdirectory path\r\n- Updated All Contributors specification links across documentation files\r\n- Updated All Contributors emoji-key links across documentation files\r\n- Updated the All Contributors bot link from the bare domain to the proper `/en/bot/` path\r\n\r\n**Link changes (old → new):**\r\n\r\n| File | Old URL | New URL |\r\n|------|----------|----------|\r\n| `components/footer/FooterList.ts` | [https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md) | [https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md) |\r\n| `CONTRIBUTING.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/about/index.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/about/index.md` | [https://allcontributors.org](https://allcontributors.org) | [https://allcontributors.org/en/bot/](https://allcontributors.org/en/bot/) |\r\n| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/emoji-key](https://allcontributors.org/docs/en/emoji-key) | [https://allcontributors.org/en/reference/emoji-key/](https://allcontributors.org/en/reference/emoji-key/) |\r\n\r\n**Related issue(s)**\r\n\r\n<!-- If there is an existing issue tracking these broken links, add: Fixes #5546 \r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Documentation**\n  * Standardized and updated documentation links and reference paths across the site.\n  * Refreshed contributor recognition links (All Contributors spec and bot) and updated governance/membership document links to their current locations.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "merged_at": "2026-06-07T05:36:50Z",
+      "language": "TypeScript",
+      "repo_stars": 708,
+      "repo_description": "AsyncAPI specification website",
+      "labels": [
+        "ready-to-merge"
+      ],
+      "additions": 8,
+      "deletions": 7,
+      "files_changed": 4,
       "reviewers": [
         {
           "login": "princerajpoot20",

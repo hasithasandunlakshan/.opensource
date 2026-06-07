@@ -19,7 +19,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 <table align="center">
   <tr>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">22</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">23</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Contributions</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
@@ -158,7 +158,55 @@ These issues were identified while implementing new database tools. Resolving th
 
 AsyncAPI specification website
 
-**20 contributions** • TypeScript • **★ 707**
+**21 contributions** • TypeScript • **★ 707**
+
+---
+
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [update broken allcontributors and TSC_MEMBERSHIP links](https://github.com/asyncapi/website/pull/5545) <sub>[#5545](https://github.com/asyncapi/website/pull/5545)</sub>
+
+<sub><strong>Merged</strong> on Jun 7, 2026</sub>
+
+- **Changes:** <code>+8</code> <code>-7</code> across 4 files
+- **Language:** TypeScript
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
+
+
+<details>
+<summary>View PR description</summary>
+
+**Description**
+
+This PR fixes several broken external links found across the website's documentation and configuration files. The `allcontributors.org` site restructured its URL paths from `/docs/en/` to `/en/reference/`, and the `TSC_MEMBERSHIP.md` file was moved from the root of the `asyncapi/community` repo to a subdirectory, making the old hardcoded path return a 404.
+
+**Changes made:**
+
+- Updated the `TSC_MEMBERSHIP` constant in `FooterList.ts` to point to the correct subdirectory path
+- Updated All Contributors specification links across documentation files
+- Updated All Contributors emoji-key links across documentation files
+- Updated the All Contributors bot link from the bare domain to the proper `/en/bot/` path
+
+**Link changes (old → new):**
+
+| File | Old URL | New URL |
+|------|----------|----------|
+| `components/footer/FooterList.ts` | [https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md) | [https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md) |
+| `CONTRIBUTING.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |
+| `markdown/about/index.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |
+| `markdown/about/index.md` | [https://allcontributors.org](https://allcontributors.org) | [https://allcontributors.org/en/bot/](https://allcontributors.org/en/bot/) |
+| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |
+| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/emoji-key](https://allcontributors.org/docs/en/emoji-key) | [https://allcontributors.org/en/reference/emoji-key/](https://allcontributors.org/en/reference/emoji-key/) |
+
+**Related issue(s)**
+
+
+## Summary by CodeRabbit
+
+* **Documentation**
+  * Standardized and updated documentation links and reference paths across the site.
+  * Refreshed contributor recognition links (All Contributors spec and bot) and updated governance/membership document links to their current locations.
+
+</details>
+
 
 ---
 
@@ -1128,7 +1176,7 @@ Fixes #5469
 
 <div align="center">
 
-<sub>Last updated: June 4, 2026</sub>
+<sub>Last updated: June 7, 2026</sub>
 
 <br/>
 

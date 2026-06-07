@@ -565,11 +565,44 @@
               </div>
               <div class="repo-stats">
                 <span aria-label="707 stars">★ 707</span>
-                <span>20 PRs</span>
+                <span>21 PRs</span>
               </div>
             </header>
             <div class="contribution-list">
-              <article class="contribution" data-title="fix: broken-url-in-tools" data-language="TypeScript">
+              <article class="contribution" data-title="fix: update broken allcontributors and TSC_MEMBERSHIP links" data-language="TypeScript">
+                <div class="pr-heading">
+                  <span class="merge-icon-wrap" title="Merged pull request"><svg class="merge-icon" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M5 3.25a2.25 2.25 0 1 1-2.75-2.193v9.886A2.25 2.25 0 1 1 .75 13V3.057A2.25 2.25 0 1 1 5 3.25Zm-2.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM14.75 3.25a2.25 2.25 0 0 1-3 2.122v.878A3.75 3.75 0 0 1 8 10H6.75a.75.75 0 0 1 0-1.5H8a2.25 2.25 0 0 0 2.25-2.25v-.878a2.25 2.25 0 1 1 4.5-2.122Zm-2.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path>
+  </svg></span>
+                  <a class="pr-title" href="https://github.com/asyncapi/website/pull/5545">fix: update broken allcontributors and TSC_MEMBERSHIP links</a>
+                  <a class="pr-number" href="https://github.com/asyncapi/website/pull/5545">#5,545</a>
+                </div>
+                
+                <details class="description-details">
+                  <summary>📝 <strong>See description</strong></summary>
+                  <script class="description-markdown" type="application/json">"**Description**\r\n\r\nThis PR fixes several broken external links found across the website's documentation and configuration files. The `allcontributors.org` site restructured its URL paths from `/docs/en/` to `/en/reference/`, and the `TSC_MEMBERSHIP.md` file was moved from the root of the `asyncapi/community` repo to a subdirectory, making the old hardcoded path return a 404.\r\n\r\n**Changes made:**\r\n\r\n- Updated the `TSC_MEMBERSHIP` constant in `FooterList.ts` to point to the correct subdirectory path\r\n- Updated All Contributors specification links across documentation files\r\n- Updated All Contributors emoji-key links across documentation files\r\n- Updated the All Contributors bot link from the bare domain to the proper `/en/bot/` path\r\n\r\n**Link changes (old → new):**\r\n\r\n| File | Old URL | New URL |\r\n|------|----------|----------|\r\n| `components/footer/FooterList.ts` | [https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md) | [https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md) |\r\n| `CONTRIBUTING.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/about/index.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/about/index.md` | [https://allcontributors.org](https://allcontributors.org) | [https://allcontributors.org/en/bot/](https://allcontributors.org/en/bot/) |\r\n| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/emoji-key](https://allcontributors.org/docs/en/emoji-key) | [https://allcontributors.org/en/reference/emoji-key/](https://allcontributors.org/en/reference/emoji-key/) |\r\n\r\n**Related issue(s)**\r\n\r\n\u003c!-- If there is an existing issue tracking these broken links, add: Fixes #5546 \r\n\r\n\u003c!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Documentation**\n  * Standardized and updated documentation links and reference paths across the site.\n  * Refreshed contributor recognition links (All Contributors spec and bot) and updated governance/membership document links to their current locations.\n\u003c!-- end of auto-generated comment: release notes by coderabbit.ai -->"</script>
+                  <div class="description markdown-body"></div>
+                </details>
+                
+                <div class="reviewed-by">
+                  <span>✅ Approved by</span>
+                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="24" height="24" /></a></div>
+                </div>
+                
+                
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> Jun 7, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+8</span>
+                    <span class="diff-badge del">-7</span>
+                  </li>
+                  <li><strong>Files</strong> 4</li>
+                </ul>
+                
+                <div class="labels"><span>ready-to-merge</span></div>
+              </article><article class="contribution" data-title="fix: broken-url-in-tools" data-language="TypeScript">
                 <div class="pr-heading">
                   <span class="merge-icon-wrap" title="Merged pull request"><svg class="merge-icon" viewBox="0 0 16 16" aria-hidden="true">
     <path d="M5 3.25a2.25 2.25 0 1 1-2.75-2.193v9.886A2.25 2.25 0 1 1 .75 13V3.057A2.25 2.25 0 1 1 5 3.25Zm-2.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM14.75 3.25a2.25 2.25 0 0 1-3 2.122v.878A3.75 3.75 0 0 1 8 10H6.75a.75.75 0 0 1 0-1.5H8a2.25 2.25 0 0 0 2.25-2.25v-.878a2.25 2.25 0 1 1 4.5-2.122Zm-2.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path>
@@ -1237,7 +1270,7 @@
     </main>
     <footer>
       <div class="shell">
-        Updated Jun 4, 2026. Data available in <a href="contributions.json">contributions.json</a>.
+        Updated Jun 7, 2026. Data available in <a href="contributions.json">contributions.json</a>.
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
