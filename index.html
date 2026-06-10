@@ -1297,13 +1297,63 @@
                 
               </article>
             </div>
+          </section><section class="repo-section" data-repo="asyncapi/conference-website" data-languages="TypeScript">
+            <header class="repo-header">
+              <div>
+                <a class="repo-name" href="https://github.com/asyncapi/conference-website">
+                  <img src="https://github.com/asyncapi.png" alt="" width="28" height="28" />
+                  asyncapi/conference-website
+                </a>
+                <p>Website for the AsyncAPI online conference</p>
+              </div>
+              <div class="repo-stats">
+                <span aria-label="46 stars">★ 46</span>
+                <span>1 PR</span>
+              </div>
+            </header>
+            <div class="contribution-list">
+              <article class="contribution" data-title="feat: implement useSectionTracker hook for dynamic navbar active states" data-language="TypeScript">
+                <div class="pr-heading">
+                  <span class="merge-icon-wrap" title="Merged pull request"><svg class="merge-icon" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M5 3.25a2.25 2.25 0 1 1-2.75-2.193v9.886A2.25 2.25 0 1 1 .75 13V3.057A2.25 2.25 0 1 1 5 3.25Zm-2.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM14.75 3.25a2.25 2.25 0 0 1-3 2.122v.878A3.75 3.75 0 0 1 8 10H6.75a.75.75 0 0 1 0-1.5H8a2.25 2.25 0 0 0 2.25-2.25v-.878a2.25 2.25 0 1 1 4.5-2.122Zm-2.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path>
+  </svg></span>
+                  <a class="pr-title" href="https://github.com/asyncapi/conference-website/pull/1006">feat: implement useSectionTracker hook for dynamic navbar active states</a>
+                  <a class="pr-number" href="https://github.com/asyncapi/conference-website/pull/1006">#1,006</a>
+                </div>
+                
+                <details class="description-details">
+                  <summary>📝 <strong>See description</strong></summary>
+                  <script class="description-markdown" type="application/json">"**Description**\r\n\r\nThis PR implements dynamic viewport scroll-spy section tracking and refactors the navigation menu states to address the static feedback issues outlined in the design report.\r\n\r\n### Core Implementation Details\r\n- **The Tracking Hook:** Created a performance-optimized `useSectionTracker` custom hook using an `IntersectionObserver` combined with `hashchange` event listeners to accurately track when homepage sections enter the viewport.\r\n- **Desktop Component Update:** Integrated the tracking hook into the main header layout. Active items now seamlessly show an elegant, expanding CSS underline animation as the user scrolls or clicks anchor points.\r\n- **Mobile Drawer Updates (`NavDrop`):** Integrated the section tracker into the mobile menu drawer. Active targets within the mobile layout are now visually highlighted with a bold font-weight modification and a branded accent color (`#C6BED9`) left-side border.\r\n- **Submenu Alignment:** Ensured dropdown submenus seamlessly compute active states using the unified `isActive()` utility scheme.\r\n\r\n### Visual Validation\r\nA recording demonstrating the visual state updates across viewports is attached to the corresponding tracking issue.\r\n\r\n**Related issue(s)**\r\nFixes #1005"</script>
+                  <div class="description markdown-body"></div>
+                </details>
+                
+                <div class="reviewed-by">
+                  <span>✅ Approved by</span>
+                  <div class="reviewers"><a href="https://github.com/princerajpoot20" title="princerajpoot20"><img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&amp;v=4" alt="princerajpoot20" width="24" height="24" /></a><a href="https://github.com/TenzDelek" title="TenzDelek"><img src="https://avatars.githubusercontent.com/u/122612557?u=7e8bcfb06d1868f2ed930640e8a6e69f498b0c51&amp;v=4" alt="TenzDelek" width="24" height="24" /></a></div>
+                </div>
+                
+                
+                <ul class="pr-facts">
+                  <li><strong>Merged</strong> Jun 10, 2026</li>
+                  <li><strong>Language</strong> TypeScript</li>
+                  <li class="change-fact">
+                    <strong>Changes</strong>
+                    <span class="diff-badge add">+149</span>
+                    <span class="diff-badge del">-6</span>
+                  </li>
+                  <li><strong>Files</strong> 3</li>
+                </ul>
+                
+                <div class="labels"><span>ready-to-merge</span></div>
+              </article>
+            </div>
           </section>
       </div>
       <div class="empty" id="empty" hidden>No matching contributions found.</div>
     </main>
     <footer>
       <div class="shell">
-        Updated Jun 7, 2026. Data available in <a href="contributions.json">contributions.json</a>.
+        Updated Jun 10, 2026. Data available in <a href="contributions.json">contributions.json</a>.
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

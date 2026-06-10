@@ -19,11 +19,11 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 <table align="center">
   <tr>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">24</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">25</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Contributions</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">3</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">4</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Projects</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
@@ -1217,12 +1217,55 @@ Fixes #5469
 ---
 
 
+### <img src="https://github.com/asyncapi.png" width="28" height="28" align="absmiddle" alt="asyncapi"> [asyncapi/conference-website](https://github.com/asyncapi/conference-website)
+
+Website for the AsyncAPI online conference
+
+**1 contribution** • TypeScript • **★ 46**
+
+---
+
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [implement useSectionTracker hook for dynamic navbar active states](https://github.com/asyncapi/conference-website/pull/1006) <sub>[#1006](https://github.com/asyncapi/conference-website/pull/1006)</sub>
+
+<sub><strong>Merged</strong> on Jun 10, 2026</sub>
+
+- **Changes:** <code>+149</code> <code>-6</code> across 3 files
+- **Language:** TypeScript
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20"> <img src="https://avatars.githubusercontent.com/u/122612557?u=7e8bcfb06d1868f2ed930640e8a6e69f498b0c51&v=4" width="24" height="24" align="absmiddle" alt="TenzDelek" title="TenzDelek">
+
+
+<details>
+<summary>View PR description</summary>
+
+**Description**
+
+This PR implements dynamic viewport scroll-spy section tracking and refactors the navigation menu states to address the static feedback issues outlined in the design report.
+
+### Core Implementation Details
+- **The Tracking Hook:** Created a performance-optimized `useSectionTracker` custom hook using an `IntersectionObserver` combined with `hashchange` event listeners to accurately track when homepage sections enter the viewport.
+- **Desktop Component Update:** Integrated the tracking hook into the main header layout. Active items now seamlessly show an elegant, expanding CSS underline animation as the user scrolls or clicks anchor points.
+- **Mobile Drawer Updates (`NavDrop`):** Integrated the section tracker into the mobile menu drawer. Active targets within the mobile layout are now visually highlighted with a bold font-weight modification and a branded accent color (`#C6BED9`) left-side border.
+- **Submenu Alignment:** Ensured dropdown submenus seamlessly compute active states using the unified `isActive()` utility scheme.
+
+### Visual Validation
+A recording demonstrating the visual state updates across viewports is attached to the corresponding tracking issue.
+
+**Related issue(s)**
+Fixes #1005
+
+</details>
+
+
+
+---
+
+
 
 ---
 
 <div align="center">
 
-<sub>Last updated: June 7, 2026</sub>
+<sub>Last updated: June 10, 2026</sub>
 
 <br/>
 

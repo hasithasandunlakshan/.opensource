@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-07T06:34:12.079Z",
+  "updated_at": "2026-06-10T07:57:05.501Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -571,6 +571,35 @@
         }
       ],
       "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/conference-website",
+      "pr_number": 1006,
+      "pr_title": "feat: implement useSectionTracker hook for dynamic navbar active states",
+      "pr_url": "https://github.com/asyncapi/conference-website/pull/1006",
+      "pr_body": "**Description**\r\n\r\nThis PR implements dynamic viewport scroll-spy section tracking and refactors the navigation menu states to address the static feedback issues outlined in the design report.\r\n\r\n### Core Implementation Details\r\n- **The Tracking Hook:** Created a performance-optimized `useSectionTracker` custom hook using an `IntersectionObserver` combined with `hashchange` event listeners to accurately track when homepage sections enter the viewport.\r\n- **Desktop Component Update:** Integrated the tracking hook into the main header layout. Active items now seamlessly show an elegant, expanding CSS underline animation as the user scrolls or clicks anchor points.\r\n- **Mobile Drawer Updates (`NavDrop`):** Integrated the section tracker into the mobile menu drawer. Active targets within the mobile layout are now visually highlighted with a bold font-weight modification and a branded accent color (`#C6BED9`) left-side border.\r\n- **Submenu Alignment:** Ensured dropdown submenus seamlessly compute active states using the unified `isActive()` utility scheme.\r\n\r\n### Visual Validation\r\nA recording demonstrating the visual state updates across viewports is attached to the corresponding tracking issue.\r\n\r\n**Related issue(s)**\r\nFixes #1005 ",
+      "merged_at": "2026-06-10T04:04:05Z",
+      "language": "TypeScript",
+      "repo_stars": 46,
+      "repo_description": "Website for the AsyncAPI online conference",
+      "labels": [
+        "ready-to-merge"
+      ],
+      "additions": 149,
+      "deletions": 6,
+      "files_changed": 3,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        },
+        {
+          "login": "TenzDelek",
+          "avatar_url": "https://avatars.githubusercontent.com/u/122612557?u=7e8bcfb06d1868f2ed930640e8a6e69f498b0c51&v=4"
+        }
+      ],
+      "merged_by": "asyncapi-bot",
       "showcase": true
     }
   ]
