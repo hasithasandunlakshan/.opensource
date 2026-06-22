@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-03T21:31:51.705Z",
+  "updated_at": "2026-06-10T07:57:05.501Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -19,7 +19,7 @@
       "pr_body": "## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.\r\n\r\nYES\r\n\r\n## What kind of change does this PR introduce?\r\n\r\nRefactor\r\n\r\n## What is the current behavior?\r\n\r\nThe Auth policy editor flow still uses the deprecated `Modal` component and `Modal.Content` / `Modal.Separator` helpers.\r\n\r\n## What is the new behavior?\r\n\r\nThe Auth policy editor flow now uses `Dialog` primitives instead:\r\n\r\n- `Dialog`\r\n- `DialogContent`\r\n- `DialogHeader`\r\n- `DialogTitle`\r\n- `DialogSection`\r\n- `DialogSectionSeparator`\r\n\r\nBehavior is intended to remain unchanged.\r\n\r\n## Additional context\r\n\r\n- Fixes #46375 \r\n\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Refactor**\n  * Updated the policy editor and review flows to a unified dialog layout for a cleaner, more consistent UI.\n  * Sections and footer controls were reorganized for clearer grouping and improved button placement.\n  * Existing behaviors (viewing templates, review/save flow, and close confirmation) are preserved.\n\n<!-- review_stack_entry_start -->\r\n\r\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46374?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\r\n\r\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
       "merged_at": "2026-05-26T16:18:21Z",
       "language": "TypeScript",
-      "repo_stars": 103400,
+      "repo_stars": 103430,
       "repo_description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
       "labels": [],
       "additions": 81,
@@ -42,7 +42,7 @@
       "pr_body": "## What kind of change does this PR introduce?\r\n\r\nBug fix\r\n\r\n## What is the current behavior?\r\n\r\n1. The `delete branch` test case in `server.test.ts` fails in standard JavaScript environments due to an invalid negative array index `branches[-1]`.\r\n2. There is a typo in one of the Edge Function test descriptions: `eploy edge function validates slug format`.\r\n\r\n## What is the new behavior?\r\n\r\n1. Replaces `branches[-1]` with the modern JavaScript `.at(-1)` method to safely access the last element of the array.\r\n2. Corrected the typo from `eploy` to `deploy`.\r\n\r\n## Additional context\r\n\r\nThese issues were identified while implementing new database tools. Resolving them ensures a stable test suite for all contributors.\r\n",
       "merged_at": "2026-05-15T21:05:16Z",
       "language": "TypeScript",
-      "repo_stars": 2710,
+      "repo_stars": 2713,
       "repo_description": "Connect Supabase to your AI assistants",
       "labels": [],
       "additions": 16,
@@ -276,7 +276,7 @@
       "pr_title": "fix: add dark theme support for Warning component",
       "pr_url": "https://github.com/asyncapi/website/pull/5517",
       "pr_body": "**Description**\r\n\r\n- Enhanced the design of the warning components in the Roadmap section.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| Light | <img width=\"646\" height=\"204\" alt=\"Screenshot Light Before\" src=\"https://github.com/user-attachments/assets/d95539fc-4dd9-494e-b23d-82ce5d9bf6fd\" /> | <img width=\"714\" height=\"206\" alt=\"Screenshot Light After\" src=\"https://github.com/user-attachments/assets/e30575dc-fdb9-4fd8-a443-be7c3f7abc4b\" /> |\r\n| Dark | <img width=\"635\" height=\"174\" alt=\"Screenshot Dark Before\" src=\"https://github.com/user-attachments/assets/e3206a41-ab7a-491c-9b93-a3ad43c9e8e8\" /> | <img width=\"723\" height=\"215\" alt=\"Screenshot Dark After\" src=\"https://github.com/user-attachments/assets/22f5f3ae-2005-41e1-9758-f29903fb558f\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to https://deploy-preview-5517--asyncapi-website.netlify.app/roadmap\r\n2. Scroll down to see the warning component.\r\n3. Test the UI by toggling between the light and dark themes.\r\n\r\n**Related issue(s)**\r\n- N/A",
-      "merged_at": "2026-05-29T12:19:20Z",
+      "merged_at": "2026-05-29T12:19:19Z",
       "language": "TypeScript",
       "repo_stars": 707,
       "repo_description": "AsyncAPI specification website",
@@ -520,6 +520,86 @@
         }
       ],
       "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/website",
+      "pr_number": 5545,
+      "pr_title": "fix: update broken allcontributors and TSC_MEMBERSHIP links",
+      "pr_url": "https://github.com/asyncapi/website/pull/5545",
+      "pr_body": "**Description**\r\n\r\nThis PR fixes several broken external links found across the website's documentation and configuration files. The `allcontributors.org` site restructured its URL paths from `/docs/en/` to `/en/reference/`, and the `TSC_MEMBERSHIP.md` file was moved from the root of the `asyncapi/community` repo to a subdirectory, making the old hardcoded path return a 404.\r\n\r\n**Changes made:**\r\n\r\n- Updated the `TSC_MEMBERSHIP` constant in `FooterList.ts` to point to the correct subdirectory path\r\n- Updated All Contributors specification links across documentation files\r\n- Updated All Contributors emoji-key links across documentation files\r\n- Updated the All Contributors bot link from the bare domain to the proper `/en/bot/` path\r\n\r\n**Link changes (old → new):**\r\n\r\n| File | Old URL | New URL |\r\n|------|----------|----------|\r\n| `components/footer/FooterList.ts` | [https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/TSC_MEMBERSHIP.md) | [https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md](https://github.com/asyncapi/community/blob/master/docs/020-governance-and-policies/TSC_MEMBERSHIP.md) |\r\n| `CONTRIBUTING.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/about/index.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/about/index.md` | [https://allcontributors.org](https://allcontributors.org) | [https://allcontributors.org/en/bot/](https://allcontributors.org/en/bot/) |\r\n| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/specification](https://allcontributors.org/docs/en/specification) | [https://allcontributors.org/en/reference/specification/](https://allcontributors.org/en/reference/specification/) |\r\n| `markdown/docs/.../recognize-contributors.md` | [https://allcontributors.org/docs/en/emoji-key](https://allcontributors.org/docs/en/emoji-key) | [https://allcontributors.org/en/reference/emoji-key/](https://allcontributors.org/en/reference/emoji-key/) |\r\n\r\n**Related issue(s)**\r\n\r\n<!-- If there is an existing issue tracking these broken links, add: Fixes #5546 \r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Documentation**\n  * Standardized and updated documentation links and reference paths across the site.\n  * Refreshed contributor recognition links (All Contributors spec and bot) and updated governance/membership document links to their current locations.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "merged_at": "2026-06-07T05:36:50Z",
+      "language": "TypeScript",
+      "repo_stars": 708,
+      "repo_description": "AsyncAPI specification website",
+      "labels": [
+        "ready-to-merge"
+      ],
+      "additions": 8,
+      "deletions": 7,
+      "files_changed": 4,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        }
+      ],
+      "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/website",
+      "pr_number": 5531,
+      "pr_title": "feat: implement FilterDropdown component and replace Select in Filtercomponent",
+      "pr_url": "https://github.com/asyncapi/website/pull/5531",
+      "pr_body": "**Description**\r\n\r\n- The current dropdown filter on the blog page was using the full device height. Because it relied on the native HTML `<select>` element, it was difficult to style and control.\r\n- Implemented a simple custom dropdown component to replace it, which correctly manages the height and fully supports both dark and light themes.\r\n\r\n**Screenshots**\r\n\r\n| Theme | Before | After |\r\n| --- | --- | --- |\r\n| **Light** | <img width=\"1512\" height=\"954\" alt=\"Light Theme Before\" src=\"https://github.com/user-attachments/assets/851696f3-e20f-47c5-af0e-777b492ce083\" /> | <img width=\"822\" height=\"660\" alt=\"Light Theme After\" src=\"https://github.com/user-attachments/assets/efd2c7b6-301c-4ce7-bb1a-ae685b331cfb\" /> |\r\n| **Dark** | <img width=\"1512\" height=\"952\" alt=\"Dark Theme Before\" src=\"https://github.com/user-attachments/assets/2fc95806-3e57-4fa6-893f-c2aa2afd17be\" /> | <img width=\"809\" height=\"722\" alt=\"Dark Theme After\" src=\"https://github.com/user-attachments/assets/358818d1-b659-4529-b8cb-0636d56a7ef4\" /> |\r\n\r\n**Reproduce**\r\n\r\n1. Navigate to the blog page at https://deploy-preview-5531--asyncapi-website.netlify.app/blog.\r\n2. Click on the category filter to open the dropdown.\r\n3. Verify that the custom dropdown renders correctly and does not stretch to the full device height.\r\n4. Toggle between the light and dark themes to check the styling.\r\n\r\n**Related issue(s)**\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **New Features**\n  * Replaced legacy select controls with a single‑select filter dropdown for type/author/tag — adds a dedicated dropdown component, outside‑click and Escape‑to‑close behavior, rotating caret visual state, and ARIA accessibility improvements.\n* **Tests**\n  * End-to-end tests updated to drive and assert the new dropdown controls, including robust option matching and selecting the first available option.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "merged_at": "2026-06-07T05:51:41Z",
+      "language": "TypeScript",
+      "repo_stars": 708,
+      "repo_description": "AsyncAPI specification website",
+      "labels": [
+        "ready-to-merge",
+        "autoupdate"
+      ],
+      "additions": 129,
+      "deletions": 17,
+      "files_changed": 3,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        }
+      ],
+      "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/conference-website",
+      "pr_number": 1006,
+      "pr_title": "feat: implement useSectionTracker hook for dynamic navbar active states",
+      "pr_url": "https://github.com/asyncapi/conference-website/pull/1006",
+      "pr_body": "**Description**\r\n\r\nThis PR implements dynamic viewport scroll-spy section tracking and refactors the navigation menu states to address the static feedback issues outlined in the design report.\r\n\r\n### Core Implementation Details\r\n- **The Tracking Hook:** Created a performance-optimized `useSectionTracker` custom hook using an `IntersectionObserver` combined with `hashchange` event listeners to accurately track when homepage sections enter the viewport.\r\n- **Desktop Component Update:** Integrated the tracking hook into the main header layout. Active items now seamlessly show an elegant, expanding CSS underline animation as the user scrolls or clicks anchor points.\r\n- **Mobile Drawer Updates (`NavDrop`):** Integrated the section tracker into the mobile menu drawer. Active targets within the mobile layout are now visually highlighted with a bold font-weight modification and a branded accent color (`#C6BED9`) left-side border.\r\n- **Submenu Alignment:** Ensured dropdown submenus seamlessly compute active states using the unified `isActive()` utility scheme.\r\n\r\n### Visual Validation\r\nA recording demonstrating the visual state updates across viewports is attached to the corresponding tracking issue.\r\n\r\n**Related issue(s)**\r\nFixes #1005 ",
+      "merged_at": "2026-06-10T04:04:05Z",
+      "language": "TypeScript",
+      "repo_stars": 46,
+      "repo_description": "Website for the AsyncAPI online conference",
+      "labels": [
+        "ready-to-merge"
+      ],
+      "additions": 149,
+      "deletions": 6,
+      "files_changed": 3,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        },
+        {
+          "login": "TenzDelek",
+          "avatar_url": "https://avatars.githubusercontent.com/u/122612557?u=7e8bcfb06d1868f2ed930640e8a6e69f498b0c51&v=4"
+        }
+      ],
+      "merged_by": "asyncapi-bot",
       "showcase": true
     }
   ]
