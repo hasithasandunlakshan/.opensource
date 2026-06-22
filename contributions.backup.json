@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-22T11:15:24.093Z",
+  "updated_at": "2026-06-22T11:54:05.207Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -19,7 +19,7 @@
       "pr_body": "## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.\r\n\r\nYES\r\n\r\n## What kind of change does this PR introduce?\r\n\r\nRefactor\r\n\r\n## What is the current behavior?\r\n\r\nThe Auth policy editor flow still uses the deprecated `Modal` component and `Modal.Content` / `Modal.Separator` helpers.\r\n\r\n## What is the new behavior?\r\n\r\nThe Auth policy editor flow now uses `Dialog` primitives instead:\r\n\r\n- `Dialog`\r\n- `DialogContent`\r\n- `DialogHeader`\r\n- `DialogTitle`\r\n- `DialogSection`\r\n- `DialogSectionSeparator`\r\n\r\nBehavior is intended to remain unchanged.\r\n\r\n## Additional context\r\n\r\n- Fixes #46375 \r\n\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Refactor**\n  * Updated the policy editor and review flows to a unified dialog layout for a cleaner, more consistent UI.\n  * Sections and footer controls were reorganized for clearer grouping and improved button placement.\n  * Existing behaviors (viewing templates, review/save flow, and close confirmation) are preserved.\n\n<!-- review_stack_entry_start -->\r\n\r\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46374?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\r\n\r\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
       "merged_at": "2026-05-26T16:18:21Z",
       "language": "TypeScript",
-      "repo_stars": 104660,
+      "repo_stars": 104661,
       "repo_description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
       "labels": [],
       "additions": 81,
