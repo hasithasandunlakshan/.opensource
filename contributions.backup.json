@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-22T11:54:05.207Z",
+  "updated_at": "2026-07-02T16:21:08.045Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -19,7 +19,7 @@
       "pr_body": "## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.\r\n\r\nYES\r\n\r\n## What kind of change does this PR introduce?\r\n\r\nRefactor\r\n\r\n## What is the current behavior?\r\n\r\nThe Auth policy editor flow still uses the deprecated `Modal` component and `Modal.Content` / `Modal.Separator` helpers.\r\n\r\n## What is the new behavior?\r\n\r\nThe Auth policy editor flow now uses `Dialog` primitives instead:\r\n\r\n- `Dialog`\r\n- `DialogContent`\r\n- `DialogHeader`\r\n- `DialogTitle`\r\n- `DialogSection`\r\n- `DialogSectionSeparator`\r\n\r\nBehavior is intended to remain unchanged.\r\n\r\n## Additional context\r\n\r\n- Fixes #46375 \r\n\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Refactor**\n  * Updated the policy editor and review flows to a unified dialog layout for a cleaner, more consistent UI.\n  * Sections and footer controls were reorganized for clearer grouping and improved button placement.\n  * Existing behaviors (viewing templates, review/save flow, and close confirmation) are preserved.\n\n<!-- review_stack_entry_start -->\r\n\r\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46374?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\r\n\r\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
       "merged_at": "2026-05-26T16:18:21Z",
       "language": "TypeScript",
-      "repo_stars": 104661,
+      "repo_stars": 104668,
       "repo_description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
       "labels": [],
       "additions": 81,
@@ -569,6 +569,29 @@
         }
       ],
       "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "supabase/supabase",
+      "pr_number": 46025,
+      "pr_title": "fix(www): resolve globe component memory leak and resizing issues",
+      "pr_url": "https://github.com/supabase/supabase/pull/46025",
+      "pr_body": "## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.\r\nYES\r\n\r\n## What kind of change does this PR introduce?\r\n\r\nBug fix\r\n\r\n## What is the current behavior?\r\n\r\nResolves #46026\r\n\r\n1. **Memory Leak**: The `<Globe />` component in the `www` app creates a new `debouncedResize` event listener every time the theme changes, but in the `useEffect` cleanup function, it attempts to remove `onResize` instead. Because these are two different function references in memory, the listener is never removed, causing a memory leak that grows with theme toggling.\r\n2. **Resolution Scaling**: The WebGL `cobe` globe instance is not notified of width changes dynamically. When a user resizes their browser window, the `<canvas>` resizes via CSS, but the internal 3D rendering stretches and becomes distorted because `state.width` and `state.height` are not updated inside the `onRender` loop.\r\n3. **Local Dev Rendering**: Due to async CSS loading in Next.js development environments, `offsetWidth` evaluates to 0 on initial mount, causing the globe to render invisibly until manually resized.\r\n\r\n## What is the new behavior?\r\n\r\n1. **Memory Leak Fixed**: Switched from a global `window.addEventListener('resize')` to a `ResizeObserver` attached directly to the canvas container, properly disconnecting it on unmount.\r\n2. **Resolution Scaling Fixed**: Added `state.width` and `state.height` updates directly inside the `onRender` callback. The globe now maintains its aspect ratio and high resolution dynamically as the user resizes the browser.\r\n3. **Local Dev Rendering Fixed**: The `ResizeObserver` correctly triggers a size recalculation exactly when the local Next.js CSS finishes injecting, allowing the globe to render immediately in local dev.\r\n4. **Safe Timeout**: Wrapped the initial opacity update in a null check and correctly store/clear the `timeoutId` during unmount.\r\n\r\n## Additional context\r\n\r\n## Before\r\nhttps://github.com/user-attachments/assets/813e077d-bcf4-4584-b3da-46c01b6af001\r\n\r\nhttps://github.com/user-attachments/assets/73cef575-27e3-44d2-a191-fd192dec3ef9\r\n\r\n## After\r\nhttps://github.com/user-attachments/assets/cd68c66d-6a35-43d0-971f-04627ef532fb\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **Bug Fixes**\n  * Globe now adapts instantly to container size changes for smoother, consistent rendering.\n  * Improved lifecycle cleanup to reliably stop background tasks and clear timers, reducing memory leaks.\n  * Enhanced stability and performance for longer-running sessions of the Globe component.\n\n<!-- review_stack_entry_start -->\n\n[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46025?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)\n\n<!-- review_stack_entry_end -->\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "merged_at": "2026-07-02T09:31:38Z",
+      "language": "TypeScript",
+      "repo_stars": 105124,
+      "repo_description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "labels": [],
+      "additions": 30,
+      "deletions": 14,
+      "files_changed": 1,
+      "reviewers": [
+        {
+          "login": "fsansalvadore",
+          "avatar_url": "https://avatars.githubusercontent.com/u/25671831?u=86277d64a060914c254478ca778c9b29d09ddf15&v=4"
+        }
+      ],
+      "merged_by": "fsansalvadore",
       "showcase": true
     }
   ]
