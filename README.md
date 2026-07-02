@@ -19,7 +19,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 <table align="center">
   <tr>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">24</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">25</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Contributions</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
@@ -44,7 +44,68 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 
 The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.
 
-**1 contribution** • TypeScript • **★ 104,668**
+**2 contributions** • TypeScript • **★ 104,668**
+
+---
+
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [resolve globe component memory leak and resizing issues](https://github.com/supabase/supabase/pull/46025) <sub>[#46025](https://github.com/supabase/supabase/pull/46025)</sub>
+
+<sub><strong>Merged</strong> on Jul 2, 2026</sub>
+
+- **Changes:** <code>+30</code> <code>-14</code> across 1 file
+- **Language:** TypeScript
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/25671831?u=86277d64a060914c254478ca778c9b29d09ddf15&v=4" width="24" height="24" align="absmiddle" alt="fsansalvadore" title="fsansalvadore">
+
+
+<details>
+<summary>View PR description</summary>
+
+## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.
+YES
+
+## What kind of change does this PR introduce?
+
+Bug fix
+
+## What is the current behavior?
+
+Resolves #46026
+
+1. **Memory Leak**: The `<Globe />` component in the `www` app creates a new `debouncedResize` event listener every time the theme changes, but in the `useEffect` cleanup function, it attempts to remove `onResize` instead. Because these are two different function references in memory, the listener is never removed, causing a memory leak that grows with theme toggling.
+2. **Resolution Scaling**: The WebGL `cobe` globe instance is not notified of width changes dynamically. When a user resizes their browser window, the `<canvas>` resizes via CSS, but the internal 3D rendering stretches and becomes distorted because `state.width` and `state.height` are not updated inside the `onRender` loop.
+3. **Local Dev Rendering**: Due to async CSS loading in Next.js development environments, `offsetWidth` evaluates to 0 on initial mount, causing the globe to render invisibly until manually resized.
+
+## What is the new behavior?
+
+1. **Memory Leak Fixed**: Switched from a global `window.addEventListener('resize')` to a `ResizeObserver` attached directly to the canvas container, properly disconnecting it on unmount.
+2. **Resolution Scaling Fixed**: Added `state.width` and `state.height` updates directly inside the `onRender` callback. The globe now maintains its aspect ratio and high resolution dynamically as the user resizes the browser.
+3. **Local Dev Rendering Fixed**: The `ResizeObserver` correctly triggers a size recalculation exactly when the local Next.js CSS finishes injecting, allowing the globe to render immediately in local dev.
+4. **Safe Timeout**: Wrapped the initial opacity update in a null check and correctly store/clear the `timeoutId` during unmount.
+
+## Additional context
+
+## Before
+https://github.com/user-attachments/assets/813e077d-bcf4-4584-b3da-46c01b6af001
+
+https://github.com/user-attachments/assets/73cef575-27e3-44d2-a191-fd192dec3ef9
+
+## After
+https://github.com/user-attachments/assets/cd68c66d-6a35-43d0-971f-04627ef532fb
+
+
+## Summary by CodeRabbit
+
+* **Bug Fixes**
+  * Globe now adapts instantly to container size changes for smoother, consistent rendering.
+  * Improved lifecycle cleanup to reliably stop background tasks and clear timers, reducing memory leaks.
+  * Enhanced stability and performance for longer-running sessions of the Globe component.
+
+
+
+[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46025?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)
+
+</details>
+
 
 ---
 
@@ -119,7 +180,7 @@ Connect Supabase to your AI assistants
 
 #### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [resolve edge function test typo and invalid branch array access](https://github.com/supabase/mcp/pull/279) <sub>[#279](https://github.com/supabase/mcp/pull/279)</sub>
 
-<sub><strong>Merged</strong> on May 16, 2026</sub>
+<sub><strong>Merged</strong> on May 15, 2026</sub>
 
 - **Changes:** <code>+16</code> <code>-5</code> across 2 files
 - **Language:** TypeScript
@@ -1223,7 +1284,7 @@ Fixes #5469
 
 <div align="center">
 
-<sub>Last updated: June 22, 2026</sub>
+<sub>Last updated: July 2, 2026</sub>
 
 <br/>
 
