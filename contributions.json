@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-02T22:07:15.408Z",
+  "updated_at": "2026-07-08T16:00:40.274Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -621,6 +621,29 @@
         }
       ],
       "merged_by": "asyncapi-bot",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/website",
+      "pr_number": 5589,
+      "pr_title": "feat: add connect page with social media links and reusable card component.",
+      "pr_url": "https://github.com/asyncapi/website/pull/5589",
+      "pr_body": "## Description\r\n\r\n* Added a new `/connect` page (`pages/connect.tsx` and `pages/[lang]/connect.tsx`) to showcase official AsyncAPI social media, community, and contact links in a dedicated location.\r\n* Created a reusable and responsive `ConnectCard` component with smooth hover animations, automatic external link handling, and support for both light and dark themes.\r\n* Added custom SVG icons (`SlackColor.tsx`, `LinkedInColor.tsx`, `MastodonColor.tsx`) and a `Podium.tsx` icon to closely match the provided design mockup.\r\n* Implemented a responsive card grid that adapts across desktop and mobile devices.\r\n* Configured the layout to automatically center the final card when an odd number of links is displayed, maintaining a balanced visual appearance.\r\n* Ensured consistent styling and accessibility across supported themes and screen sizes.\r\n\r\n## Screenshots\r\n\r\n### Light Theme\r\n\r\n<img width=\"1507\" height=\"754\" alt=\"Screenshot 2026-06-24 at 03 25 31\" src=\"https://github.com/user-attachments/assets/8ad480d8-42fa-4df6-a914-3768615c770e\" />\r\n\r\n### Dark Theme\r\n\r\n<img width=\"1509\" height=\"762\" alt=\"Screenshot 2026-06-24 at 03 25 43\" src=\"https://github.com/user-attachments/assets/26720114-3e64-422a-bd60-13ee47a7ee3a\" />\r\n\r\n### Mobile Light Theme\r\n\r\n<img width=\"380\" height=\"668\" alt=\"Screenshot 2026-06-24 at 03 27 25\" src=\"https://github.com/user-attachments/assets/d3bb41ec-a439-48fd-8320-fafb5d4cc10e\" />\r\n\r\n### Mobile Dark Theme\r\n\r\n<img width=\"377\" height=\"666\" alt=\"Screenshot 2026-06-24 at 03 27 32\" src=\"https://github.com/user-attachments/assets/c8adebbc-51f2-4ef2-959c-fa3d7f47c916\" />\r\n\r\n## Reproduce\r\n\r\n- Visit https://deploy-preview-5589--asyncapi-website.netlify.app/connect\r\n\r\n## Related Issue(s)\r\n\r\nResolves #4077.\r\n\n\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\n## Summary by CodeRabbit\n\n* **New Features**\n  * Launched a new **Connect** page with a “Get in Touch” heading and a responsive contact-card grid.\n  * Added connect cards for **Slack, Conferences, LinkedIn, Mastodon, Email, and GitHub**, each with a matching icon.\n  * External destinations now open safely in a new tab, while internal destinations stay in the same tab.\n  * On larger screens, the layout smartly adjusts card spanning when needed.\n* **Updates**\n  * Footer social links and “Email Us” now draw from a centralized community links configuration.\n* **Tests**\n  * Added Cypress coverage to validate the Connect page and each card’s destination.\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "merged_at": "2026-07-08T15:35:15Z",
+      "language": "TypeScript",
+      "repo_stars": 713,
+      "repo_description": "AsyncAPI specification website",
+      "labels": [],
+      "additions": 354,
+      "deletions": 13,
+      "files_changed": 14,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        }
+      ],
+      "merged_by": "princerajpoot20",
       "showcase": true
     }
   ]

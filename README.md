@@ -19,7 +19,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 <table align="center">
   <tr>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">26</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">27</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Contributions</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
@@ -180,7 +180,7 @@ Connect Supabase to your AI assistants
 
 #### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [resolve edge function test typo and invalid branch array access](https://github.com/supabase/mcp/pull/279) <sub>[#279](https://github.com/supabase/mcp/pull/279)</sub>
 
-<sub><strong>Merged</strong> on May 16, 2026</sub>
+<sub><strong>Merged</strong> on May 15, 2026</sub>
 
 - **Changes:** <code>+16</code> <code>-5</code> across 2 files
 - **Language:** TypeScript
@@ -219,7 +219,73 @@ These issues were identified while implementing new database tools. Resolving th
 
 AsyncAPI specification website
 
-**22 contributions** • TypeScript • **★ 713**
+**23 contributions** • TypeScript • **★ 713**
+
+---
+
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [add connect page with social media links and reusable card component.](https://github.com/asyncapi/website/pull/5589) <sub>[#5589](https://github.com/asyncapi/website/pull/5589)</sub>
+
+<sub><strong>Merged</strong> on Jul 8, 2026</sub>
+
+- **Changes:** <code>+354</code> <code>-13</code> across 14 files
+- **Language:** TypeScript
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
+
+
+<details>
+<summary>View PR description</summary>
+
+## Description
+
+* Added a new `/connect` page (`pages/connect.tsx` and `pages/[lang]/connect.tsx`) to showcase official AsyncAPI social media, community, and contact links in a dedicated location.
+* Created a reusable and responsive `ConnectCard` component with smooth hover animations, automatic external link handling, and support for both light and dark themes.
+* Added custom SVG icons (`SlackColor.tsx`, `LinkedInColor.tsx`, `MastodonColor.tsx`) and a `Podium.tsx` icon to closely match the provided design mockup.
+* Implemented a responsive card grid that adapts across desktop and mobile devices.
+* Configured the layout to automatically center the final card when an odd number of links is displayed, maintaining a balanced visual appearance.
+* Ensured consistent styling and accessibility across supported themes and screen sizes.
+
+## Screenshots
+
+### Light Theme
+
+<img width="1507" height="754" alt="Screenshot 2026-06-24 at 03 25 31" src="https://github.com/user-attachments/assets/8ad480d8-42fa-4df6-a914-3768615c770e" />
+
+### Dark Theme
+
+<img width="1509" height="762" alt="Screenshot 2026-06-24 at 03 25 43" src="https://github.com/user-attachments/assets/26720114-3e64-422a-bd60-13ee47a7ee3a" />
+
+### Mobile Light Theme
+
+<img width="380" height="668" alt="Screenshot 2026-06-24 at 03 27 25" src="https://github.com/user-attachments/assets/d3bb41ec-a439-48fd-8320-fafb5d4cc10e" />
+
+### Mobile Dark Theme
+
+<img width="377" height="666" alt="Screenshot 2026-06-24 at 03 27 32" src="https://github.com/user-attachments/assets/c8adebbc-51f2-4ef2-959c-fa3d7f47c916" />
+
+## Reproduce
+
+- Visit https://deploy-preview-5589--asyncapi-website.netlify.app/connect
+
+## Related Issue(s)
+
+Resolves #4077.
+
+
+
+## Summary by CodeRabbit
+
+* **New Features**
+  * Launched a new **Connect** page with a “Get in Touch” heading and a responsive contact-card grid.
+  * Added connect cards for **Slack, Conferences, LinkedIn, Mastodon, Email, and GitHub**, each with a matching icon.
+  * External destinations now open safely in a new tab, while internal destinations stay in the same tab.
+  * On larger screens, the layout smartly adjusts card spanning when needed.
+* **Updates**
+  * Footer social links and “Email Us” now draw from a centralized community links configuration.
+* **Tests**
+  * Added Cypress coverage to validate the Connect page and each card’s destination.
+
+</details>
+
 
 ---
 
@@ -1327,7 +1393,7 @@ Fixes #1005
 
 <div align="center">
 
-<sub>Last updated: July 3, 2026</sub>
+<sub>Last updated: July 8, 2026</sub>
 
 <br/>
 
