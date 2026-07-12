@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-08T16:00:40.274Z",
+  "updated_at": "2026-07-12T10:21:16.833Z",
   "contributor": {
     "username": "hasithasandunlakshan",
     "profile_url": "https://github.com/hasithasandunlakshan",
@@ -637,6 +637,29 @@
       "additions": 354,
       "deletions": 13,
       "files_changed": 14,
+      "reviewers": [
+        {
+          "login": "princerajpoot20",
+          "avatar_url": "https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4"
+        }
+      ],
+      "merged_by": "princerajpoot20",
+      "showcase": true
+    },
+    {
+      "repo": "asyncapi/website",
+      "pr_number": 5530,
+      "pr_title": "fix: resolve broken TOC sidebar links for headings containing Markdown links",
+      "pr_url": "https://github.com/asyncapi/website/pull/5530",
+      "pr_body": "<!--   Thank you for your contribution. Before you submit the pull request:\r\n1. Follow our contribution guidelines\r\n2. Test your changes and attach their results to the pull request.\r\n3. Update the relevant documentation.\r\n-->\r\n\r\n**Description**\r\n\r\n- Fixed the right-side “On this page” sidebar links for docs headings that contain Markdown links.\r\n- Normalized TOC content before generating fallback heading slugs, so sidebar anchors now match the rendered heading IDs.\r\n- This fixes the broken sidebar navigation on the AsyncAPI Mentorship 2024 Project Ideas page.\r\n\r\n**Related issue(s)**\r\n<!-- If you refer to a particular issue, provide its number, otherwise, remove this section.\r\nFor example, `Resolves #123`, `Fixes #43`, or `See also #33`. The `See also #33` option will not automatically close the issue after the PR merge. -->\r\n\r\nhttps://github.com/asyncapi/website/issues/5465#issuecomment-4586415133\r\n\r\nIssue 17\r\n\r\n- Before \r\n\r\n\r\nhttps://github.com/user-attachments/assets/b98c910c-55ad-4f1c-99b6-e03e482e5c78\r\n\r\n\r\n\r\n- After \r\n\r\nhttps://github.com/user-attachments/assets/e76eea9d-945a-46e9-9f98-20982636f5a2\r\n\r\n\r\n\r\n**Reprodcue**\r\n- Navigate https://deploy-preview-5530--asyncapi-website.netlify.app/docs/community/050-mentorship-program/asyncapi-mentorship-2024-project-ideas#asyncapi-mentorship-program-2024\r\n- Test by plying with on-this-page side bar\r\n\r\n<!-- This is an auto-generated comment: release notes by coderabbit.ai -->\r\n## Summary by CodeRabbit\r\n\r\n* **Chores**\r\n  * Improved table of contents generation with enhanced heading normalization during the build process, ensuring more consistent and reliable documentation formatting.\r\n\r\n* **Tests**\r\n  * Expanded test coverage for table of contents functionality to validate heading normalization and slug generation logic.\r\n<!-- end of auto-generated comment: release notes by coderabbit.ai -->",
+      "merged_at": "2026-07-12T10:19:20Z",
+      "language": "TypeScript",
+      "repo_stars": 715,
+      "repo_description": "AsyncAPI specification website",
+      "labels": [],
+      "additions": 169,
+      "deletions": 4,
+      "files_changed": 2,
       "reviewers": [
         {
           "login": "princerajpoot20",

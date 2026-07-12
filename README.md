@@ -19,7 +19,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 <table align="center">
   <tr>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">27</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">28</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Contributions</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
@@ -219,7 +219,63 @@ These issues were identified while implementing new database tools. Resolving th
 
 AsyncAPI specification website
 
-**23 contributions** • TypeScript • **★ 713**
+**24 contributions** • TypeScript • **★ 713**
+
+---
+
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [resolve broken TOC sidebar links for headings containing Markdown links](https://github.com/asyncapi/website/pull/5530) <sub>[#5530](https://github.com/asyncapi/website/pull/5530)</sub>
+
+<sub><strong>Merged</strong> on Jul 12, 2026</sub>
+
+- **Changes:** <code>+169</code> <code>-4</code> across 2 files
+- **Language:** TypeScript
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/44585452?u=fa0f6a137d8f8613707cc500dbbc19066be78bd8&v=4" width="24" height="24" align="absmiddle" alt="princerajpoot20" title="princerajpoot20">
+
+
+<details>
+<summary>View PR description</summary>
+
+**Description**
+
+- Fixed the right-side “On this page” sidebar links for docs headings that contain Markdown links.
+- Normalized TOC content before generating fallback heading slugs, so sidebar anchors now match the rendered heading IDs.
+- This fixes the broken sidebar navigation on the AsyncAPI Mentorship 2024 Project Ideas page.
+
+**Related issue(s)**
+
+
+https://github.com/asyncapi/website/issues/5465#issuecomment-4586415133
+
+Issue 17
+
+- Before 
+
+
+https://github.com/user-attachments/assets/b98c910c-55ad-4f1c-99b6-e03e482e5c78
+
+
+
+- After 
+
+https://github.com/user-attachments/assets/e76eea9d-945a-46e9-9f98-20982636f5a2
+
+
+
+**Reprodcue**
+- Navigate https://deploy-preview-5530--asyncapi-website.netlify.app/docs/community/050-mentorship-program/asyncapi-mentorship-2024-project-ideas#asyncapi-mentorship-program-2024
+- Test by plying with on-this-page side bar
+
+
+## Summary by CodeRabbit
+
+* **Chores**
+  * Improved table of contents generation with enhanced heading normalization during the build process, ensuring more consistent and reliable documentation formatting.
+
+* **Tests**
+  * Expanded test coverage for table of contents functionality to validate heading normalization and slug generation logic.
+
+</details>
+
 
 ---
 
@@ -1393,7 +1449,7 @@ Fixes #1005
 
 <div align="center">
 
-<sub>Last updated: July 8, 2026</sub>
+<sub>Last updated: July 12, 2026</sub>
 
 <br/>
 
