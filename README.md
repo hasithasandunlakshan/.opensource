@@ -19,7 +19,7 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 <table align="center">
   <tr>
     <td align="center" width="200" style="padding: 20px;">
-      <h2 style="margin: 0; font-size: 2.5em;">28</h2>
+      <h2 style="margin: 0; font-size: 2.5em;">29</h2>
       <p style="margin: 5px 0 0 0; font-weight: 600;">Contributions</p>
     </td>
     <td align="center" width="200" style="padding: 20px;">
@@ -44,7 +44,92 @@ Full Stack Developer @ Upwork | Engineering Undergraduate at University of Morat
 
 The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.
 
-**2 contributions** • TypeScript • **★ 105,150**
+**3 contributions** • TypeScript • **★ 115,142**
+
+---
+
+#### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [improve responsiveness of copywriting components](https://github.com/supabase/supabase/pull/46034) <sub>[#46034](https://github.com/supabase/supabase/pull/46034)</sub>
+
+<sub><strong>Merged</strong> on Nov 17, 2026</sub>
+
+- **Changes:** <code>+20</code> <code>-20</code> across 8 files
+- **Language:** TypeScript
+- **Approved by:** <img src="https://avatars.githubusercontent.com/u/22655069?u=b5f9355fb0e6344624e6e6d3423f2904ecabec83&v=4" width="24" height="24" align="absmiddle" alt="Hallidayo" title="Hallidayo">
+
+
+<details>
+<summary>View PR description</summary>
+
+## I have read the [CONTRIBUTING.md](https://github.com/supabase/supabase/blob/master/CONTRIBUTING.md) file.
+
+YES
+
+## What kind of change does this PR introduce?
+
+Bug fix
+
+## What is the current behavior?
+
+On mobile devices, the component previews in the Design System documentation site (`/apps/design-system`) overflow horizontally and clip off the screen. This is caused by rigid `p-10` padding on the preview container and hardcoded widths (`w-[400px]`, `w-[300px]`) and inflexible flex layouts (`flex-row gap-16`) within the example components.
+
+## What is the new behavior?
+
+The component previews are now fully responsive and render correctly on mobile viewports:
+- Updated the main preview container padding to be responsive (`p-4 sm:p-10`) in `component-preview.tsx` to maximize available space on mobile.
+- Replaced fixed widths with fluid max-widths (`w-full max-w-[400px]`) in various copywriting component examples.
+- Updated flex layouts that previously forced single rows to wrap (`flex-wrap`) and scale down gaps on smaller screens (`gap-8 sm:gap-16`).
+- Added `shrink-0` to icons in alerts to prevent them from squishing when text wraps on narrow screens.
+
+Affected components:
+- `component-preview.tsx`
+- `copy-button-verbs.tsx`
+- `copy-confirmations.tsx`
+- `copy-error-messages.tsx`
+- `copy-form-labels.tsx`
+- `copy-loading-states.tsx`
+- `copy-success-messages.tsx`
+- `copy-tooltips.tsx`
+
+## Screenshots
+### Mobile (Layout Bug - Before)
+
+<img width="383" height="673" alt="Image" src="https://github.com/user-attachments/assets/faeba844-c137-4ab2-aa2c-2299e5ae5bf0" />
+
+<img width="377" height="667" alt="Image" src="https://github.com/user-attachments/assets/e995289c-8c4c-4ba2-8fac-f36bfe869cd7" />
+
+<img width="376" height="671" alt="Image" src="https://github.com/user-attachments/assets/b08afcfc-cc03-4087-9bdc-6082ed4a0c0a" />
+
+### Mobile (Responsive - After)
+
+<img width="375" height="672" alt="Image" src="https://github.com/user-attachments/assets/54f68165-1e42-4f96-b9b8-cc6928909cbf" />
+
+<img width="378" height="673" alt="Image" src="https://github.com/user-attachments/assets/816e7103-3184-4593-9847-896e3e4736ff" />
+
+<img width="372" height="665" alt="Image" src="https://github.com/user-attachments/assets/97ba8f70-5340-4d15-92ee-1a032ee7d935" />
+
+## Additional context
+
+This addresses the layout bugs on the Design System Copywriting documentation page.
+
+Fixes #46033
+
+
+
+## Summary by CodeRabbit
+
+* **Style**
+  * Improved responsiveness across the design system with updated layout and spacing utilities.
+  * Replaced several fixed-width examples with flexible full-width containers constrained by max-widths for consistent sizing.
+  * Adjusted preview padding to use responsive values for better mobile presentation.
+  * Enabled flex wrapping and refined gap sizes for multi-row layouts.
+  * Prevented icons from shrinking in flex rows to preserve alignment and visual consistency.
+
+
+
+[![Review Change Stack](https://storage.googleapis.com/coderabbit_public_assets/review-stack-in-coderabbit-ui.svg)](https://app.coderabbit.ai/change-stack/supabase/supabase/pull/46034?utm_source=github_walkthrough&utm_medium=github&utm_campaign=change_stack)
+
+</details>
+
 
 ---
 
@@ -174,13 +259,13 @@ Behavior is intended to remain unchanged.
 
 Connect Supabase to your AI assistants
 
-**1 contribution** • TypeScript • **★ 2,780**
+**1 contribution** • TypeScript • **★ 3,015**
 
 ---
 
 #### <img src="https://raw.githubusercontent.com/primer/octicons/main/icons/git-merge-16.svg" width="16" height="16" align="absmiddle" alt="Merged" title="Merged pull request"> [resolve edge function test typo and invalid branch array access](https://github.com/supabase/mcp/pull/279) <sub>[#279](https://github.com/supabase/mcp/pull/279)</sub>
 
-<sub><strong>Merged</strong> on May 15, 2026</sub>
+<sub><strong>Merged</strong> on May 16, 2026</sub>
 
 - **Changes:** <code>+16</code> <code>-5</code> across 2 files
 - **Language:** TypeScript
@@ -219,7 +304,7 @@ These issues were identified while implementing new database tools. Resolving th
 
 AsyncAPI specification website
 
-**24 contributions** • TypeScript • **★ 713**
+**24 contributions** • TypeScript • **★ 719**
 
 ---
 
@@ -1403,9 +1488,9 @@ Fixes #5469
 
 ### <img src="https://github.com/asyncapi.png" width="28" height="28" align="absmiddle" alt="asyncapi"> [asyncapi/conference-website](https://github.com/asyncapi/conference-website)
 
-Website for the AsyncAPI online conference
+Website for the AsyncAPI Conference
 
-**1 contribution** • TypeScript • **★ 46**
+**1 contribution** • TypeScript • **★ 48**
 
 ---
 
@@ -1449,7 +1534,7 @@ Fixes #1005
 
 <div align="center">
 
-<sub>Last updated: July 12, 2026</sub>
+<sub>Last updated: November 17, 2026</sub>
 
 <br/>
 
